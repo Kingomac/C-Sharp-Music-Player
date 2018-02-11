@@ -16,6 +16,55 @@ namespace Project_Music
         public Options()
         {
             InitializeComponent();
+            StreamReader reader = new StreamReader("config.ini");
+            numericUpDown1.Value = Convert.ToDecimal(reader.ReadLine());
+            comboBox1.SelectedItem = reader.ReadLine();
+            reader.Close();
+            if(comboBox1.SelectedItem.ToString() == "Dark")
+            {
+                //Paneles
+                panel1.BackColor = Color.FromArgb(28, 28, 28);
+                panel2.BackColor = Color.FromArgb(28, 28, 28);
+                panel3.BackColor = Color.FromArgb(28, 28, 28);
+                panel4.BackColor = Color.FromArgb(28, 28, 28);
+                //Form backcolor
+                this.BackColor = Color.FromArgb(37, 37, 38);
+                //Other's color
+                numericUpDown1.BackColor = Color.FromArgb(37, 37, 38);
+                comboBox1.BackColor = Color.FromArgb(37, 37, 38);
+                numericUpDown1.ForeColor = Color.White;
+                comboBox1.ForeColor = Color.White;
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Blue")
+            {
+                //Paneles
+                panel1.BackColor = Color.FromArgb(16, 71, 166);
+                panel2.BackColor = Color.FromArgb(16, 71, 166);
+                panel3.BackColor = Color.FromArgb(16, 71, 166);
+                panel4.BackColor = Color.FromArgb(16, 71, 166);
+                //Form backcolor
+                this.BackColor = Color.WhiteSmoke;
+                //Other's color
+                numericUpDown1.BackColor = Color.WhiteSmoke;
+                comboBox1.BackColor = Color.WhiteSmoke;
+                numericUpDown1.ForeColor = Color.FromArgb(16, 71, 166);
+                comboBox1.ForeColor = Color.FromArgb(16, 71, 166);
+            }
+            else if (comboBox1.SelectedItem.ToString() == "Orange")
+            {
+                //Paneles
+                panel1.BackColor = Color.FromArgb(252, 143, 0);
+                panel2.BackColor = Color.FromArgb(252, 143, 0);
+                panel3.BackColor = Color.FromArgb(252, 143, 0);
+                panel4.BackColor = Color.FromArgb(252, 143, 0);
+                //Form backcolor
+                this.BackColor = Color.FromArgb(255, 179, 81);
+                //Other's color
+                numericUpDown1.BackColor = Color.FromArgb(255, 179, 81);
+                comboBox1.BackColor = Color.FromArgb(255, 179, 81);
+                numericUpDown1.ForeColor = Color.WhiteSmoke;
+                comboBox1.ForeColor = Color.WhiteSmoke;
+            }
         }
 
         private void pictureBox10_Click(object sender, EventArgs e)
@@ -42,6 +91,9 @@ namespace Project_Music
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             this.Close();
+            ConfigFile.ClearAll();
+            ConfigFile.WriteLine(true, Convert.ToString(numericUpDown1.Value));
+            ConfigFile.WriteLine(true, Convert.ToString(comboBox1.SelectedItem));
         }
 
         private void pictureBox4_MouseDown(object sender, MouseEventArgs e)
@@ -52,6 +104,11 @@ namespace Project_Music
         private void pictureBox4_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left) { this.Left += e.X - lastPoint.X; this.Top += e.Y - lastPoint.Y; }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = !panel3.Visible;
         }
     }
 }

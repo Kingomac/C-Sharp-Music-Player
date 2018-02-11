@@ -25,9 +25,129 @@ namespace Project_Music
 {
     public partial class Form1 : Form
     {
+        public double fadeLenght;
         public Form1()
         {
             InitializeComponent();
+            if (!File.Exists("config.ini"))
+            {
+                ConfigFile.ClearAll();
+            }
+            StreamReader reader = new StreamReader("config.ini");
+            fadeLenght = Convert.ToDouble(reader.ReadLine());
+            string color = reader.ReadLine();
+            reader.Close();
+            if(color == "Dark")
+            {
+                //Paneles
+                panel1.BackColor = Color.FromArgb(28, 28, 28);
+                panel2.BackColor = Color.FromArgb(28, 28, 28);
+                panel4.BackColor = Color.FromArgb(28, 28, 28);
+                panel5.BackColor = Color.FromArgb(28, 28, 28);
+                //Pictures background
+                pictureBox11.BackColor = Color.FromArgb(28, 28, 28);
+                pictureBox10.BackColor = Color.FromArgb(28, 28, 28);
+                //Form backcolor
+                this.BackColor = Color.FromArgb(37, 37, 38);
+                //Textbox
+                textBox1.BackColor = Color.FromArgb(63, 63, 70);
+                textBox2.BackColor = Color.FromArgb(63, 63, 70);
+                //Buttons backcolor
+                button1.BackColor = Color.FromArgb(45, 45, 48);
+                button3.BackColor = Color.FromArgb(45, 45, 48);
+                button4.BackColor = Color.FromArgb(45, 45, 48);
+                button5.BackColor = Color.FromArgb(45, 45, 48);
+                button6.BackColor = Color.FromArgb(45, 45, 48);
+                button7.BackColor = Color.FromArgb(45, 45, 48);
+                button9.BackColor = Color.FromArgb(45, 45, 48);
+                button10.BackColor = Color.FromArgb(45, 45, 48);
+                //Buttons forecolor
+                button1.ForeColor = Color.White;
+                button3.ForeColor = Color.White;
+                button4.ForeColor = Color.White;
+                button5.ForeColor = Color.White;
+                button6.ForeColor = Color.White;
+                button7.ForeColor = Color.White;
+                button9.ForeColor = Color.White;
+                button10.ForeColor = Color.White;
+            }
+            else if(color == "Blue")
+            {
+                //Paneles
+                panel1.BackColor = Color.FromArgb(16, 71, 166);
+                panel2.BackColor = Color.FromArgb(16, 71, 166);
+                panel4.BackColor = Color.FromArgb(16, 71, 166);
+                panel5.BackColor = Color.FromArgb(16, 71, 166);
+                //Pictures background
+                pictureBox11.BackColor = Color.FromArgb(16, 71, 166);
+                pictureBox10.BackColor = Color.FromArgb(16, 71, 166);
+                //Form backcolor
+                this.BackColor = Color.WhiteSmoke;
+                //Textbox
+                ///backcolor
+                textBox1.BackColor = Color.WhiteSmoke;
+                textBox2.BackColor = Color.WhiteSmoke;
+                ///forecolor
+                textBox1.ForeColor = Color.FromArgb(16, 71, 166);
+                textBox2.ForeColor = Color.FromArgb(16, 71, 166);
+                //Buttons backcolor
+                button1.BackColor = Color.WhiteSmoke;
+                button3.BackColor = Color.WhiteSmoke;
+                button4.BackColor = Color.WhiteSmoke;
+                button5.BackColor = Color.WhiteSmoke;
+                button6.BackColor = Color.WhiteSmoke;
+                button7.BackColor = Color.WhiteSmoke;
+                button9.BackColor = Color.WhiteSmoke;
+                button10.BackColor = Color.WhiteSmoke;
+                //Buttons forecolor
+                button1.ForeColor = Color.FromArgb(16, 71, 166);
+                button3.ForeColor = Color.FromArgb(16, 71, 166);
+                button4.ForeColor = Color.FromArgb(16, 71, 166);
+                button5.ForeColor = Color.FromArgb(16, 71, 166);
+                button6.ForeColor = Color.FromArgb(16, 71, 166);
+                button7.ForeColor = Color.FromArgb(16, 71, 166);
+                button9.ForeColor = Color.FromArgb(16, 71, 166);
+                button10.ForeColor = Color.FromArgb(16, 71, 166);
+            }
+            else if (color == "Orange")
+            {
+                //Paneles
+                panel1.BackColor = Color.FromArgb(252, 143, 0);
+                panel2.BackColor = Color.FromArgb(252, 143, 0);
+                panel4.BackColor = Color.FromArgb(252, 143, 0);
+                panel5.BackColor = Color.FromArgb(252, 143, 0);
+                //Pictures background
+                pictureBox11.BackColor = Color.FromArgb(252, 143, 0);
+                pictureBox10.BackColor = Color.FromArgb(252, 143, 0);
+                //Form backcolor
+                this.BackColor = Color.FromArgb(255, 179, 81);
+                //Textbox
+                ///backcolor
+                textBox1.BackColor = Color.FromArgb(255, 179, 81);
+                textBox2.BackColor = Color.FromArgb(255, 179, 81);
+                ///forecolor
+                textBox1.ForeColor = Color.WhiteSmoke;
+                textBox2.ForeColor = Color.WhiteSmoke;
+                //Buttons backcolor
+                button1.BackColor = Color.FromArgb(255, 179, 81);
+                button3.BackColor = Color.FromArgb(255, 179, 81);
+                button4.BackColor = Color.FromArgb(255, 179, 81);
+                button5.BackColor = Color.FromArgb(255, 179, 81);
+                button6.BackColor = Color.FromArgb(255, 179, 81);
+                button7.BackColor = Color.FromArgb(255, 179, 81);
+                button9.BackColor = Color.FromArgb(255, 179, 81);
+                button10.BackColor = Color.FromArgb(255, 179, 81);
+                //Buttons forecolor
+                button1.ForeColor = Color.WhiteSmoke;
+                button3.ForeColor = Color.WhiteSmoke;
+                button4.ForeColor = Color.WhiteSmoke;
+                button5.ForeColor = Color.WhiteSmoke;
+                button6.ForeColor = Color.WhiteSmoke;
+                button7.ForeColor = Color.WhiteSmoke;
+                button9.ForeColor = Color.WhiteSmoke;
+                button10.ForeColor = Color.WhiteSmoke;
+            }
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -169,28 +289,44 @@ namespace Project_Music
 
         private void PlayAudio(String path)
         {
-            audio = new AudioFileReader(path);
-            fade = new FadeInOutSampleProvider(audio, true);
-            fade.BeginFadeIn(2000);
-            //var waveOutDevice = new WaveOutEvent();
-            waveOutDevice.Init(fade);
-            waveOutDevice.Play();
-            if (audio.Position >= audio.Length)
+            if ((Path.GetExtension(path) == ".mp3") || (Path.GetExtension(path) == ".wav" ))
             {
-                fade.BeginFadeOut(2000);
-                waveOutDevice.Stop();
+            audio = new AudioFileReader(path); 
+            fade = new FadeInOutSampleProvider(audio, true);
+            fade.BeginFadeIn(fadeLenght);
+            var waveOutDevice = new WaveOutEvent();
+           waveOutDevice.Init(fade);
+           waveOutDevice.Play();
+            if (audio.Position >= audio.Length)
+                {
+                    fade.BeginFadeOut(fadeLenght);
+                    waveOutDevice.Stop();
+                }
+            }
+            else
+            {
+                ErrorForms.Error error = new ErrorForms.Error(1);
+                error.Show();
             }
         }
         private void StopAudio()
         {
-            fade.BeginFadeOut(2000);
+            fade.BeginFadeOut(fadeLenght);
             waveOutDevice.Stop();
             label1.Text = "Let's listen something!";
         }
         private void button9_Click(object sender, EventArgs e)
         {
-            PlayAudio(textBox1.Text);
-            label1.Text = Path.GetFileNameWithoutExtension(textBox1.Text);
+            if (File.Exists(textBox1.Text))
+            {
+                PlayAudio(textBox1.Text);
+                label1.Text = Path.GetFileNameWithoutExtension(textBox1.Text);
+            }
+            else
+            {
+                ErrorForms.Error error = new ErrorForms.Error(0);
+                error.Show();
+            }
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -208,6 +344,11 @@ namespace Project_Music
         }
 
         private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
