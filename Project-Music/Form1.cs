@@ -25,6 +25,7 @@ namespace Project_Music
 {
     public partial class Form1 : Form
     {
+        public bool isPlaying = false;
         public double fadeLenght;
         public Form1()
         {
@@ -214,7 +215,7 @@ namespace Project_Music
         private void button1_Click(object sender, EventArgs e)
         {
             files = Directory.GetFiles(textBox2.Text);
-            PlayAudio(files[fileNum]);
+            PlayAudioDirectory(files);
             label1.Text = Path.GetFileNameWithoutExtension(files[fileNum]);
         }
         private void button7_Click(object sender, EventArgs e)
@@ -281,6 +282,11 @@ namespace Project_Music
 
         private void Form1_Activated(object sender, EventArgs e)
         {
+            if (isPlaying)
+            {
+                progressBar1.Maximum = Convert.ToInt32(audio.Length);
+                progressBar1.Value = Convert.ToInt32(audio.Position);
+            }
         }
 
         WaveOutEvent waveOutDevice = new WaveOutEvent();
@@ -308,6 +314,30 @@ namespace Project_Music
                 ErrorForms.Error error = new ErrorForms.Error(1);
                 error.Show();
             }
+        }
+        private void PlayAudioDirectory(String[] path)
+        {
+            audio = new AudioFileReader(path[fileNum]);
+            fade = new FadeInOutSampleProvider(audio, true);
+            fade.BeginFadeIn(fadeLenght);
+            var waveOutDevice = new WaveOutEvent();
+            waveOutDevice.Init(fade);
+            waveOutDevice.Play();
+            isPlaying = true;
+            if (audio.Position >= audio.Length)
+            {
+                fade.BeginFadeOut(fadeLenght);
+                waveOutDevice.Stop();
+                isPlaying = false;
+                
+            }
+        }
+        private void PlayNext()
+        {
+            StopAudio();
+            fileNum++;
+            if (File.Exists(files[fileNum])) PlayAudio(files[fileNum]);
+            label1.Text = Path.GetFileNameWithoutExtension(files[fileNum]);
         }
         private void StopAudio()
         {
@@ -341,11 +371,6 @@ namespace Project_Music
 
         private void Form1_MouseHover(object sender, EventArgs e)
         {
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
