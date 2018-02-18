@@ -19,6 +19,7 @@ using NAudio.Utils;
 using NAudio.Dsp;
 using NAudio.CoreAudioApi;
 using NAudio.Wave.SampleProviders;
+using System.Windows.Input;
 
 
 namespace Project_Music
@@ -282,11 +283,7 @@ namespace Project_Music
 
         private void Form1_Activated(object sender, EventArgs e)
         {
-            if (isPlaying)
-            {
-                progressBar1.Maximum = Convert.ToInt32(audio.Length);
-                progressBar1.Value = Convert.ToInt32(audio.Position);
-            }
+
         }
 
         WaveOutEvent waveOutDevice = new WaveOutEvent();
@@ -331,6 +328,17 @@ namespace Project_Music
                 isPlaying = false;
                 
             }
+            Timer timer = new Timer();
+            timer.Interval = 1000;
+            timer.Tick += new EventHandler(Timer_Tick);
+            timer.Start();
+            trackBar1.Maximum = Convert.ToInt32(audio.Length / 1000);
+        }
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            trackBar1.Value = Convert.ToInt32(audio.Position / 1000);
+            if(isPlaying)   label3.Text = $"{audio.CurrentTime.Hours.ToString()}:{audio.CurrentTime.Minutes.ToString()}:{audio.CurrentTime.Seconds.ToString()} / {audio.TotalTime.Hours}:{audio.TotalTime.Minutes}:{audio.TotalTime.Seconds}";
+
         }
         private void PlayNext()
         {
@@ -367,6 +375,7 @@ namespace Project_Music
 
         private void Form1_MouseMove(object sender, MouseEventArgs e)
         {
+            
         }
 
         private void Form1_MouseHover(object sender, EventArgs e)
@@ -376,6 +385,24 @@ namespace Project_Music
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trackBar1_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            if (isPlaying)
+            {
+                audio.Position = 1000 * trackBar1.Value;
+            }
         }
     }
 }
