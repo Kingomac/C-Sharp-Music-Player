@@ -289,7 +289,7 @@ namespace Project_Music
         WaveOutEvent waveOutDevice = new WaveOutEvent();
         FadeInOutSampleProvider fade;
         AudioFileReader audio;
-
+        Timer timer = new Timer();
         private void PlayAudio(String path)
         {
             if ((Path.GetExtension(path) == ".mp3") || (Path.GetExtension(path) == ".wav" ))
@@ -311,6 +311,11 @@ namespace Project_Music
                 ErrorForms.Error error = new ErrorForms.Error(1);
                 error.Show();
             }
+            isPlaying = true;
+            timer.Interval = 1000;
+            timer.Tick += new EventHandler(Timer_Tick);
+            timer.Start();
+            trackBar1.Maximum = Convert.ToInt32(audio.Length / 1000);
         }
         private void PlayAudioDirectory(String[] path)
         {
@@ -321,14 +326,6 @@ namespace Project_Music
             waveOutDevice.Init(fade);
             waveOutDevice.Play();
             isPlaying = true;
-            if (audio.Position >= audio.Length)
-            {
-                fade.BeginFadeOut(fadeLenght);
-                waveOutDevice.Stop();
-                isPlaying = false;
-                
-            }
-            Timer timer = new Timer();
             timer.Interval = 1000;
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
@@ -347,11 +344,22 @@ namespace Project_Music
             if (File.Exists(files[fileNum])) PlayAudio(files[fileNum]);
             label1.Text = Path.GetFileNameWithoutExtension(files[fileNum]);
         }
+        Timer reloj = new Timer();
         private void StopAudio()
         {
+            timer.Stop();
             fade.BeginFadeOut(fadeLenght);
             waveOutDevice.Stop();
             label1.Text = "Let's listen something!";
+            label3.Text = "0:0:0 / 0:0:0";
+            reloj.Interval = 10;
+            reloj.Tick += new EventHandler(Reloj_Tick);
+            reloj.Start();
+        }
+        private void Reloj_Tick(object sender, EventArgs e)
+        {
+            if (trackBar1.Value - 100 >= 100) trackBar1.Value -= 100;
+            else reloj.Stop();
         }
         private void button9_Click(object sender, EventArgs e)
         {
@@ -383,11 +391,6 @@ namespace Project_Music
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void progressBar1_Click(object sender, EventArgs e)
         {
 
         }
