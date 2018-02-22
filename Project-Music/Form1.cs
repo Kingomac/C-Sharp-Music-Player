@@ -46,6 +46,7 @@ namespace Project_Music
                 panel2.BackColor = Color.FromArgb(28, 28, 28);
                 panel4.BackColor = Color.FromArgb(28, 28, 28);
                 panel5.BackColor = Color.FromArgb(28, 28, 28);
+                panel3.BackColor = Color.FromArgb(28, 28, 28);
                 //Pictures background
                 pictureBox11.BackColor = Color.FromArgb(28, 28, 28);
                 pictureBox10.BackColor = Color.FromArgb(28, 28, 28);
@@ -80,6 +81,7 @@ namespace Project_Music
                 panel2.BackColor = Color.FromArgb(16, 71, 166);
                 panel4.BackColor = Color.FromArgb(16, 71, 166);
                 panel5.BackColor = Color.FromArgb(16, 71, 166);
+                panel3.BackColor = Color.FromArgb(16, 71, 166);
                 //Pictures background
                 pictureBox11.BackColor = Color.FromArgb(16, 71, 166);
                 pictureBox10.BackColor = Color.FromArgb(16, 71, 166);
@@ -118,6 +120,7 @@ namespace Project_Music
                 panel2.BackColor = Color.FromArgb(252, 143, 0);
                 panel4.BackColor = Color.FromArgb(252, 143, 0);
                 panel5.BackColor = Color.FromArgb(252, 143, 0);
+                panel3.BackColor = Color.FromArgb(252, 143, 0);
                 //Pictures background
                 pictureBox11.BackColor = Color.FromArgb(252, 143, 0);
                 pictureBox10.BackColor = Color.FromArgb(252, 143, 0);
@@ -405,6 +408,28 @@ namespace Project_Music
             if (isPlaying)
             {
                 audio.Position = 1000 * trackBar1.Value;
+            }
+        }
+
+        private void PauseButton_Click(object sender, EventArgs e)
+        {
+            if (isPlaying)
+            {
+                waveOutDevice.Pause();
+                isPlaying = false;
+            }
+        }
+
+        private void ContinueButton_Click(object sender, EventArgs e)
+        {
+            waveOutDevice.Play();
+        }
+
+        private void VolumeTrackBar_Scroll(object sender, EventArgs e)
+        {
+            if (isPlaying)
+            {
+                audio.Volume = VolumeTrackBar.Value / 100;
             }
         }
     }
