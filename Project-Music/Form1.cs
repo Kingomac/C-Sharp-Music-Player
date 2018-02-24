@@ -38,6 +38,7 @@ namespace Project_Music
             StreamReader reader = new StreamReader("config.ini");
             fadeLenght = Convert.ToDouble(reader.ReadLine());
             string color = reader.ReadLine();
+            timer.Interval = Convert.ToInt32(reader.ReadLine());
             reader.Close();
             if(color == "Dark")
             {
@@ -315,7 +316,7 @@ namespace Project_Music
                 error.Show();
             }
             isPlaying = true;
-            timer.Interval = 1000;
+            //timer.Interval = 1000;
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
             trackBar1.Maximum = Convert.ToInt32(audio.Length / 1000);
@@ -355,7 +356,7 @@ namespace Project_Music
             waveOutDevice.Stop();
             label1.Text = "Let's listen something!";
             label3.Text = "0:0:0 / 0:0:0";
-            reloj.Interval = 10;
+            reloj.Interval = timer.Interval;
             reloj.Tick += new EventHandler(Reloj_Tick);
             reloj.Start();
         }

@@ -19,6 +19,7 @@ namespace Project_Music
             StreamReader reader = new StreamReader("config.ini");
             numericUpDown1.Value = Convert.ToDecimal(reader.ReadLine());
             comboBox1.SelectedItem = reader.ReadLine();
+            numericUpDown2.Value = Convert.ToDecimal(reader.ReadLine());
             reader.Close();
             if(comboBox1.SelectedItem.ToString() == "Dark")
             {
@@ -94,6 +95,7 @@ namespace Project_Music
             ConfigFile.ClearAll();
             ConfigFile.WriteLine(true, Convert.ToString(numericUpDown1.Value));
             ConfigFile.WriteLine(true, Convert.ToString(comboBox1.SelectedItem));
+            ConfigFile.WriteLine(true, Convert.ToString(numericUpDown2.Value));
         }
 
         private void pictureBox4_MouseDown(object sender, MouseEventArgs e)
