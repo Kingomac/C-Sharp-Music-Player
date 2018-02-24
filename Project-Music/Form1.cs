@@ -369,6 +369,8 @@ namespace Project_Music
             if (File.Exists(textBox1.Text))
             {
                 PlayAudio(textBox1.Text);
+                audio.Volume = 0.5f;
+                trackBar1.Value = 50;
                 label1.Text = Path.GetFileNameWithoutExtension(textBox1.Text);
             }
             else
@@ -429,7 +431,7 @@ namespace Project_Music
         {
             if (isPlaying)
             {
-                audio.Volume = VolumeTrackBar.Value / 100;
+                audio.Volume = VolumeTrackBar.Value / 100f;
             }
         }
     }
