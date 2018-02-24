@@ -359,6 +359,18 @@ namespace Project_Music
             reloj.Tick += new EventHandler(Reloj_Tick);
             reloj.Start();
         }
+        private void PauseAudio()
+        {
+            position = audio.Position;
+            timer.Stop();
+            fade.BeginFadeOut(fadeLenght);
+            waveOutDevice.Stop();
+            //label1.Text = "Let's listen something!";
+            //label3.Text = "0:0:0 / 0:0:0";
+            //reloj.Interval = 10;
+            //reloj.Tick += new EventHandler(Reloj_Tick);
+            //reloj.Start();
+        }
         private void Reloj_Tick(object sender, EventArgs e)
         {
             if (trackBar1.Value - 100 >= 100) trackBar1.Value -= 100;
@@ -412,19 +424,16 @@ namespace Project_Music
                 audio.Position = 1000 * trackBar1.Value;
             }
         }
-
+        public long position = 0;
         private void PauseButton_Click(object sender, EventArgs e)
         {
-            if (isPlaying)
-            {
-                waveOutDevice.Pause();
-                isPlaying = false;
-            }
+            if (isPlaying) PauseAudio();
         }
 
         private void ContinueButton_Click(object sender, EventArgs e)
         {
-            waveOutDevice.Play();
+            PlayAudio(textBox1.Text);
+            audio.Position = position;
         }
 
         private void VolumeTrackBar_Scroll(object sender, EventArgs e)
