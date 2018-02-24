@@ -35,11 +35,15 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.ContinueButton = new System.Windows.Forms.Button();
+            this.pauseButton = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.ContinueButDirectory = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -47,6 +51,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.VolumeTrackBar = new System.Windows.Forms.TrackBar();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
@@ -54,9 +59,6 @@
             this.trackBar1 = new System.Windows.Forms.TrackBar();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.pauseButton = new System.Windows.Forms.Button();
-            this.ContinueButton = new System.Windows.Forms.Button();
-            this.VolumeTrackBar = new System.Windows.Forms.TrackBar();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -64,13 +66,13 @@
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VolumeTrackBar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VolumeTrackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -157,6 +159,32 @@
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
             // 
+            // ContinueButton
+            // 
+            this.ContinueButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.ContinueButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContinueButton.ForeColor = System.Drawing.Color.White;
+            this.ContinueButton.Location = new System.Drawing.Point(168, 58);
+            this.ContinueButton.Name = "ContinueButton";
+            this.ContinueButton.Size = new System.Drawing.Size(68, 23);
+            this.ContinueButton.TabIndex = 9;
+            this.ContinueButton.Text = "Continue";
+            this.ContinueButton.UseVisualStyleBackColor = false;
+            this.ContinueButton.Click += new System.EventHandler(this.ContinueButton_Click);
+            // 
+            // pauseButton
+            // 
+            this.pauseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.pauseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pauseButton.ForeColor = System.Drawing.Color.White;
+            this.pauseButton.Location = new System.Drawing.Point(3, 56);
+            this.pauseButton.Name = "pauseButton";
+            this.pauseButton.Size = new System.Drawing.Size(68, 23);
+            this.pauseButton.TabIndex = 8;
+            this.pauseButton.Text = "Pause";
+            this.pauseButton.UseVisualStyleBackColor = false;
+            this.pauseButton.Click += new System.EventHandler(this.PauseButton_Click);
+            // 
             // button10
             // 
             this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -211,6 +239,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
+            this.panel5.Controls.Add(this.ContinueButDirectory);
+            this.panel5.Controls.Add(this.button2);
             this.panel5.Controls.Add(this.button5);
             this.panel5.Controls.Add(this.button1);
             this.panel5.Controls.Add(this.button7);
@@ -225,6 +255,32 @@
             this.panel5.Visible = false;
             this.panel5.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseDown);
             this.panel5.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseMove);
+            // 
+            // ContinueButDirectory
+            // 
+            this.ContinueButDirectory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.ContinueButDirectory.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ContinueButDirectory.ForeColor = System.Drawing.Color.White;
+            this.ContinueButDirectory.Location = new System.Drawing.Point(190, 58);
+            this.ContinueButDirectory.Name = "ContinueButDirectory";
+            this.ContinueButDirectory.Size = new System.Drawing.Size(68, 23);
+            this.ContinueButDirectory.TabIndex = 10;
+            this.ContinueButDirectory.Text = "Continue";
+            this.ContinueButDirectory.UseVisualStyleBackColor = false;
+            this.ContinueButDirectory.Click += new System.EventHandler(this.ContinueButDirectory_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(10, 59);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(68, 23);
+            this.button2.TabIndex = 10;
+            this.button2.Text = "Pause";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.PauseButton_Click);
             // 
             // button5
             // 
@@ -316,6 +372,18 @@
             this.panel4.Size = new System.Drawing.Size(63, 423);
             this.panel4.TabIndex = 2;
             // 
+            // VolumeTrackBar
+            // 
+            this.VolumeTrackBar.Location = new System.Drawing.Point(10, 141);
+            this.VolumeTrackBar.Maximum = 100;
+            this.VolumeTrackBar.Name = "VolumeTrackBar";
+            this.VolumeTrackBar.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.VolumeTrackBar.Size = new System.Drawing.Size(45, 147);
+            this.VolumeTrackBar.TabIndex = 15;
+            this.VolumeTrackBar.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.VolumeTrackBar.Value = 50;
+            this.VolumeTrackBar.Scroll += new System.EventHandler(this.VolumeTrackBar_Scroll);
+            // 
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
@@ -391,44 +459,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Time";
             // 
-            // pauseButton
-            // 
-            this.pauseButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.pauseButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pauseButton.ForeColor = System.Drawing.Color.White;
-            this.pauseButton.Location = new System.Drawing.Point(3, 56);
-            this.pauseButton.Name = "pauseButton";
-            this.pauseButton.Size = new System.Drawing.Size(68, 23);
-            this.pauseButton.TabIndex = 8;
-            this.pauseButton.Text = "Pause";
-            this.pauseButton.UseVisualStyleBackColor = false;
-            this.pauseButton.Click += new System.EventHandler(this.PauseButton_Click);
-            // 
-            // ContinueButton
-            // 
-            this.ContinueButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.ContinueButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ContinueButton.ForeColor = System.Drawing.Color.White;
-            this.ContinueButton.Location = new System.Drawing.Point(168, 58);
-            this.ContinueButton.Name = "ContinueButton";
-            this.ContinueButton.Size = new System.Drawing.Size(68, 23);
-            this.ContinueButton.TabIndex = 9;
-            this.ContinueButton.Text = "Continue";
-            this.ContinueButton.UseVisualStyleBackColor = false;
-            this.ContinueButton.Click += new System.EventHandler(this.ContinueButton_Click);
-            // 
-            // VolumeTrackBar
-            // 
-            this.VolumeTrackBar.Location = new System.Drawing.Point(10, 141);
-            this.VolumeTrackBar.Maximum = 100;
-            this.VolumeTrackBar.Name = "VolumeTrackBar";
-            this.VolumeTrackBar.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.VolumeTrackBar.Size = new System.Drawing.Size(45, 147);
-            this.VolumeTrackBar.TabIndex = 15;
-            this.VolumeTrackBar.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.VolumeTrackBar.Value = 50;
-            this.VolumeTrackBar.Scroll += new System.EventHandler(this.VolumeTrackBar_Scroll);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -461,6 +491,7 @@
             this.panel5.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.VolumeTrackBar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
@@ -468,7 +499,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.VolumeTrackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -504,6 +534,8 @@
         private System.Windows.Forms.Button ContinueButton;
         private System.Windows.Forms.Button pauseButton;
         private System.Windows.Forms.TrackBar VolumeTrackBar;
+        private System.Windows.Forms.Button ContinueButDirectory;
+        private System.Windows.Forms.Button button2;
     }
 }
 

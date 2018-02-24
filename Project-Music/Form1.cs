@@ -443,5 +443,11 @@ namespace Project_Music
                 audio.Volume = VolumeTrackBar.Value / 100f;
             }
         }
+
+        private void ContinueButDirectory_Click(object sender, EventArgs e)
+        {
+            PlayAudioDirectory(files);
+            audio.Position = position;
+        }
     }
 }
