@@ -450,5 +450,11 @@ namespace Project_Music
             PlayAudioDirectory(files);
             audio.Position = position;
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            About about = new About();
+            about.ShowDialog();
+        }
     }
 }
