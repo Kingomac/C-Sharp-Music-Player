@@ -37,5 +37,10 @@ namespace Project_Music
         {
             lastPoint = new Point(e.X, e.Y);
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://github.com/Kingomac/C-Sharp-Music-Player/tree/master/Releases");
+        }
     }
 }

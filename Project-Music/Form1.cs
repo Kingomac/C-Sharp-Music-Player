@@ -154,8 +154,6 @@ namespace Project_Music
                 button9.ForeColor = Color.WhiteSmoke;
                 button10.ForeColor = Color.WhiteSmoke;
             }
-            AutoUpdater.Start("https://github.com/Kingomac/C-Sharp-Music-Player/blob/master/Releases/version.xml");
-            AutoUpdater.OpenDownloadPage = true;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
