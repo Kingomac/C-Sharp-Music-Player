@@ -296,6 +296,7 @@ namespace Project_Music
         Timer timer = new Timer();
         private void PlayAudio(String path)
         {
+            if (isPlaying) StopAudio();
             if ((Path.GetExtension(path) == ".mp3") || (Path.GetExtension(path) == ".wav" ))
             {
             audio = new AudioFileReader(path); 
@@ -320,6 +321,7 @@ namespace Project_Music
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
             trackBar1.Maximum = Convert.ToInt32(audio.Length / 1000);
+            TagControl.GetCover(textBox1.Text, pictureBox5);
         }
         private void PlayAudioDirectory(String[] path)
         {
@@ -334,6 +336,7 @@ namespace Project_Music
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
             trackBar1.Maximum = Convert.ToInt32(audio.Length / 1000);
+            TagControl.GetCover(textBox2.Text, pictureBox5);
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -359,6 +362,7 @@ namespace Project_Music
             reloj.Interval = timer.Interval;
             reloj.Tick += new EventHandler(Reloj_Tick);
             reloj.Start();
+            pictureBox5.Image = null;
         }
         private void PauseAudio()
         {
@@ -375,7 +379,10 @@ namespace Project_Music
         private void Reloj_Tick(object sender, EventArgs e)
         {
             if (trackBar1.Value - 100 >= 100) trackBar1.Value -= 100;
-            else reloj.Stop();
+            else
+            {
+                reloj.Stop(); 
+            }
         }
         private void button9_Click(object sender, EventArgs e)
         {

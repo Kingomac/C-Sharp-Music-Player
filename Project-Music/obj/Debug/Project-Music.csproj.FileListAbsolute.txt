@@ -54,3 +54,6 @@ X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\ru\AutoUp
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\sv\AutoUpdater.NET.resources.dll
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\tr\AutoUpdater.NET.resources.dll
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\zh\AutoUpdater.NET.resources.dll
+X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\policy.2.0.taglib-sharp.dll
+X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\taglib-sharp.dll
+X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\policy.2.0.taglib-sharp.config
