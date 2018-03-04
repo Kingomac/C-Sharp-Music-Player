@@ -305,7 +305,7 @@ namespace Project_Music
             if (audio.Position >= audio.Length)
                 {
                     fade.BeginFadeOut(fadeLenght);
-                    waveOutDevice.Stop();
+                    StopAudio();
                 }
             }
             else
@@ -356,7 +356,7 @@ namespace Project_Music
             waveOutDevice.Stop();
             label1.Text = "Let's listen something!";
             label3.Text = "0:0:0 / 0:0:0";
-            reloj.Interval = timer.Interval;
+            reloj.Interval = 10;
             reloj.Tick += new EventHandler(Reloj_Tick);
             reloj.Start();
             pictureBox5.Image = null;
@@ -375,7 +375,7 @@ namespace Project_Music
         }
         private void Reloj_Tick(object sender, EventArgs e)
         {
-            if (trackBar1.Value - 100 >= 100) trackBar1.Value -= 100;
+            if (trackBar1.Value - 150 >= 150) trackBar1.Value -= 150;
             else
             {
                 reloj.Stop(); 
