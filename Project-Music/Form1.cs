@@ -225,16 +225,13 @@ namespace Project_Music
         }
         private void button7_Click(object sender, EventArgs e)
         {
-            StopAudio();
-            fileNum++;
-            if (File.Exists(files[fileNum])) PlayAudio(files[fileNum]);
-            label1.Text = Path.GetFileNameWithoutExtension(files[fileNum]);
+            PlayNext();
         }
         private void button6_Click(object sender, EventArgs e)
         {
             StopAudio();
             fileNum--;
-            if (File.Exists(files[fileNum])) PlayAudio(files[fileNum]);
+            if (File.Exists(files[fileNum])) PlayAudioDirectory(files);
             label1.Text = Path.GetFileNameWithoutExtension(files[fileNum]);
         }
 
@@ -336,7 +333,8 @@ namespace Project_Music
             timer.Tick += new EventHandler(Timer_Tick);
             timer.Start();
             trackBar1.Maximum = Convert.ToInt32(audio.Length / 1000);
-            TagControl.GetCover(textBox2.Text, pictureBox5);
+            TagControl.GetCover(path[fileNum], pictureBox5);
+            label1.Text = label1.Text = Path.GetFileNameWithoutExtension(files[fileNum]);
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -348,8 +346,7 @@ namespace Project_Music
         {
             StopAudio();
             fileNum++;
-            if (File.Exists(files[fileNum])) PlayAudio(files[fileNum]);
-            label1.Text = Path.GetFileNameWithoutExtension(files[fileNum]);
+            if (File.Exists(files[fileNum])) PlayAudioDirectory(files);
         }
         Timer reloj = new Timer();
         private void StopAudio()
