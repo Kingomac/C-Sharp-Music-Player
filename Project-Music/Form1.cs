@@ -340,7 +340,10 @@ namespace Project_Music
         {
             trackBar1.Value = Convert.ToInt32(audio.Position / 1000);
             if(isPlaying)   label3.Text = $"{audio.CurrentTime.Hours.ToString()}:{audio.CurrentTime.Minutes.ToString()}:{audio.CurrentTime.Seconds.ToString()} / {audio.TotalTime.Hours}:{audio.TotalTime.Minutes}:{audio.TotalTime.Seconds}";
-
+            if(audio.Position >= audio.Length)
+            {
+                PlayNext();
+            }
         }
         private void PlayNext()
         {
