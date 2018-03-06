@@ -221,7 +221,6 @@ namespace Project_Music
         {
             files = Directory.GetFiles(textBox2.Text);
             PlayAudioDirectory(files);
-            label1.Text = Path.GetFileNameWithoutExtension(files[fileNum]);
         }
         private void button7_Click(object sender, EventArgs e)
         {
@@ -232,7 +231,6 @@ namespace Project_Music
             StopAudio();
             fileNum--;
             if (File.Exists(files[fileNum])) PlayAudioDirectory(files);
-            label1.Text = Path.GetFileNameWithoutExtension(files[fileNum]);
         }
 
         private void pictureBox11_Click(object sender, EventArgs e)
@@ -319,9 +317,11 @@ namespace Project_Music
             timer.Start();
             trackBar1.Maximum = Convert.ToInt32(audio.Length / 1000);
             TagControl.GetCover(textBox1.Text, pictureBox5);
+            label1.Text = TagControl.GetName(path);
         }
         private void PlayAudioDirectory(String[] path)
         {
+            if (isPlaying) StopAudio();
             audio = new AudioFileReader(path[fileNum]);
             fade = new FadeInOutSampleProvider(audio, true);
             fade.BeginFadeIn(fadeLenght);
@@ -334,7 +334,6 @@ namespace Project_Music
             timer.Start();
             trackBar1.Maximum = Convert.ToInt32(audio.Length / 1000);
             TagControl.GetCover(path[fileNum], pictureBox5);
-            label1.Text = label1.Text = Path.GetFileNameWithoutExtension(files[fileNum]);
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -391,7 +390,6 @@ namespace Project_Music
                 PlayAudio(textBox1.Text);
                 audio.Volume = 0.5f;
                 trackBar1.Value = 50;
-                label1.Text = Path.GetFileNameWithoutExtension(textBox1.Text);
             }
             else
             {

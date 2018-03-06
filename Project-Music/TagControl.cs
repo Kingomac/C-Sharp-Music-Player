@@ -21,5 +21,14 @@ namespace Project_Music
                 pictureBox.Image = Image.FromStream(new MemoryStream(bin)).GetThumbnailImage(1000, 1000, null, IntPtr.Zero);
             }
         }
+        public static string GetName(string path)
+        {
+            TagLib.File file = TagLib.File.Create(path);
+            if (file.Tag.IsEmpty)
+            {
+                return Path.GetFileNameWithoutExtension(path);
+            }
+            else return file.Tag.Title;
+        }
     }
 }
