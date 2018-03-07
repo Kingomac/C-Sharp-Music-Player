@@ -319,6 +319,8 @@ namespace Project_Music
             TagControl.GetCover(textBox1.Text, pictureBox5);
             label1.Text = TagControl.GetName(path);
             textBox3.Text = path;
+            audio.Volume = 0.5f;
+            trackBar1.Value = 50;
         }
         private void PlayAudioDirectory(String[] path)
         {
@@ -337,6 +339,8 @@ namespace Project_Music
             TagControl.GetCover(path[fileNum], pictureBox5);
             label1.Text = TagControl.GetName(path[fileNum]);
             textBox3.Text = path[fileNum];
+            audio.Volume = 0.5f;
+            trackBar1.Value = 50;
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
@@ -391,8 +395,6 @@ namespace Project_Music
             if (File.Exists(textBox1.Text))
             {
                 PlayAudio(textBox1.Text);
-                audio.Volume = 0.5f;
-                trackBar1.Value = 50;
             }
             else
             {
