@@ -318,6 +318,7 @@ namespace Project_Music
             trackBar1.Maximum = Convert.ToInt32(audio.Length / 1000);
             TagControl.GetCover(textBox1.Text, pictureBox5);
             label1.Text = TagControl.GetName(path);
+            textBox3.Text = path;
         }
         private void PlayAudioDirectory(String[] path)
         {
@@ -335,6 +336,7 @@ namespace Project_Music
             trackBar1.Maximum = Convert.ToInt32(audio.Length / 1000);
             TagControl.GetCover(path[fileNum], pictureBox5);
             label1.Text = TagControl.GetName(path[fileNum]);
+            textBox3.Text = path[fileNum];
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
