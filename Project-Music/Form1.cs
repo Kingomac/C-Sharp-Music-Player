@@ -334,6 +334,7 @@ namespace Project_Music
             timer.Start();
             trackBar1.Maximum = Convert.ToInt32(audio.Length / 1000);
             TagControl.GetCover(path[fileNum], pictureBox5);
+            label1.Text = TagControl.GetName(path[fileNum]);
         }
         private void Timer_Tick(object sender, EventArgs e)
         {

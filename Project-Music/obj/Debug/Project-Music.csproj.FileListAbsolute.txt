@@ -57,3 +57,4 @@ X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\zh\AutoUp
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\policy.2.0.taglib-sharp.dll
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\taglib-sharp.dll
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\policy.2.0.taglib-sharp.config
+X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project-Music.csproj.CopyComplete
