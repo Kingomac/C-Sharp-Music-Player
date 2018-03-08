@@ -39,7 +39,8 @@ namespace Project_Music
             StreamReader reader = new StreamReader("config.ini");
             fadeLenght = Convert.ToDouble(reader.ReadLine());
             string color = reader.ReadLine();
-            timer.Interval = Convert.ToInt32(reader.ReadLine());
+            if (Convert.ToInt32(reader.ReadLine()) < 0) timer.Interval = Convert.ToInt32(reader.ReadLine());
+            else timer.Interval = 500;
             reader.Close();
             if(color == "Dark")
             {
@@ -171,12 +172,6 @@ namespace Project_Music
             lastPoint = new Point(e.X, e.Y);
         }
 
-        private void pictureBox10_Click(object sender, EventArgs e)
-        {
-            panel2.Visible = !panel2.Visible;
-            panel2.Enabled = !panel2.Enabled;
-        }
-
         private void button3_Click(object sender, EventArgs e)
         {
             // Create an instance of the open file dialog box.
@@ -231,12 +226,6 @@ namespace Project_Music
             StopAudio();
             fileNum--;
             if (File.Exists(files[fileNum])) PlayAudioDirectory(files);
-        }
-
-        private void pictureBox11_Click(object sender, EventArgs e)
-        {
-            panel5.Enabled = !panel5.Enabled;
-            panel5.Visible = !panel5.Visible;
         }
 
         public void pictureBox13_Click(object sender, EventArgs e)
@@ -332,7 +321,7 @@ namespace Project_Music
                   var waveOutDevice = new WaveOutEvent();
                   waveOutDevice.Init(fade);
                   waveOutDevice.Play();
-                  isPlaying = true;
+                  isPlaying = true; 
                   timer.Tick += new EventHandler(Timer_Tick);
                   timer.Start();
                   trackBar1.Maximum = Convert.ToInt32(audio.Length / 1000);
@@ -471,6 +460,26 @@ namespace Project_Music
         {
             About about = new About();
             about.ShowDialog();
+        }
+
+        private void pictureBox10_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right) panel2.Location = new Point(98, 126);
+            if (e.Button == MouseButtons.Left)
+            {
+                panel2.Visible = !panel2.Visible;
+                panel2.Enabled = !panel2.Enabled;
+            }
+        }
+
+        private void pictureBox11_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right) panel5.Location = new Point(364, 126);
+            if (e.Button == MouseButtons.Left)
+            {
+                panel5.Visible = !panel5.Visible;
+                panel5.Enabled = !panel5.Enabled;
+            }
         }
     }
 }

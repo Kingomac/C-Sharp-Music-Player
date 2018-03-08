@@ -251,7 +251,7 @@
             this.panel5.Controls.Add(this.textBox2);
             this.panel5.Controls.Add(this.button4);
             this.panel5.Enabled = false;
-            this.panel5.Location = new System.Drawing.Point(364, 129);
+            this.panel5.Location = new System.Drawing.Point(364, 126);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(270, 117);
             this.panel5.TabIndex = 6;
@@ -419,7 +419,7 @@
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox11.TabIndex = 1;
             this.pictureBox11.TabStop = false;
-            this.pictureBox11.Click += new System.EventHandler(this.pictureBox11_Click);
+            this.pictureBox11.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox11_MouseClick);
             // 
             // pictureBox10
             // 
@@ -431,7 +431,7 @@
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox10.TabIndex = 0;
             this.pictureBox10.TabStop = false;
-            this.pictureBox10.Click += new System.EventHandler(this.pictureBox10_Click);
+            this.pictureBox10.MouseClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox10_MouseClick);
             // 
             // trackBar1
             // 
