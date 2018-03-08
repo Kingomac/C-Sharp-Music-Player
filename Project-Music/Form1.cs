@@ -292,55 +292,61 @@ namespace Project_Music
         private void PlayAudio(String path)
         {
             if (isPlaying) StopAudio();
-            if ((Path.GetExtension(path) == ".mp3") || (Path.GetExtension(path) == ".wav" ))
+            if ((Path.GetExtension(path) == ".mp3") || (Path.GetExtension(path) == ".wav"))
             {
-            audio = new AudioFileReader(path); 
-            fade = new FadeInOutSampleProvider(audio, true);
-            fade.BeginFadeIn(fadeLenght);
-            var waveOutDevice = new WaveOutEvent();
-           waveOutDevice.Init(fade);
-           waveOutDevice.Play();
-            if (audio.Position >= audio.Length)
+                audio = new AudioFileReader(path);
+                fade = new FadeInOutSampleProvider(audio, true);
+                fade.BeginFadeIn(fadeLenght);
+                var waveOutDevice = new WaveOutEvent();
+                waveOutDevice.Init(fade);
+                waveOutDevice.Play();
+                if (audio.Position >= audio.Length)
                 {
                     fade.BeginFadeOut(fadeLenght);
                     StopAudio();
                 }
+                isPlaying = true;
+                timer.Tick += new EventHandler(Timer_Tick);
+                timer.Start();
+                trackBar1.Maximum = Convert.ToInt32(audio.Length / 1000);
+                TagControl.GetCover(textBox1.Text, pictureBox5);
+                label1.Text = TagControl.GetName(path);
+                textBox3.Text = path;
+                audio.Volume = 0.5f;
+                trackBar1.Value = 50;
             }
             else
             {
                 ErrorForms.Error error = new ErrorForms.Error(1);
                 error.Show();
             }
-            isPlaying = true;
-            //timer.Interval = 1000;
-            timer.Tick += new EventHandler(Timer_Tick);
-            timer.Start();
-            trackBar1.Maximum = Convert.ToInt32(audio.Length / 1000);
-            TagControl.GetCover(textBox1.Text, pictureBox5);
-            label1.Text = TagControl.GetName(path);
-            textBox3.Text = path;
-            audio.Volume = 0.5f;
-            trackBar1.Value = 50;
         }
-        private void PlayAudioDirectory(String[] path)
+        private void PlayAudioDirectory(string[] path)
         {
             if (isPlaying) StopAudio();
-            audio = new AudioFileReader(path[fileNum]);
-            fade = new FadeInOutSampleProvider(audio, true);
-            fade.BeginFadeIn(fadeLenght);
-            var waveOutDevice = new WaveOutEvent();
-            waveOutDevice.Init(fade);
-            waveOutDevice.Play();
-            isPlaying = true;
-            timer.Interval = 1000;
-            timer.Tick += new EventHandler(Timer_Tick);
-            timer.Start();
-            trackBar1.Maximum = Convert.ToInt32(audio.Length / 1000);
-            TagControl.GetCover(path[fileNum], pictureBox5);
-            label1.Text = TagControl.GetName(path[fileNum]);
-            textBox3.Text = path[fileNum];
-            audio.Volume = 0.5f;
-            trackBar1.Value = 50;
+              if (Path.GetExtension(path[fileNum]) == ".mp3" || Path.GetExtension(path[fileNum]) == ".wav")
+                {
+                  audio = new AudioFileReader(path[fileNum]);
+                  fade = new FadeInOutSampleProvider(audio, true);
+                  fade.BeginFadeIn(fadeLenght);
+                  var waveOutDevice = new WaveOutEvent();
+                  waveOutDevice.Init(fade);
+                  waveOutDevice.Play();
+                  isPlaying = true;
+                  timer.Tick += new EventHandler(Timer_Tick);
+                  timer.Start();
+                  trackBar1.Maximum = Convert.ToInt32(audio.Length / 1000);
+                  TagControl.GetCover(path[fileNum], pictureBox5);
+                  label1.Text = TagControl.GetName(path[fileNum]);
+                  textBox3.Text = path[fileNum];
+                  audio.Volume = 0.5f;
+                  trackBar1.Value = 50;  
+            }
+            else
+            {
+                fileNum++;
+                PlayAudioDirectory(files);
+            }
         }
         private void Timer_Tick(object sender, EventArgs e)
         {
