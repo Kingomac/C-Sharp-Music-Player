@@ -57,3 +57,6 @@ X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project-M
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project-Music.csproj.CopyComplete
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project-Music.exe
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project-Music.pdb
+X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\Interop.WMPLib.dll
+X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\AxInterop.WMPLib.dll
+X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\AxInterop.WMPLib.dll

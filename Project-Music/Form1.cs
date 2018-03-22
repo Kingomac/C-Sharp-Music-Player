@@ -156,7 +156,7 @@ namespace Project_Music
                 button10.ForeColor = Color.WhiteSmoke;
             }
         }
-
+        private string PlayMeth { get; set; }
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Close();
@@ -303,6 +303,7 @@ namespace Project_Music
                 textBox3.Text = path;
                 audio.Volume = 0.5f;
                 trackBar1.Value = 50;
+                PlayMeth = "PlayAudio()";
             }
             else
             {
@@ -329,7 +330,8 @@ namespace Project_Music
                   label1.Text = TagControl.GetName(path[fileNum]);
                   textBox3.Text = path[fileNum];
                   audio.Volume = 0.5f;
-                  trackBar1.Value = 50;  
+                  trackBar1.Value = 50;
+                PlayMeth = "PlayAudioDirectory()";
             }
             else
             {
@@ -341,10 +343,8 @@ namespace Project_Music
         {
             trackBar1.Value = Convert.ToInt32(audio.Position / 1000);
             if(isPlaying)   label3.Text = $"{audio.CurrentTime.Hours.ToString()}:{audio.CurrentTime.Minutes.ToString()}:{audio.CurrentTime.Seconds.ToString()} / {audio.TotalTime.Hours}:{audio.TotalTime.Minutes}:{audio.TotalTime.Seconds}";
-            if(audio.Position >= audio.Length)
-            {
-                PlayNext();
-            }
+            if (audio.Position >= audio.Length && PlayMeth == "PlayAudioDirectory()") PlayNext();
+            else if (audio.Position >= audio.Length && PlayMeth == "PlayAudio()") StopAudio();
         }
         private void PlayNext()
         {

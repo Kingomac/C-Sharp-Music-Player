@@ -9,7 +9,7 @@ using System.IO;
 
 namespace Project_Music
 {
-    class Appearance
+    class ColorSetting
     {
         public static void PanelColor(Color BackColor, Color ForeColor, Panel panel)
         {
