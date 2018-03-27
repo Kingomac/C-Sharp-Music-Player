@@ -210,15 +210,6 @@ namespace Project_Music
             OptionsForm o = new OptionsForm();
             o.Show();
         }
-
-        private void bunifuFlatButton1_Click(object sender, EventArgs e)
-        {
-            if (FilePath != null)
-            {
-                AboutTags w = new AboutTags();
-                w.Show();
-            }
-        }
         private long _position;
         private void PauseButton_Click(object sender, EventArgs e)
         {
@@ -249,6 +240,15 @@ namespace Project_Music
             VolumeTrackbar.Value = 50;
             PlayingMeth = 1;
             audio.Position = _position;    
+        }
+
+        private void MoreAbout_Click(object sender, EventArgs e)
+        {
+            if(FilePath != null)
+            {
+                AboutTags w = new AboutTags();
+                w.Show();
+            }
         }
     }
 }

@@ -20,8 +20,9 @@ namespace Project_Music
         public AboutTags()
         {
             InitializeComponent();
-            TitleLabel.Text = $"More about: {TagControl.GetName(MainForm.FilePath)}";
+            PathTextbox.Text = $"More about: {MainForm.FilePath}";
             TagLib.File file = TagLib.File.Create(MainForm.FilePath);
+            TitleTextbox.Text = file.Tag.Title;
             AuthorTextbox.Text = "";
             foreach(string i in file.Tag.Performers)
             {
@@ -73,8 +74,9 @@ namespace Project_Music
             if (e.Button == MouseButtons.Left) { this.Left += e.X - LastPoint.X; this.Top += e.Y - LastPoint.Y; }
         }
 
-        private void SaveTagsButton_Click(object sender, EventArgs e)
+        private void GeneralButton_Click(object sender, EventArgs e)
         {
+            GeneralPanel.Visible = !GeneralPanel.Visible;
         }
     }
 }

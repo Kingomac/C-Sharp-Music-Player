@@ -118,22 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="SaveTagsButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAEAAAAAlCAYAAADyUO83AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJYSURBVGhD7ZnPSxRhGMf7I7p19NYlugiCh6iLXZoO6sEo
-        NmINXIUgMERkWWQ97cUK8hSuKMLipVNsqbUl+ANpyYOK+Kv94c7ObhZ2EOnwdb7vsGPLPuXFQ/POvPC5
-        vDw7O89n933eed65dM0w4GcCAdKknwgESJN+IhAgTdZo7ujAs0QCmQ8ZrGfX8P3AhBcG75P3u7SwiKHR
-        UbR2dYn5kb8K6InFcGhfyHozBzMcRdHow/71dmxfbv3v4X3yfksPBmCl3uJn0UTMFiHl2SCAtt6nZ2F9
-        XMbe1TviF3iN3aY2mLaI7MoqboVCdfnWCWDyha0dFPvi4oW8zkHnU+TX1nE7HJYF8JfXNfkaXBqsDw0C
-        uOb5t5c+pBulF5N4NZ48E8Bqz4Kny5o/j50rN1Hd2MbdSMQRwK2C1VIK1pXy8BgmUjOOAO6X3DKkQF3J
-        33iInF3wlQBzP4dvLffEQF3hMvh9cuIIOD76pfZKKVBnOJQADilAdzgCAYGAQIChqiGrohSkM64A9s9e
-        aXUvElcA20R2SlKQrvC5h88/SsDL5ATKzyfFQF0p98aRfjfrCGB//GM356s6YKU/48nIiCOAjE9No5h4
-        LQbrRqE7ik/zmfrzALbEm1++otD2WPyQLrDlr+zl3INSVwBhf1yx+2RdGyMmby1l8Whw0M25TgC539+v
-        zgVL8THxIl4lb7f7/OX/TJ40CCBcDlOpGVRsW6yWXj0pUqfB4ag62l9ZWBTfD4gCatAWt4qj6qF6aPDa
-        YJvPlzp8uSPlR/4pwA8EAqRJPxEIkCb9g4FTxfPrNsBKP98AAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="CloseButton.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACcAAAAlCAYAAADBa/A+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -166,7 +150,7 @@
         hx9/AFATIKmPW75yAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuGradientPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="GeneralPanel.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFYSURBVChTDcprb9JQAIBhfqIxxhjvl3i/ROfuMmCMMQaM

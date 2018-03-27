@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.MoreAbout = new Bunifu.Framework.UI.BunifuFlatButton();
             this.SettingsButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.PlayDirectoryButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.PlaySingleButton = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -60,7 +60,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel1.Controls.Add(this.bunifuFlatButton1);
+            this.panel1.Controls.Add(this.MoreAbout);
             this.panel1.Controls.Add(this.SettingsButton);
             this.panel1.Controls.Add(this.PlayDirectoryButton);
             this.panel1.Controls.Add(this.PlaySingleButton);
@@ -71,42 +71,42 @@
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 0;
             // 
-            // bunifuFlatButton1
+            // MoreAbout
             // 
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(54)))), ((int)(((byte)(91)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.Crimson;
-            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton1.BorderRadius = 0;
-            this.bunifuFlatButton1.ButtonText = "More about this song";
-            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton1.Iconimage = null;
-            this.bunifuFlatButton1.Iconimage_right = null;
-            this.bunifuFlatButton1.Iconimage_right_Selected = null;
-            this.bunifuFlatButton1.Iconimage_Selected = null;
-            this.bunifuFlatButton1.IconMarginLeft = 0;
-            this.bunifuFlatButton1.IconMarginRight = 0;
-            this.bunifuFlatButton1.IconRightVisible = true;
-            this.bunifuFlatButton1.IconRightZoom = 0D;
-            this.bunifuFlatButton1.IconVisible = true;
-            this.bunifuFlatButton1.IconZoom = 0D;
-            this.bunifuFlatButton1.IsTab = false;
-            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 227);
-            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.Crimson;
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(31)))), ((int)(((byte)(72)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(200, 55);
-            this.bunifuFlatButton1.TabIndex = 5;
-            this.bunifuFlatButton1.Text = "More about this song";
-            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+            this.MoreAbout.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(54)))), ((int)(((byte)(91)))));
+            this.MoreAbout.BackColor = System.Drawing.Color.Crimson;
+            this.MoreAbout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.MoreAbout.BorderRadius = 0;
+            this.MoreAbout.ButtonText = "More about this song";
+            this.MoreAbout.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MoreAbout.DisabledColor = System.Drawing.Color.Gray;
+            this.MoreAbout.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoreAbout.Iconcolor = System.Drawing.Color.Transparent;
+            this.MoreAbout.Iconimage = null;
+            this.MoreAbout.Iconimage_right = null;
+            this.MoreAbout.Iconimage_right_Selected = null;
+            this.MoreAbout.Iconimage_Selected = null;
+            this.MoreAbout.IconMarginLeft = 0;
+            this.MoreAbout.IconMarginRight = 0;
+            this.MoreAbout.IconRightVisible = true;
+            this.MoreAbout.IconRightZoom = 0D;
+            this.MoreAbout.IconVisible = true;
+            this.MoreAbout.IconZoom = 0D;
+            this.MoreAbout.IsTab = false;
+            this.MoreAbout.Location = new System.Drawing.Point(0, 227);
+            this.MoreAbout.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.MoreAbout.Name = "MoreAbout";
+            this.MoreAbout.Normalcolor = System.Drawing.Color.Crimson;
+            this.MoreAbout.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(31)))), ((int)(((byte)(72)))));
+            this.MoreAbout.OnHoverTextColor = System.Drawing.Color.White;
+            this.MoreAbout.selected = false;
+            this.MoreAbout.Size = new System.Drawing.Size(200, 55);
+            this.MoreAbout.TabIndex = 5;
+            this.MoreAbout.Text = "More about this song";
+            this.MoreAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.MoreAbout.Textcolor = System.Drawing.Color.White;
+            this.MoreAbout.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MoreAbout.Click += new System.EventHandler(this.MoreAbout_Click);
             // 
             // SettingsButton
             // 
@@ -588,7 +588,7 @@
         private Bunifu.Framework.UI.BunifuThinButton2 NextButton;
         private Bunifu.Framework.UI.BunifuCustomLabel TimeLabel;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
-        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
+        private Bunifu.Framework.UI.BunifuFlatButton MoreAbout;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator3;
     }
