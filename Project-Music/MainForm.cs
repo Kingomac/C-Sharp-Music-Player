@@ -65,6 +65,7 @@ namespace Project_Music
             TitleLabel.Text = "Let's listen your favourite songs!";
             TimeLabel.Text = "0:0:0 / 0:0:0";
             CoverPicture.Image = null;
+            _position = 0;
         }
 
         private void PlaySingleButton_Click(object sender, EventArgs e)
@@ -212,11 +213,42 @@ namespace Project_Music
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            if(FilePath != null)
+            if (FilePath != null)
             {
                 AboutTags w = new AboutTags();
                 w.Show();
             }
+        }
+        private long _position;
+        private void PauseButton_Click(object sender, EventArgs e)
+        {
+            if (IsPlaying)
+            {
+                _position = audio.Position;
+                timer.Stop();
+                fade.BeginFadeOut(FadeLenght);
+                waveOutDevice.Stop();
+            }
+        }
+
+        private void PlayButton_Click(object sender, EventArgs e)
+        {
+            audio = new AudioFileReader(FilePath);
+            fade = new FadeInOutSampleProvider(audio, true);
+            fade.BeginFadeIn(FadeLenght);
+            var waveOutDevice = new WaveOutEvent();
+            waveOutDevice.Init(fade);
+            waveOutDevice.Play();
+            IsPlaying = true;
+            timer.Tick += new EventHandler(Timer_Tick);
+            timer.Start();
+            TimeTrackbar.MaximumValue = Convert.ToInt32(audio.Length / 1000);
+            TagControl.GetCover(FilePath, CoverPicture);
+            TitleLabel.Text = TagControl.GetName(FilePath);
+            audio.Volume = 0.5f;
+            VolumeTrackbar.Value = 50;
+            PlayingMeth = 1;
+            audio.Position = _position;    
         }
     }
 }

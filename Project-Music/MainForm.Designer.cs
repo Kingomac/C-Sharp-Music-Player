@@ -442,6 +442,7 @@
             this.PauseButton.Size = new System.Drawing.Size(84, 37);
             this.PauseButton.TabIndex = 9;
             this.PauseButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PauseButton.Click += new System.EventHandler(this.PauseButton_Click);
             // 
             // StopButton
             // 
@@ -493,6 +494,7 @@
             this.PlayButton.Size = new System.Drawing.Size(84, 37);
             this.PlayButton.TabIndex = 7;
             this.PlayButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
             // 
             // CoverPicture
             // 
