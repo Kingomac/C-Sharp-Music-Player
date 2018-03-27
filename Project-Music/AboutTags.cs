@@ -50,6 +50,7 @@ namespace Project_Music
                 BitrateTextbox.Text = Convert.ToString(mp3.Mp3WaveFormat.AverageBytesPerSecond * 8 / 1024) + "Kbps (aprox.)";
                 mp3.Close();
             }
+            file.Dispose();
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -70,6 +71,10 @@ namespace Project_Music
         private void DragPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left) { this.Left += e.X - LastPoint.X; this.Top += e.Y - LastPoint.Y; }
+        }
+
+        private void SaveTagsButton_Click(object sender, EventArgs e)
+        {
         }
     }
 }

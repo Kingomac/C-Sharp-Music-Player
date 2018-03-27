@@ -33,27 +33,30 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.DragPanel = new System.Windows.Forms.Panel();
+            this.SaveTagsButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.TitleLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.CloseButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.MinimizeButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.bunifuGradientPanel1 = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.AuthorLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.AuthorTextbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.AlbumTextbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.YearTextbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.TrackTextbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.GenreTextbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.FreqTextbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
-            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.LengthTextbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.BitrateTextbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuThinButton21 = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.FreqTextbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.LengthTextbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.GenreTextbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.TrackTextbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.YearTextbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.AlbumTextbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.AuthorTextbox = new Bunifu.Framework.UI.BunifuMaterialTextbox();
+            this.AuthorLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.DragPanel.SuspendLayout();
@@ -63,6 +66,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.Controls.Add(this.bunifuSeparator2);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -97,7 +101,7 @@
             // DragPanel
             // 
             this.DragPanel.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.DragPanel.Controls.Add(this.bunifuThinButton21);
+            this.DragPanel.Controls.Add(this.SaveTagsButton);
             this.DragPanel.Controls.Add(this.TitleLabel);
             this.DragPanel.Controls.Add(this.CloseButton);
             this.DragPanel.Controls.Add(this.MinimizeButton);
@@ -108,6 +112,32 @@
             this.DragPanel.TabIndex = 2;
             this.DragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
             this.DragPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            // 
+            // SaveTagsButton
+            // 
+            this.SaveTagsButton.ActiveBorderThickness = 1;
+            this.SaveTagsButton.ActiveCornerRadius = 20;
+            this.SaveTagsButton.ActiveFillColor = System.Drawing.Color.White;
+            this.SaveTagsButton.ActiveForecolor = System.Drawing.Color.Crimson;
+            this.SaveTagsButton.ActiveLineColor = System.Drawing.Color.Crimson;
+            this.SaveTagsButton.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.SaveTagsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("SaveTagsButton.BackgroundImage")));
+            this.SaveTagsButton.ButtonText = "Save";
+            this.SaveTagsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SaveTagsButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SaveTagsButton.ForeColor = System.Drawing.Color.White;
+            this.SaveTagsButton.IdleBorderThickness = 1;
+            this.SaveTagsButton.IdleCornerRadius = 20;
+            this.SaveTagsButton.IdleFillColor = System.Drawing.Color.Crimson;
+            this.SaveTagsButton.IdleForecolor = System.Drawing.Color.White;
+            this.SaveTagsButton.IdleLineColor = System.Drawing.Color.White;
+            this.SaveTagsButton.Location = new System.Drawing.Point(432, 1);
+            this.SaveTagsButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SaveTagsButton.Name = "SaveTagsButton";
+            this.SaveTagsButton.Size = new System.Drawing.Size(64, 37);
+            this.SaveTagsButton.TabIndex = 7;
+            this.SaveTagsButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.SaveTagsButton.Click += new System.EventHandler(this.SaveTagsButton_Click);
             // 
             // TitleLabel
             // 
@@ -203,165 +233,38 @@
             this.bunifuGradientPanel1.Size = new System.Drawing.Size(530, 369);
             this.bunifuGradientPanel1.TabIndex = 3;
             // 
-            // AuthorLabel
+            // BitrateTextbox
             // 
-            this.AuthorLabel.BackColor = System.Drawing.Color.Transparent;
-            this.AuthorLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AuthorLabel.ForeColor = System.Drawing.Color.White;
-            this.AuthorLabel.Location = new System.Drawing.Point(32, 15);
-            this.AuthorLabel.Name = "AuthorLabel";
-            this.AuthorLabel.Size = new System.Drawing.Size(79, 33);
-            this.AuthorLabel.TabIndex = 7;
-            this.AuthorLabel.Text = "Author: ";
+            this.BitrateTextbox.BackColor = System.Drawing.Color.CadetBlue;
+            this.BitrateTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.BitrateTextbox.Enabled = false;
+            this.BitrateTextbox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BitrateTextbox.ForeColor = System.Drawing.Color.Crimson;
+            this.BitrateTextbox.HintForeColor = System.Drawing.Color.Crimson;
+            this.BitrateTextbox.HintText = "";
+            this.BitrateTextbox.isPassword = false;
+            this.BitrateTextbox.LineFocusedColor = System.Drawing.Color.Crimson;
+            this.BitrateTextbox.LineIdleColor = System.Drawing.Color.White;
+            this.BitrateTextbox.LineMouseHoverColor = System.Drawing.Color.Crimson;
+            this.BitrateTextbox.LineThickness = 3;
+            this.BitrateTextbox.Location = new System.Drawing.Point(97, 295);
+            this.BitrateTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.BitrateTextbox.Name = "BitrateTextbox";
+            this.BitrateTextbox.Size = new System.Drawing.Size(379, 29);
+            this.BitrateTextbox.TabIndex = 24;
+            this.BitrateTextbox.Text = "Bitrate";
+            this.BitrateTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // AuthorTextbox
+            // bunifuCustomLabel8
             // 
-            this.AuthorTextbox.BackColor = System.Drawing.Color.CadetBlue;
-            this.AuthorTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.AuthorTextbox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AuthorTextbox.ForeColor = System.Drawing.Color.Crimson;
-            this.AuthorTextbox.HintForeColor = System.Drawing.Color.Empty;
-            this.AuthorTextbox.HintText = "";
-            this.AuthorTextbox.isPassword = false;
-            this.AuthorTextbox.LineFocusedColor = System.Drawing.Color.Crimson;
-            this.AuthorTextbox.LineIdleColor = System.Drawing.Color.White;
-            this.AuthorTextbox.LineMouseHoverColor = System.Drawing.Color.Crimson;
-            this.AuthorTextbox.LineThickness = 3;
-            this.AuthorTextbox.Location = new System.Drawing.Point(97, 14);
-            this.AuthorTextbox.Margin = new System.Windows.Forms.Padding(4);
-            this.AuthorTextbox.Name = "AuthorTextbox";
-            this.AuthorTextbox.Size = new System.Drawing.Size(379, 29);
-            this.AuthorTextbox.TabIndex = 10;
-            this.AuthorTextbox.Text = "Author";
-            this.AuthorTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // AlbumTextbox
-            // 
-            this.AlbumTextbox.BackColor = System.Drawing.Color.CadetBlue;
-            this.AlbumTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.AlbumTextbox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AlbumTextbox.ForeColor = System.Drawing.Color.Crimson;
-            this.AlbumTextbox.HintForeColor = System.Drawing.Color.Empty;
-            this.AlbumTextbox.HintText = "";
-            this.AlbumTextbox.isPassword = false;
-            this.AlbumTextbox.LineFocusedColor = System.Drawing.Color.Crimson;
-            this.AlbumTextbox.LineIdleColor = System.Drawing.Color.White;
-            this.AlbumTextbox.LineMouseHoverColor = System.Drawing.Color.Crimson;
-            this.AlbumTextbox.LineThickness = 3;
-            this.AlbumTextbox.Location = new System.Drawing.Point(97, 63);
-            this.AlbumTextbox.Margin = new System.Windows.Forms.Padding(4);
-            this.AlbumTextbox.Name = "AlbumTextbox";
-            this.AlbumTextbox.Size = new System.Drawing.Size(379, 29);
-            this.AlbumTextbox.TabIndex = 12;
-            this.AlbumTextbox.Text = "Album";
-            this.AlbumTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(32, 63);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(79, 33);
-            this.bunifuCustomLabel2.TabIndex = 11;
-            this.bunifuCustomLabel2.Text = "Album:";
-            // 
-            // YearTextbox
-            // 
-            this.YearTextbox.BackColor = System.Drawing.Color.CadetBlue;
-            this.YearTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.YearTextbox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.YearTextbox.ForeColor = System.Drawing.Color.Crimson;
-            this.YearTextbox.HintForeColor = System.Drawing.Color.Empty;
-            this.YearTextbox.HintText = "";
-            this.YearTextbox.isPassword = false;
-            this.YearTextbox.LineFocusedColor = System.Drawing.Color.Crimson;
-            this.YearTextbox.LineIdleColor = System.Drawing.Color.White;
-            this.YearTextbox.LineMouseHoverColor = System.Drawing.Color.Crimson;
-            this.YearTextbox.LineThickness = 3;
-            this.YearTextbox.Location = new System.Drawing.Point(97, 108);
-            this.YearTextbox.Margin = new System.Windows.Forms.Padding(4);
-            this.YearTextbox.Name = "YearTextbox";
-            this.YearTextbox.Size = new System.Drawing.Size(96, 29);
-            this.YearTextbox.TabIndex = 14;
-            this.YearTextbox.Text = "Year";
-            this.YearTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuCustomLabel3
-            // 
-            this.bunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(32, 107);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(69, 33);
-            this.bunifuCustomLabel3.TabIndex = 13;
-            this.bunifuCustomLabel3.Text = "Year:";
-            // 
-            // TrackTextbox
-            // 
-            this.TrackTextbox.BackColor = System.Drawing.Color.CadetBlue;
-            this.TrackTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.TrackTextbox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TrackTextbox.ForeColor = System.Drawing.Color.Crimson;
-            this.TrackTextbox.HintForeColor = System.Drawing.Color.Empty;
-            this.TrackTextbox.HintText = "";
-            this.TrackTextbox.isPassword = false;
-            this.TrackTextbox.LineFocusedColor = System.Drawing.Color.Crimson;
-            this.TrackTextbox.LineIdleColor = System.Drawing.Color.White;
-            this.TrackTextbox.LineMouseHoverColor = System.Drawing.Color.Crimson;
-            this.TrackTextbox.LineThickness = 3;
-            this.TrackTextbox.Location = new System.Drawing.Point(380, 108);
-            this.TrackTextbox.Margin = new System.Windows.Forms.Padding(4);
-            this.TrackTextbox.Name = "TrackTextbox";
-            this.TrackTextbox.Size = new System.Drawing.Size(96, 29);
-            this.TrackTextbox.TabIndex = 16;
-            this.TrackTextbox.Text = "Number";
-            this.TrackTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuCustomLabel4
-            // 
-            this.bunifuCustomLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(304, 116);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(69, 33);
-            this.bunifuCustomLabel4.TabIndex = 15;
-            this.bunifuCustomLabel4.Text = "Track:";
-            // 
-            // GenreTextbox
-            // 
-            this.GenreTextbox.BackColor = System.Drawing.Color.CadetBlue;
-            this.GenreTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.GenreTextbox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GenreTextbox.ForeColor = System.Drawing.Color.Crimson;
-            this.GenreTextbox.HintForeColor = System.Drawing.Color.Empty;
-            this.GenreTextbox.HintText = "";
-            this.GenreTextbox.isPassword = false;
-            this.GenreTextbox.LineFocusedColor = System.Drawing.Color.Crimson;
-            this.GenreTextbox.LineIdleColor = System.Drawing.Color.White;
-            this.GenreTextbox.LineMouseHoverColor = System.Drawing.Color.Crimson;
-            this.GenreTextbox.LineThickness = 3;
-            this.GenreTextbox.Location = new System.Drawing.Point(97, 153);
-            this.GenreTextbox.Margin = new System.Windows.Forms.Padding(4);
-            this.GenreTextbox.Name = "GenreTextbox";
-            this.GenreTextbox.Size = new System.Drawing.Size(379, 29);
-            this.GenreTextbox.TabIndex = 18;
-            this.GenreTextbox.Text = "Genre";
-            this.GenreTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            // 
-            // bunifuCustomLabel5
-            // 
-            this.bunifuCustomLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(32, 155);
-            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(79, 33);
-            this.bunifuCustomLabel5.TabIndex = 17;
-            this.bunifuCustomLabel5.Text = "Genre:";
+            this.bunifuCustomLabel8.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(32, 295);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(79, 33);
+            this.bunifuCustomLabel8.TabIndex = 23;
+            this.bunifuCustomLabel8.Text = "Bitrate:";
             // 
             // FreqTextbox
             // 
@@ -396,17 +299,6 @@
             this.bunifuCustomLabel7.TabIndex = 21;
             this.bunifuCustomLabel7.Text = "Frequ:";
             // 
-            // bunifuCustomLabel6
-            // 
-            this.bunifuCustomLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(32, 200);
-            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(79, 33);
-            this.bunifuCustomLabel6.TabIndex = 19;
-            this.bunifuCustomLabel6.Text = "Length:";
-            // 
             // LengthTextbox
             // 
             this.LengthTextbox.BackColor = System.Drawing.Color.CadetBlue;
@@ -429,63 +321,215 @@
             this.LengthTextbox.Text = "Length";
             this.LengthTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // BitrateTextbox
+            // bunifuCustomLabel6
             // 
-            this.BitrateTextbox.BackColor = System.Drawing.Color.CadetBlue;
-            this.BitrateTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.BitrateTextbox.Enabled = false;
-            this.BitrateTextbox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BitrateTextbox.ForeColor = System.Drawing.Color.Crimson;
-            this.BitrateTextbox.HintForeColor = System.Drawing.Color.Crimson;
-            this.BitrateTextbox.HintText = "";
-            this.BitrateTextbox.isPassword = false;
-            this.BitrateTextbox.LineFocusedColor = System.Drawing.Color.Crimson;
-            this.BitrateTextbox.LineIdleColor = System.Drawing.Color.White;
-            this.BitrateTextbox.LineMouseHoverColor = System.Drawing.Color.Crimson;
-            this.BitrateTextbox.LineThickness = 3;
-            this.BitrateTextbox.Location = new System.Drawing.Point(97, 295);
-            this.BitrateTextbox.Margin = new System.Windows.Forms.Padding(4);
-            this.BitrateTextbox.Name = "BitrateTextbox";
-            this.BitrateTextbox.Size = new System.Drawing.Size(379, 29);
-            this.BitrateTextbox.TabIndex = 24;
-            this.BitrateTextbox.Text = "Bitrate";
-            this.BitrateTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.bunifuCustomLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel6.Location = new System.Drawing.Point(32, 200);
+            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
+            this.bunifuCustomLabel6.Size = new System.Drawing.Size(79, 33);
+            this.bunifuCustomLabel6.TabIndex = 19;
+            this.bunifuCustomLabel6.Text = "Length:";
             // 
-            // bunifuCustomLabel8
+            // GenreTextbox
             // 
-            this.bunifuCustomLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(32, 295);
-            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(79, 33);
-            this.bunifuCustomLabel8.TabIndex = 23;
-            this.bunifuCustomLabel8.Text = "Bitrate:";
+            this.GenreTextbox.BackColor = System.Drawing.Color.CadetBlue;
+            this.GenreTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.GenreTextbox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GenreTextbox.ForeColor = System.Drawing.Color.Crimson;
+            this.GenreTextbox.HintForeColor = System.Drawing.Color.Empty;
+            this.GenreTextbox.HintText = "";
+            this.GenreTextbox.isPassword = false;
+            this.GenreTextbox.LineFocusedColor = System.Drawing.Color.Crimson;
+            this.GenreTextbox.LineIdleColor = System.Drawing.Color.White;
+            this.GenreTextbox.LineMouseHoverColor = System.Drawing.Color.Crimson;
+            this.GenreTextbox.LineThickness = 3;
+            this.GenreTextbox.Location = new System.Drawing.Point(97, 153);
+            this.GenreTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.GenreTextbox.Name = "GenreTextbox";
+            this.GenreTextbox.Size = new System.Drawing.Size(379, 29);
+            this.GenreTextbox.TabIndex = 18;
+            this.GenreTextbox.Text = "Genre";
+            this.GenreTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // bunifuThinButton21
+            // bunifuCustomLabel5
             // 
-            this.bunifuThinButton21.ActiveBorderThickness = 1;
-            this.bunifuThinButton21.ActiveCornerRadius = 20;
-            this.bunifuThinButton21.ActiveFillColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.ActiveForecolor = System.Drawing.Color.Crimson;
-            this.bunifuThinButton21.ActiveLineColor = System.Drawing.Color.Crimson;
-            this.bunifuThinButton21.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.bunifuThinButton21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuThinButton21.BackgroundImage")));
-            this.bunifuThinButton21.ButtonText = "Save";
-            this.bunifuThinButton21.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bunifuThinButton21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuThinButton21.ForeColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.IdleBorderThickness = 1;
-            this.bunifuThinButton21.IdleCornerRadius = 20;
-            this.bunifuThinButton21.IdleFillColor = System.Drawing.Color.Crimson;
-            this.bunifuThinButton21.IdleForecolor = System.Drawing.Color.White;
-            this.bunifuThinButton21.IdleLineColor = System.Drawing.Color.White;
-            this.bunifuThinButton21.Location = new System.Drawing.Point(432, 1);
-            this.bunifuThinButton21.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.bunifuThinButton21.Name = "bunifuThinButton21";
-            this.bunifuThinButton21.Size = new System.Drawing.Size(64, 37);
-            this.bunifuThinButton21.TabIndex = 7;
-            this.bunifuThinButton21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.bunifuCustomLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel5.Location = new System.Drawing.Point(32, 155);
+            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
+            this.bunifuCustomLabel5.Size = new System.Drawing.Size(79, 33);
+            this.bunifuCustomLabel5.TabIndex = 17;
+            this.bunifuCustomLabel5.Text = "Genre:";
+            // 
+            // TrackTextbox
+            // 
+            this.TrackTextbox.BackColor = System.Drawing.Color.CadetBlue;
+            this.TrackTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.TrackTextbox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrackTextbox.ForeColor = System.Drawing.Color.Crimson;
+            this.TrackTextbox.HintForeColor = System.Drawing.Color.Empty;
+            this.TrackTextbox.HintText = "";
+            this.TrackTextbox.isPassword = false;
+            this.TrackTextbox.LineFocusedColor = System.Drawing.Color.Crimson;
+            this.TrackTextbox.LineIdleColor = System.Drawing.Color.White;
+            this.TrackTextbox.LineMouseHoverColor = System.Drawing.Color.Crimson;
+            this.TrackTextbox.LineThickness = 3;
+            this.TrackTextbox.Location = new System.Drawing.Point(380, 108);
+            this.TrackTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.TrackTextbox.Name = "TrackTextbox";
+            this.TrackTextbox.Size = new System.Drawing.Size(96, 29);
+            this.TrackTextbox.TabIndex = 16;
+            this.TrackTextbox.Text = "Number";
+            this.TrackTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuCustomLabel4
+            // 
+            this.bunifuCustomLabel4.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel4.Location = new System.Drawing.Point(304, 116);
+            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
+            this.bunifuCustomLabel4.Size = new System.Drawing.Size(69, 33);
+            this.bunifuCustomLabel4.TabIndex = 15;
+            this.bunifuCustomLabel4.Text = "Track:";
+            // 
+            // YearTextbox
+            // 
+            this.YearTextbox.BackColor = System.Drawing.Color.CadetBlue;
+            this.YearTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.YearTextbox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YearTextbox.ForeColor = System.Drawing.Color.Crimson;
+            this.YearTextbox.HintForeColor = System.Drawing.Color.Empty;
+            this.YearTextbox.HintText = "";
+            this.YearTextbox.isPassword = false;
+            this.YearTextbox.LineFocusedColor = System.Drawing.Color.Crimson;
+            this.YearTextbox.LineIdleColor = System.Drawing.Color.White;
+            this.YearTextbox.LineMouseHoverColor = System.Drawing.Color.Crimson;
+            this.YearTextbox.LineThickness = 3;
+            this.YearTextbox.Location = new System.Drawing.Point(97, 108);
+            this.YearTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.YearTextbox.Name = "YearTextbox";
+            this.YearTextbox.Size = new System.Drawing.Size(96, 29);
+            this.YearTextbox.TabIndex = 14;
+            this.YearTextbox.Text = "Year";
+            this.YearTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(32, 107);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(69, 33);
+            this.bunifuCustomLabel3.TabIndex = 13;
+            this.bunifuCustomLabel3.Text = "Year:";
+            // 
+            // AlbumTextbox
+            // 
+            this.AlbumTextbox.BackColor = System.Drawing.Color.CadetBlue;
+            this.AlbumTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.AlbumTextbox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AlbumTextbox.ForeColor = System.Drawing.Color.Crimson;
+            this.AlbumTextbox.HintForeColor = System.Drawing.Color.Empty;
+            this.AlbumTextbox.HintText = "";
+            this.AlbumTextbox.isPassword = false;
+            this.AlbumTextbox.LineFocusedColor = System.Drawing.Color.Crimson;
+            this.AlbumTextbox.LineIdleColor = System.Drawing.Color.White;
+            this.AlbumTextbox.LineMouseHoverColor = System.Drawing.Color.Crimson;
+            this.AlbumTextbox.LineThickness = 3;
+            this.AlbumTextbox.Location = new System.Drawing.Point(97, 63);
+            this.AlbumTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.AlbumTextbox.Name = "AlbumTextbox";
+            this.AlbumTextbox.Size = new System.Drawing.Size(379, 29);
+            this.AlbumTextbox.TabIndex = 12;
+            this.AlbumTextbox.Text = "Album";
+            this.AlbumTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(32, 63);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(79, 33);
+            this.bunifuCustomLabel2.TabIndex = 11;
+            this.bunifuCustomLabel2.Text = "Album:";
+            // 
+            // AuthorTextbox
+            // 
+            this.AuthorTextbox.BackColor = System.Drawing.Color.CadetBlue;
+            this.AuthorTextbox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.AuthorTextbox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AuthorTextbox.ForeColor = System.Drawing.Color.Crimson;
+            this.AuthorTextbox.HintForeColor = System.Drawing.Color.Empty;
+            this.AuthorTextbox.HintText = "";
+            this.AuthorTextbox.isPassword = false;
+            this.AuthorTextbox.LineFocusedColor = System.Drawing.Color.Crimson;
+            this.AuthorTextbox.LineIdleColor = System.Drawing.Color.White;
+            this.AuthorTextbox.LineMouseHoverColor = System.Drawing.Color.Crimson;
+            this.AuthorTextbox.LineThickness = 3;
+            this.AuthorTextbox.Location = new System.Drawing.Point(97, 14);
+            this.AuthorTextbox.Margin = new System.Windows.Forms.Padding(4);
+            this.AuthorTextbox.Name = "AuthorTextbox";
+            this.AuthorTextbox.Size = new System.Drawing.Size(379, 29);
+            this.AuthorTextbox.TabIndex = 10;
+            this.AuthorTextbox.Text = "Author";
+            this.AuthorTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            // 
+            // AuthorLabel
+            // 
+            this.AuthorLabel.BackColor = System.Drawing.Color.Transparent;
+            this.AuthorLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AuthorLabel.ForeColor = System.Drawing.Color.White;
+            this.AuthorLabel.Location = new System.Drawing.Point(32, 15);
+            this.AuthorLabel.Name = "AuthorLabel";
+            this.AuthorLabel.Size = new System.Drawing.Size(79, 33);
+            this.AuthorLabel.TabIndex = 7;
+            this.AuthorLabel.Text = "Author: ";
+            // 
+            // bunifuSeparator1
+            // 
+            this.bunifuSeparator1.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bunifuSeparator1.LineColor = System.Drawing.Color.Crimson;
+            this.bunifuSeparator1.LineThickness = 4;
+            this.bunifuSeparator1.Location = new System.Drawing.Point(200, 440);
+            this.bunifuSeparator1.Name = "bunifuSeparator1";
+            this.bunifuSeparator1.Size = new System.Drawing.Size(600, 10);
+            this.bunifuSeparator1.TabIndex = 4;
+            this.bunifuSeparator1.Transparency = 255;
+            this.bunifuSeparator1.Vertical = false;
+            // 
+            // bunifuSeparator2
+            // 
+            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
+            this.bunifuSeparator2.LineThickness = 4;
+            this.bunifuSeparator2.Location = new System.Drawing.Point(0, 440);
+            this.bunifuSeparator2.Name = "bunifuSeparator2";
+            this.bunifuSeparator2.Size = new System.Drawing.Size(200, 10);
+            this.bunifuSeparator2.TabIndex = 5;
+            this.bunifuSeparator2.Transparency = 255;
+            this.bunifuSeparator2.Vertical = false;
+            // 
+            // bunifuSeparator3
+            // 
+            this.bunifuSeparator3.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.bunifuSeparator3.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
+            this.bunifuSeparator3.LineThickness = 4;
+            this.bunifuSeparator3.Location = new System.Drawing.Point(790, 38);
+            this.bunifuSeparator3.Name = "bunifuSeparator3";
+            this.bunifuSeparator3.Size = new System.Drawing.Size(10, 402);
+            this.bunifuSeparator3.TabIndex = 5;
+            this.bunifuSeparator3.Transparency = 255;
+            this.bunifuSeparator3.Vertical = true;
             // 
             // AboutTags
             // 
@@ -493,6 +537,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bunifuSeparator3);
+            this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.bunifuGradientPanel1);
             this.Controls.Add(this.DragPanel);
             this.Controls.Add(this.panel1);
@@ -534,6 +580,9 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private Bunifu.Framework.UI.BunifuMaterialTextbox BitrateTextbox;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
-        private Bunifu.Framework.UI.BunifuThinButton2 bunifuThinButton21;
+        private Bunifu.Framework.UI.BunifuThinButton2 SaveTagsButton;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
+        private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator3;
     }
 }
