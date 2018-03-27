@@ -49,3 +49,4 @@ X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\MetroFram
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\MetroFramework.Fonts.dll
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project_Music.MainForm.resources
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project_Music.OptionsForm.resources
+X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project_Music.AboutTags.resources

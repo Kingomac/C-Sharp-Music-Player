@@ -47,7 +47,7 @@ namespace Project_Music
         #region Properties and vars
         bool IsPlaying { get => _isPlaying; set => _isPlaying = value; }
         int FadeLenght { get; set; }
-        string FilePath { get; set; }
+        public static string FilePath { get; set; }
         int FileNum { get; set; }
         string[] Files { get; set; }
         int PlayingMeth { get; set; }
@@ -208,6 +208,15 @@ namespace Project_Music
         {
             OptionsForm o = new OptionsForm();
             o.Show();
+        }
+
+        private void bunifuFlatButton1_Click(object sender, EventArgs e)
+        {
+            if(FilePath != null)
+            {
+                AboutTags w = new AboutTags();
+                w.Show();
+            }
         }
     }
 }

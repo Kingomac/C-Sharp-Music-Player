@@ -30,24 +30,26 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionsForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.PlaySingleButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.DragPanel = new System.Windows.Forms.Panel();
+            this.TitleLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.CloseButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.MinimizeButton = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.PlaySingleButton = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.TitleLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.GeneralPanel = new System.Windows.Forms.Panel();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.FadeSlider = new Bunifu.Framework.UI.BunifuSlider();
-            this.FadeNumUpDown = new System.Windows.Forms.NumericUpDown();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.UpdateSlider = new Bunifu.Framework.UI.BunifuSlider();
             this.UpdateNumUpDown = new System.Windows.Forms.NumericUpDown();
+            this.UpdateSlider = new Bunifu.Framework.UI.BunifuSlider();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.FadeNumUpDown = new System.Windows.Forms.NumericUpDown();
+            this.FadeSlider = new Bunifu.Framework.UI.BunifuSlider();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.DragPanel.SuspendLayout();
             this.GeneralPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FadeNumUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateNumUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FadeNumUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,9 +63,47 @@
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 1;
             // 
+            // PlaySingleButton
+            // 
+            this.PlaySingleButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(54)))), ((int)(((byte)(91)))));
+            this.PlaySingleButton.BackColor = System.Drawing.Color.Crimson;
+            this.PlaySingleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PlaySingleButton.BorderRadius = 0;
+            this.PlaySingleButton.ButtonText = "General";
+            this.PlaySingleButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PlaySingleButton.DisabledColor = System.Drawing.Color.Gray;
+            this.PlaySingleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlaySingleButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.PlaySingleButton.Iconimage = null;
+            this.PlaySingleButton.Iconimage_right = null;
+            this.PlaySingleButton.Iconimage_right_Selected = null;
+            this.PlaySingleButton.Iconimage_Selected = null;
+            this.PlaySingleButton.IconMarginLeft = 0;
+            this.PlaySingleButton.IconMarginRight = 0;
+            this.PlaySingleButton.IconRightVisible = true;
+            this.PlaySingleButton.IconRightZoom = 0D;
+            this.PlaySingleButton.IconVisible = true;
+            this.PlaySingleButton.IconZoom = 0D;
+            this.PlaySingleButton.IsTab = false;
+            this.PlaySingleButton.Location = new System.Drawing.Point(0, 101);
+            this.PlaySingleButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.PlaySingleButton.Name = "PlaySingleButton";
+            this.PlaySingleButton.Normalcolor = System.Drawing.Color.Crimson;
+            this.PlaySingleButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(31)))), ((int)(((byte)(72)))));
+            this.PlaySingleButton.OnHoverTextColor = System.Drawing.Color.White;
+            this.PlaySingleButton.selected = false;
+            this.PlaySingleButton.Size = new System.Drawing.Size(200, 55);
+            this.PlaySingleButton.TabIndex = 2;
+            this.PlaySingleButton.Text = "General";
+            this.PlaySingleButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PlaySingleButton.Textcolor = System.Drawing.Color.White;
+            this.PlaySingleButton.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlaySingleButton.Click += new System.EventHandler(this.PlaySingleButton_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Crimson;
+            this.panel2.Controls.Add(this.bunifuCustomLabel3);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 94);
@@ -84,6 +124,19 @@
             this.DragPanel.TabIndex = 2;
             this.DragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
             this.DragPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            // 
+            // TitleLabel
+            // 
+            this.TitleLabel.AutoSize = true;
+            this.TitleLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleLabel.ForeColor = System.Drawing.Color.White;
+            this.TitleLabel.Location = new System.Drawing.Point(18, 9);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(241, 18);
+            this.TitleLabel.TabIndex = 6;
+            this.TitleLabel.Text = "Settings - Restart to see changes";
+            this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.TitleLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
             // CloseButton
             // 
@@ -137,56 +190,6 @@
             this.MinimizeButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
             // 
-            // PlaySingleButton
-            // 
-            this.PlaySingleButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(54)))), ((int)(((byte)(91)))));
-            this.PlaySingleButton.BackColor = System.Drawing.Color.Crimson;
-            this.PlaySingleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PlaySingleButton.BorderRadius = 0;
-            this.PlaySingleButton.ButtonText = "General";
-            this.PlaySingleButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PlaySingleButton.DisabledColor = System.Drawing.Color.Gray;
-            this.PlaySingleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlaySingleButton.Iconcolor = System.Drawing.Color.Transparent;
-            this.PlaySingleButton.Iconimage = null;
-            this.PlaySingleButton.Iconimage_right = null;
-            this.PlaySingleButton.Iconimage_right_Selected = null;
-            this.PlaySingleButton.Iconimage_Selected = null;
-            this.PlaySingleButton.IconMarginLeft = 0;
-            this.PlaySingleButton.IconMarginRight = 0;
-            this.PlaySingleButton.IconRightVisible = true;
-            this.PlaySingleButton.IconRightZoom = 0D;
-            this.PlaySingleButton.IconVisible = true;
-            this.PlaySingleButton.IconZoom = 0D;
-            this.PlaySingleButton.IsTab = false;
-            this.PlaySingleButton.Location = new System.Drawing.Point(0, 101);
-            this.PlaySingleButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.PlaySingleButton.Name = "PlaySingleButton";
-            this.PlaySingleButton.Normalcolor = System.Drawing.Color.Crimson;
-            this.PlaySingleButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(31)))), ((int)(((byte)(72)))));
-            this.PlaySingleButton.OnHoverTextColor = System.Drawing.Color.White;
-            this.PlaySingleButton.selected = false;
-            this.PlaySingleButton.Size = new System.Drawing.Size(200, 55);
-            this.PlaySingleButton.TabIndex = 2;
-            this.PlaySingleButton.Text = "General";
-            this.PlaySingleButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.PlaySingleButton.Textcolor = System.Drawing.Color.White;
-            this.PlaySingleButton.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlaySingleButton.Click += new System.EventHandler(this.PlaySingleButton_Click);
-            // 
-            // TitleLabel
-            // 
-            this.TitleLabel.AutoSize = true;
-            this.TitleLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleLabel.ForeColor = System.Drawing.Color.White;
-            this.TitleLabel.Location = new System.Drawing.Point(18, 9);
-            this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(241, 18);
-            this.TitleLabel.TabIndex = 6;
-            this.TitleLabel.Text = "Settings - Restart to see changes";
-            this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
-            this.TitleLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
-            // 
             // GeneralPanel
             // 
             this.GeneralPanel.BackColor = System.Drawing.Color.DarkSlateGray;
@@ -200,73 +203,6 @@
             this.GeneralPanel.Name = "GeneralPanel";
             this.GeneralPanel.Size = new System.Drawing.Size(567, 100);
             this.GeneralPanel.TabIndex = 3;
-            // 
-            // bunifuCustomLabel1
-            // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(14, 19);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(142, 18);
-            this.bunifuCustomLabel1.TabIndex = 7;
-            this.bunifuCustomLabel1.Text = "Fade in/out length";
-            // 
-            // FadeSlider
-            // 
-            this.FadeSlider.BackColor = System.Drawing.Color.Transparent;
-            this.FadeSlider.BackgroudColor = System.Drawing.Color.CadetBlue;
-            this.FadeSlider.BorderRadius = 0;
-            this.FadeSlider.IndicatorColor = System.Drawing.Color.Crimson;
-            this.FadeSlider.Location = new System.Drawing.Point(162, 19);
-            this.FadeSlider.MaximumValue = 50000;
-            this.FadeSlider.Name = "FadeSlider";
-            this.FadeSlider.Size = new System.Drawing.Size(255, 30);
-            this.FadeSlider.TabIndex = 8;
-            this.FadeSlider.Value = 0;
-            this.FadeSlider.ValueChanged += new System.EventHandler(this.FadeSlider_ValueChanged);
-            // 
-            // FadeNumUpDown
-            // 
-            this.FadeNumUpDown.BackColor = System.Drawing.Color.CadetBlue;
-            this.FadeNumUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.FadeNumUpDown.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FadeNumUpDown.ForeColor = System.Drawing.Color.Crimson;
-            this.FadeNumUpDown.Location = new System.Drawing.Point(434, 20);
-            this.FadeNumUpDown.Maximum = new decimal(new int[] {
-            50000,
-            0,
-            0,
-            0});
-            this.FadeNumUpDown.Name = "FadeNumUpDown";
-            this.FadeNumUpDown.Size = new System.Drawing.Size(120, 22);
-            this.FadeNumUpDown.TabIndex = 9;
-            this.FadeNumUpDown.ValueChanged += new System.EventHandler(this.FadeNumUpDown_ValueChanged);
-            // 
-            // bunifuCustomLabel2
-            // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(37, 56);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(98, 18);
-            this.bunifuCustomLabel2.TabIndex = 10;
-            this.bunifuCustomLabel2.Text = "Update time";
-            // 
-            // UpdateSlider
-            // 
-            this.UpdateSlider.BackColor = System.Drawing.Color.Transparent;
-            this.UpdateSlider.BackgroudColor = System.Drawing.Color.CadetBlue;
-            this.UpdateSlider.BorderRadius = 0;
-            this.UpdateSlider.IndicatorColor = System.Drawing.Color.Crimson;
-            this.UpdateSlider.Location = new System.Drawing.Point(162, 56);
-            this.UpdateSlider.MaximumValue = 10000;
-            this.UpdateSlider.Name = "UpdateSlider";
-            this.UpdateSlider.Size = new System.Drawing.Size(255, 30);
-            this.UpdateSlider.TabIndex = 11;
-            this.UpdateSlider.Value = 0;
-            this.UpdateSlider.ValueChanged += new System.EventHandler(this.UpdateSlider_ValueChanged);
             // 
             // UpdateNumUpDown
             // 
@@ -285,6 +221,86 @@
             this.UpdateNumUpDown.TabIndex = 12;
             this.UpdateNumUpDown.ValueChanged += new System.EventHandler(this.UpdateNumUpDown_ValueChanged);
             // 
+            // UpdateSlider
+            // 
+            this.UpdateSlider.BackColor = System.Drawing.Color.Transparent;
+            this.UpdateSlider.BackgroudColor = System.Drawing.Color.CadetBlue;
+            this.UpdateSlider.BorderRadius = 0;
+            this.UpdateSlider.IndicatorColor = System.Drawing.Color.Crimson;
+            this.UpdateSlider.Location = new System.Drawing.Point(162, 56);
+            this.UpdateSlider.MaximumValue = 10000;
+            this.UpdateSlider.Name = "UpdateSlider";
+            this.UpdateSlider.Size = new System.Drawing.Size(255, 30);
+            this.UpdateSlider.TabIndex = 11;
+            this.UpdateSlider.Value = 0;
+            this.UpdateSlider.ValueChanged += new System.EventHandler(this.UpdateSlider_ValueChanged);
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(37, 56);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(98, 18);
+            this.bunifuCustomLabel2.TabIndex = 10;
+            this.bunifuCustomLabel2.Text = "Update time";
+            // 
+            // FadeNumUpDown
+            // 
+            this.FadeNumUpDown.BackColor = System.Drawing.Color.CadetBlue;
+            this.FadeNumUpDown.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.FadeNumUpDown.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FadeNumUpDown.ForeColor = System.Drawing.Color.Crimson;
+            this.FadeNumUpDown.Location = new System.Drawing.Point(434, 20);
+            this.FadeNumUpDown.Maximum = new decimal(new int[] {
+            50000,
+            0,
+            0,
+            0});
+            this.FadeNumUpDown.Name = "FadeNumUpDown";
+            this.FadeNumUpDown.Size = new System.Drawing.Size(120, 22);
+            this.FadeNumUpDown.TabIndex = 9;
+            this.FadeNumUpDown.ValueChanged += new System.EventHandler(this.FadeNumUpDown_ValueChanged);
+            // 
+            // FadeSlider
+            // 
+            this.FadeSlider.BackColor = System.Drawing.Color.Transparent;
+            this.FadeSlider.BackgroudColor = System.Drawing.Color.CadetBlue;
+            this.FadeSlider.BorderRadius = 0;
+            this.FadeSlider.IndicatorColor = System.Drawing.Color.Crimson;
+            this.FadeSlider.Location = new System.Drawing.Point(162, 19);
+            this.FadeSlider.MaximumValue = 50000;
+            this.FadeSlider.Name = "FadeSlider";
+            this.FadeSlider.Size = new System.Drawing.Size(255, 30);
+            this.FadeSlider.TabIndex = 8;
+            this.FadeSlider.Value = 0;
+            this.FadeSlider.ValueChanged += new System.EventHandler(this.FadeSlider_ValueChanged);
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(14, 19);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(142, 18);
+            this.bunifuCustomLabel1.TabIndex = 7;
+            this.bunifuCustomLabel1.Text = "Fade in/out length";
+            // 
+            // bunifuCustomLabel3
+            // 
+            this.bunifuCustomLabel3.AutoSize = true;
+            this.bunifuCustomLabel3.Font = new System.Drawing.Font("CL EvoluFont", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel3.Location = new System.Drawing.Point(1, 9);
+            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
+            this.bunifuCustomLabel3.Size = new System.Drawing.Size(196, 78);
+            this.bunifuCustomLabel3.TabIndex = 4;
+            this.bunifuCustomLabel3.Text = "C#Music\r\n     Player";
+            this.bunifuCustomLabel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.bunifuCustomLabel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            // 
             // OptionsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -298,12 +314,14 @@
             this.Name = "OptionsForm";
             this.Text = "OptionsForm";
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.DragPanel.ResumeLayout(false);
             this.DragPanel.PerformLayout();
             this.GeneralPanel.ResumeLayout(false);
             this.GeneralPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.FadeNumUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.UpdateNumUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FadeNumUpDown)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -324,5 +342,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private System.Windows.Forms.NumericUpDown UpdateNumUpDown;
         private Bunifu.Framework.UI.BunifuSlider UpdateSlider;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
     }
 }

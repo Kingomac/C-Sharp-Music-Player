@@ -30,24 +30,27 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.SettingsButton = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.PlayDirectoryButton = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.PlaySingleButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.DragPanel = new System.Windows.Forms.Panel();
             this.TimeLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.TitleLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.CloseButton = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.MinimizeButton = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.CoverPicture = new System.Windows.Forms.PictureBox();
             this.VolumeTrackbar = new Bunifu.Framework.UI.BunifuVTrackbar();
             this.TimeTrackbar = new Bunifu.Framework.UI.BunifuVTrackbar();
-            this.PlayButton = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.StopButton = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.PauseButton = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.PreviousButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.NextButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.PreviousButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.PauseButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.StopButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.PlayButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.CoverPicture = new System.Windows.Forms.PictureBox();
+            this.CloseButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.MinimizeButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.SettingsButton = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.PlayDirectoryButton = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.PlaySingleButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.DragPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CoverPicture)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +58,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.Controls.Add(this.bunifuFlatButton1);
             this.panel1.Controls.Add(this.SettingsButton);
             this.panel1.Controls.Add(this.PlayDirectoryButton);
             this.panel1.Controls.Add(this.PlaySingleButton);
@@ -64,6 +68,326 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Crimson;
+            this.panel2.Controls.Add(this.bunifuCustomLabel1);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(200, 94);
+            this.panel2.TabIndex = 1;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            // 
+            // DragPanel
+            // 
+            this.DragPanel.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.DragPanel.Controls.Add(this.TimeLabel);
+            this.DragPanel.Controls.Add(this.TitleLabel);
+            this.DragPanel.Controls.Add(this.CloseButton);
+            this.DragPanel.Controls.Add(this.MinimizeButton);
+            this.DragPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DragPanel.Location = new System.Drawing.Point(200, 0);
+            this.DragPanel.Name = "DragPanel";
+            this.DragPanel.Size = new System.Drawing.Size(600, 38);
+            this.DragPanel.TabIndex = 1;
+            this.DragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.DragPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            // 
+            // TimeLabel
+            // 
+            this.TimeLabel.AutoSize = true;
+            this.TimeLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TimeLabel.ForeColor = System.Drawing.Color.White;
+            this.TimeLabel.Location = new System.Drawing.Point(397, 9);
+            this.TimeLabel.Name = "TimeLabel";
+            this.TimeLabel.Size = new System.Drawing.Size(87, 18);
+            this.TimeLabel.TabIndex = 7;
+            this.TimeLabel.Text = "0:0:0 / 0:0:0";
+            this.TimeLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.TimeLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            // 
+            // TitleLabel
+            // 
+            this.TitleLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleLabel.ForeColor = System.Drawing.Color.White;
+            this.TitleLabel.Location = new System.Drawing.Point(8, 9);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(367, 18);
+            this.TitleLabel.TabIndex = 6;
+            this.TitleLabel.Text = "Let\'s listen your favourite songs!";
+            this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.TitleLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            // 
+            // VolumeTrackbar
+            // 
+            this.VolumeTrackbar.BackColor = System.Drawing.Color.Transparent;
+            this.VolumeTrackbar.BackgroudColor = System.Drawing.Color.DarkSlateGray;
+            this.VolumeTrackbar.BorderRadius = 0;
+            this.VolumeTrackbar.IndicatorColor = System.Drawing.Color.Crimson;
+            this.VolumeTrackbar.Location = new System.Drawing.Point(208, 44);
+            this.VolumeTrackbar.MaximumValue = 100;
+            this.VolumeTrackbar.Name = "VolumeTrackbar";
+            this.VolumeTrackbar.Size = new System.Drawing.Size(30, 394);
+            this.VolumeTrackbar.SliderRadius = 0;
+            this.VolumeTrackbar.TabIndex = 4;
+            this.VolumeTrackbar.Value = 50;
+            this.VolumeTrackbar.ValueChanged += new System.EventHandler(this.VolumeTrackbar_ValueChanged);
+            // 
+            // TimeTrackbar
+            // 
+            this.TimeTrackbar.BackColor = System.Drawing.Color.Transparent;
+            this.TimeTrackbar.BackgroudColor = System.Drawing.Color.DarkSlateGray;
+            this.TimeTrackbar.BorderRadius = 0;
+            this.TimeTrackbar.IndicatorColor = System.Drawing.Color.Crimson;
+            this.TimeTrackbar.Location = new System.Drawing.Point(763, 44);
+            this.TimeTrackbar.MaximumValue = 100;
+            this.TimeTrackbar.Name = "TimeTrackbar";
+            this.TimeTrackbar.Size = new System.Drawing.Size(30, 394);
+            this.TimeTrackbar.SliderRadius = 0;
+            this.TimeTrackbar.TabIndex = 5;
+            this.TimeTrackbar.Value = 0;
+            this.TimeTrackbar.ValueChanged += new System.EventHandler(this.TimeTrackbar_ValueChanged);
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("CL EvoluFont", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(3, 0);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(196, 78);
+            this.bunifuCustomLabel1.TabIndex = 0;
+            this.bunifuCustomLabel1.Text = "C#Music\r\n     Player";
+            this.bunifuCustomLabel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.bunifuCustomLabel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            // 
+            // bunifuFlatButton1
+            // 
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(54)))), ((int)(((byte)(91)))));
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.Crimson;
+            this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton1.BorderRadius = 0;
+            this.bunifuFlatButton1.ButtonText = "More about this song";
+            this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton1.Iconimage = null;
+            this.bunifuFlatButton1.Iconimage_right = null;
+            this.bunifuFlatButton1.Iconimage_right_Selected = null;
+            this.bunifuFlatButton1.Iconimage_Selected = null;
+            this.bunifuFlatButton1.IconMarginLeft = 0;
+            this.bunifuFlatButton1.IconMarginRight = 0;
+            this.bunifuFlatButton1.IconRightVisible = true;
+            this.bunifuFlatButton1.IconRightZoom = 0D;
+            this.bunifuFlatButton1.IconVisible = true;
+            this.bunifuFlatButton1.IconZoom = 0D;
+            this.bunifuFlatButton1.IsTab = false;
+            this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 227);
+            this.bunifuFlatButton1.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.bunifuFlatButton1.Name = "bunifuFlatButton1";
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.Crimson;
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(31)))), ((int)(((byte)(72)))));
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.selected = false;
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(200, 55);
+            this.bunifuFlatButton1.TabIndex = 5;
+            this.bunifuFlatButton1.Text = "More about this song";
+            this.bunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton1.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton1.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton1.Click += new System.EventHandler(this.bunifuFlatButton1_Click);
+            // 
+            // NextButton
+            // 
+            this.NextButton.ActiveBorderThickness = 1;
+            this.NextButton.ActiveCornerRadius = 20;
+            this.NextButton.ActiveFillColor = System.Drawing.Color.White;
+            this.NextButton.ActiveForecolor = System.Drawing.Color.Crimson;
+            this.NextButton.ActiveLineColor = System.Drawing.Color.Crimson;
+            this.NextButton.BackColor = System.Drawing.Color.CadetBlue;
+            this.NextButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NextButton.BackgroundImage")));
+            this.NextButton.ButtonText = "Next";
+            this.NextButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NextButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NextButton.ForeColor = System.Drawing.Color.White;
+            this.NextButton.IdleBorderThickness = 1;
+            this.NextButton.IdleCornerRadius = 20;
+            this.NextButton.IdleFillColor = System.Drawing.Color.Crimson;
+            this.NextButton.IdleForecolor = System.Drawing.Color.White;
+            this.NextButton.IdleLineColor = System.Drawing.Color.White;
+            this.NextButton.Location = new System.Drawing.Point(642, 406);
+            this.NextButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.NextButton.Name = "NextButton";
+            this.NextButton.Size = new System.Drawing.Size(84, 37);
+            this.NextButton.TabIndex = 11;
+            this.NextButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
+            // 
+            // PreviousButton
+            // 
+            this.PreviousButton.ActiveBorderThickness = 1;
+            this.PreviousButton.ActiveCornerRadius = 20;
+            this.PreviousButton.ActiveFillColor = System.Drawing.Color.White;
+            this.PreviousButton.ActiveForecolor = System.Drawing.Color.Crimson;
+            this.PreviousButton.ActiveLineColor = System.Drawing.Color.Crimson;
+            this.PreviousButton.BackColor = System.Drawing.Color.CadetBlue;
+            this.PreviousButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PreviousButton.BackgroundImage")));
+            this.PreviousButton.ButtonText = "Previous";
+            this.PreviousButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PreviousButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PreviousButton.ForeColor = System.Drawing.Color.White;
+            this.PreviousButton.IdleBorderThickness = 1;
+            this.PreviousButton.IdleCornerRadius = 20;
+            this.PreviousButton.IdleFillColor = System.Drawing.Color.Crimson;
+            this.PreviousButton.IdleForecolor = System.Drawing.Color.White;
+            this.PreviousButton.IdleLineColor = System.Drawing.Color.White;
+            this.PreviousButton.Location = new System.Drawing.Point(551, 406);
+            this.PreviousButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PreviousButton.Name = "PreviousButton";
+            this.PreviousButton.Size = new System.Drawing.Size(84, 37);
+            this.PreviousButton.TabIndex = 10;
+            this.PreviousButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PreviousButton.Click += new System.EventHandler(this.PreviousButton_Click);
+            // 
+            // PauseButton
+            // 
+            this.PauseButton.ActiveBorderThickness = 1;
+            this.PauseButton.ActiveCornerRadius = 20;
+            this.PauseButton.ActiveFillColor = System.Drawing.Color.White;
+            this.PauseButton.ActiveForecolor = System.Drawing.Color.Crimson;
+            this.PauseButton.ActiveLineColor = System.Drawing.Color.Crimson;
+            this.PauseButton.BackColor = System.Drawing.Color.CadetBlue;
+            this.PauseButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PauseButton.BackgroundImage")));
+            this.PauseButton.ButtonText = "Pause";
+            this.PauseButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PauseButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PauseButton.ForeColor = System.Drawing.Color.White;
+            this.PauseButton.IdleBorderThickness = 1;
+            this.PauseButton.IdleCornerRadius = 20;
+            this.PauseButton.IdleFillColor = System.Drawing.Color.Crimson;
+            this.PauseButton.IdleForecolor = System.Drawing.Color.White;
+            this.PauseButton.IdleLineColor = System.Drawing.Color.White;
+            this.PauseButton.Location = new System.Drawing.Point(460, 406);
+            this.PauseButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PauseButton.Name = "PauseButton";
+            this.PauseButton.Size = new System.Drawing.Size(84, 37);
+            this.PauseButton.TabIndex = 9;
+            this.PauseButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // StopButton
+            // 
+            this.StopButton.ActiveBorderThickness = 1;
+            this.StopButton.ActiveCornerRadius = 20;
+            this.StopButton.ActiveFillColor = System.Drawing.Color.White;
+            this.StopButton.ActiveForecolor = System.Drawing.Color.Crimson;
+            this.StopButton.ActiveLineColor = System.Drawing.Color.Crimson;
+            this.StopButton.BackColor = System.Drawing.Color.CadetBlue;
+            this.StopButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("StopButton.BackgroundImage")));
+            this.StopButton.ButtonText = "Stop";
+            this.StopButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.StopButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.StopButton.ForeColor = System.Drawing.Color.White;
+            this.StopButton.IdleBorderThickness = 1;
+            this.StopButton.IdleCornerRadius = 20;
+            this.StopButton.IdleFillColor = System.Drawing.Color.Crimson;
+            this.StopButton.IdleForecolor = System.Drawing.Color.White;
+            this.StopButton.IdleLineColor = System.Drawing.Color.White;
+            this.StopButton.Location = new System.Drawing.Point(369, 406);
+            this.StopButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.StopButton.Name = "StopButton";
+            this.StopButton.Size = new System.Drawing.Size(84, 37);
+            this.StopButton.TabIndex = 8;
+            this.StopButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
+            // 
+            // PlayButton
+            // 
+            this.PlayButton.ActiveBorderThickness = 1;
+            this.PlayButton.ActiveCornerRadius = 20;
+            this.PlayButton.ActiveFillColor = System.Drawing.Color.White;
+            this.PlayButton.ActiveForecolor = System.Drawing.Color.Crimson;
+            this.PlayButton.ActiveLineColor = System.Drawing.Color.Crimson;
+            this.PlayButton.BackColor = System.Drawing.Color.CadetBlue;
+            this.PlayButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PlayButton.BackgroundImage")));
+            this.PlayButton.ButtonText = "Play!";
+            this.PlayButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PlayButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PlayButton.ForeColor = System.Drawing.Color.White;
+            this.PlayButton.IdleBorderThickness = 1;
+            this.PlayButton.IdleCornerRadius = 20;
+            this.PlayButton.IdleFillColor = System.Drawing.Color.Crimson;
+            this.PlayButton.IdleForecolor = System.Drawing.Color.White;
+            this.PlayButton.IdleLineColor = System.Drawing.Color.White;
+            this.PlayButton.Location = new System.Drawing.Point(278, 406);
+            this.PlayButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PlayButton.Name = "PlayButton";
+            this.PlayButton.Size = new System.Drawing.Size(84, 37);
+            this.PlayButton.TabIndex = 7;
+            this.PlayButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // CoverPicture
+            // 
+            this.CoverPicture.Location = new System.Drawing.Point(322, 48);
+            this.CoverPicture.Name = "CoverPicture";
+            this.CoverPicture.Size = new System.Drawing.Size(350, 350);
+            this.CoverPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CoverPicture.TabIndex = 2;
+            this.CoverPicture.TabStop = false;
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.ActiveBorderThickness = 1;
+            this.CloseButton.ActiveCornerRadius = 20;
+            this.CloseButton.ActiveFillColor = System.Drawing.Color.White;
+            this.CloseButton.ActiveForecolor = System.Drawing.Color.Crimson;
+            this.CloseButton.ActiveLineColor = System.Drawing.Color.Crimson;
+            this.CloseButton.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.CloseButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CloseButton.BackgroundImage")));
+            this.CloseButton.ButtonText = "X";
+            this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CloseButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseButton.ForeColor = System.Drawing.Color.White;
+            this.CloseButton.IdleBorderThickness = 1;
+            this.CloseButton.IdleCornerRadius = 20;
+            this.CloseButton.IdleFillColor = System.Drawing.Color.Crimson;
+            this.CloseButton.IdleForecolor = System.Drawing.Color.White;
+            this.CloseButton.IdleLineColor = System.Drawing.Color.White;
+            this.CloseButton.Location = new System.Drawing.Point(551, 0);
+            this.CloseButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(39, 37);
+            this.CloseButton.TabIndex = 5;
+            this.CloseButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
+            // MinimizeButton
+            // 
+            this.MinimizeButton.ActiveBorderThickness = 1;
+            this.MinimizeButton.ActiveCornerRadius = 20;
+            this.MinimizeButton.ActiveFillColor = System.Drawing.Color.White;
+            this.MinimizeButton.ActiveForecolor = System.Drawing.Color.Crimson;
+            this.MinimizeButton.ActiveLineColor = System.Drawing.Color.Crimson;
+            this.MinimizeButton.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.MinimizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MinimizeButton.BackgroundImage")));
+            this.MinimizeButton.ButtonText = "_";
+            this.MinimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MinimizeButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MinimizeButton.ForeColor = System.Drawing.Color.White;
+            this.MinimizeButton.IdleBorderThickness = 1;
+            this.MinimizeButton.IdleCornerRadius = 20;
+            this.MinimizeButton.IdleFillColor = System.Drawing.Color.Crimson;
+            this.MinimizeButton.IdleForecolor = System.Drawing.Color.White;
+            this.MinimizeButton.IdleLineColor = System.Drawing.Color.White;
+            this.MinimizeButton.Location = new System.Drawing.Point(504, 0);
+            this.MinimizeButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimizeButton.Name = "MinimizeButton";
+            this.MinimizeButton.Size = new System.Drawing.Size(39, 37);
+            this.MinimizeButton.TabIndex = 4;
+            this.MinimizeButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
             // 
             // SettingsButton
             // 
@@ -177,275 +501,6 @@
             this.PlaySingleButton.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PlaySingleButton.Click += new System.EventHandler(this.PlaySingleButton_Click);
             // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Crimson;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 94);
-            this.panel2.TabIndex = 1;
-            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
-            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
-            // 
-            // DragPanel
-            // 
-            this.DragPanel.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.DragPanel.Controls.Add(this.TimeLabel);
-            this.DragPanel.Controls.Add(this.TitleLabel);
-            this.DragPanel.Controls.Add(this.CloseButton);
-            this.DragPanel.Controls.Add(this.MinimizeButton);
-            this.DragPanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DragPanel.Location = new System.Drawing.Point(200, 0);
-            this.DragPanel.Name = "DragPanel";
-            this.DragPanel.Size = new System.Drawing.Size(600, 38);
-            this.DragPanel.TabIndex = 1;
-            this.DragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
-            this.DragPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
-            // 
-            // TimeLabel
-            // 
-            this.TimeLabel.AutoSize = true;
-            this.TimeLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TimeLabel.ForeColor = System.Drawing.Color.White;
-            this.TimeLabel.Location = new System.Drawing.Point(397, 9);
-            this.TimeLabel.Name = "TimeLabel";
-            this.TimeLabel.Size = new System.Drawing.Size(87, 18);
-            this.TimeLabel.TabIndex = 7;
-            this.TimeLabel.Text = "0:0:0 / 0:0:0";
-            this.TimeLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
-            this.TimeLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
-            // 
-            // TitleLabel
-            // 
-            this.TitleLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleLabel.ForeColor = System.Drawing.Color.White;
-            this.TitleLabel.Location = new System.Drawing.Point(8, 9);
-            this.TitleLabel.Name = "TitleLabel";
-            this.TitleLabel.Size = new System.Drawing.Size(367, 18);
-            this.TitleLabel.TabIndex = 6;
-            this.TitleLabel.Text = "Let\'s listen your favourite songs!";
-            this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
-            this.TitleLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
-            // 
-            // CloseButton
-            // 
-            this.CloseButton.ActiveBorderThickness = 1;
-            this.CloseButton.ActiveCornerRadius = 20;
-            this.CloseButton.ActiveFillColor = System.Drawing.Color.White;
-            this.CloseButton.ActiveForecolor = System.Drawing.Color.Crimson;
-            this.CloseButton.ActiveLineColor = System.Drawing.Color.Crimson;
-            this.CloseButton.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.CloseButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CloseButton.BackgroundImage")));
-            this.CloseButton.ButtonText = "X";
-            this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CloseButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CloseButton.ForeColor = System.Drawing.Color.White;
-            this.CloseButton.IdleBorderThickness = 1;
-            this.CloseButton.IdleCornerRadius = 20;
-            this.CloseButton.IdleFillColor = System.Drawing.Color.Crimson;
-            this.CloseButton.IdleForecolor = System.Drawing.Color.White;
-            this.CloseButton.IdleLineColor = System.Drawing.Color.White;
-            this.CloseButton.Location = new System.Drawing.Point(551, 0);
-            this.CloseButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.CloseButton.Name = "CloseButton";
-            this.CloseButton.Size = new System.Drawing.Size(39, 37);
-            this.CloseButton.TabIndex = 5;
-            this.CloseButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
-            // 
-            // MinimizeButton
-            // 
-            this.MinimizeButton.ActiveBorderThickness = 1;
-            this.MinimizeButton.ActiveCornerRadius = 20;
-            this.MinimizeButton.ActiveFillColor = System.Drawing.Color.White;
-            this.MinimizeButton.ActiveForecolor = System.Drawing.Color.Crimson;
-            this.MinimizeButton.ActiveLineColor = System.Drawing.Color.Crimson;
-            this.MinimizeButton.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.MinimizeButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("MinimizeButton.BackgroundImage")));
-            this.MinimizeButton.ButtonText = "_";
-            this.MinimizeButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.MinimizeButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MinimizeButton.ForeColor = System.Drawing.Color.White;
-            this.MinimizeButton.IdleBorderThickness = 1;
-            this.MinimizeButton.IdleCornerRadius = 20;
-            this.MinimizeButton.IdleFillColor = System.Drawing.Color.Crimson;
-            this.MinimizeButton.IdleForecolor = System.Drawing.Color.White;
-            this.MinimizeButton.IdleLineColor = System.Drawing.Color.White;
-            this.MinimizeButton.Location = new System.Drawing.Point(504, 0);
-            this.MinimizeButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MinimizeButton.Name = "MinimizeButton";
-            this.MinimizeButton.Size = new System.Drawing.Size(39, 37);
-            this.MinimizeButton.TabIndex = 4;
-            this.MinimizeButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.MinimizeButton.Click += new System.EventHandler(this.MinimizeButton_Click);
-            // 
-            // CoverPicture
-            // 
-            this.CoverPicture.Location = new System.Drawing.Point(322, 48);
-            this.CoverPicture.Name = "CoverPicture";
-            this.CoverPicture.Size = new System.Drawing.Size(350, 350);
-            this.CoverPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.CoverPicture.TabIndex = 2;
-            this.CoverPicture.TabStop = false;
-            // 
-            // VolumeTrackbar
-            // 
-            this.VolumeTrackbar.BackColor = System.Drawing.Color.Transparent;
-            this.VolumeTrackbar.BackgroudColor = System.Drawing.Color.DarkSlateGray;
-            this.VolumeTrackbar.BorderRadius = 0;
-            this.VolumeTrackbar.IndicatorColor = System.Drawing.Color.Crimson;
-            this.VolumeTrackbar.Location = new System.Drawing.Point(208, 44);
-            this.VolumeTrackbar.MaximumValue = 100;
-            this.VolumeTrackbar.Name = "VolumeTrackbar";
-            this.VolumeTrackbar.Size = new System.Drawing.Size(30, 394);
-            this.VolumeTrackbar.SliderRadius = 0;
-            this.VolumeTrackbar.TabIndex = 4;
-            this.VolumeTrackbar.Value = 50;
-            this.VolumeTrackbar.ValueChanged += new System.EventHandler(this.VolumeTrackbar_ValueChanged);
-            // 
-            // TimeTrackbar
-            // 
-            this.TimeTrackbar.BackColor = System.Drawing.Color.Transparent;
-            this.TimeTrackbar.BackgroudColor = System.Drawing.Color.DarkSlateGray;
-            this.TimeTrackbar.BorderRadius = 0;
-            this.TimeTrackbar.IndicatorColor = System.Drawing.Color.Crimson;
-            this.TimeTrackbar.Location = new System.Drawing.Point(763, 44);
-            this.TimeTrackbar.MaximumValue = 100;
-            this.TimeTrackbar.Name = "TimeTrackbar";
-            this.TimeTrackbar.Size = new System.Drawing.Size(30, 394);
-            this.TimeTrackbar.SliderRadius = 0;
-            this.TimeTrackbar.TabIndex = 5;
-            this.TimeTrackbar.Value = 0;
-            this.TimeTrackbar.ValueChanged += new System.EventHandler(this.TimeTrackbar_ValueChanged);
-            // 
-            // PlayButton
-            // 
-            this.PlayButton.ActiveBorderThickness = 1;
-            this.PlayButton.ActiveCornerRadius = 20;
-            this.PlayButton.ActiveFillColor = System.Drawing.Color.White;
-            this.PlayButton.ActiveForecolor = System.Drawing.Color.Crimson;
-            this.PlayButton.ActiveLineColor = System.Drawing.Color.Crimson;
-            this.PlayButton.BackColor = System.Drawing.Color.CadetBlue;
-            this.PlayButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PlayButton.BackgroundImage")));
-            this.PlayButton.ButtonText = "Play!";
-            this.PlayButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PlayButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlayButton.ForeColor = System.Drawing.Color.White;
-            this.PlayButton.IdleBorderThickness = 1;
-            this.PlayButton.IdleCornerRadius = 20;
-            this.PlayButton.IdleFillColor = System.Drawing.Color.Crimson;
-            this.PlayButton.IdleForecolor = System.Drawing.Color.White;
-            this.PlayButton.IdleLineColor = System.Drawing.Color.White;
-            this.PlayButton.Location = new System.Drawing.Point(278, 406);
-            this.PlayButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.PlayButton.Name = "PlayButton";
-            this.PlayButton.Size = new System.Drawing.Size(84, 37);
-            this.PlayButton.TabIndex = 7;
-            this.PlayButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // StopButton
-            // 
-            this.StopButton.ActiveBorderThickness = 1;
-            this.StopButton.ActiveCornerRadius = 20;
-            this.StopButton.ActiveFillColor = System.Drawing.Color.White;
-            this.StopButton.ActiveForecolor = System.Drawing.Color.Crimson;
-            this.StopButton.ActiveLineColor = System.Drawing.Color.Crimson;
-            this.StopButton.BackColor = System.Drawing.Color.CadetBlue;
-            this.StopButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("StopButton.BackgroundImage")));
-            this.StopButton.ButtonText = "Stop";
-            this.StopButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.StopButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.StopButton.ForeColor = System.Drawing.Color.White;
-            this.StopButton.IdleBorderThickness = 1;
-            this.StopButton.IdleCornerRadius = 20;
-            this.StopButton.IdleFillColor = System.Drawing.Color.Crimson;
-            this.StopButton.IdleForecolor = System.Drawing.Color.White;
-            this.StopButton.IdleLineColor = System.Drawing.Color.White;
-            this.StopButton.Location = new System.Drawing.Point(369, 406);
-            this.StopButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.StopButton.Name = "StopButton";
-            this.StopButton.Size = new System.Drawing.Size(84, 37);
-            this.StopButton.TabIndex = 8;
-            this.StopButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
-            // 
-            // PauseButton
-            // 
-            this.PauseButton.ActiveBorderThickness = 1;
-            this.PauseButton.ActiveCornerRadius = 20;
-            this.PauseButton.ActiveFillColor = System.Drawing.Color.White;
-            this.PauseButton.ActiveForecolor = System.Drawing.Color.Crimson;
-            this.PauseButton.ActiveLineColor = System.Drawing.Color.Crimson;
-            this.PauseButton.BackColor = System.Drawing.Color.CadetBlue;
-            this.PauseButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PauseButton.BackgroundImage")));
-            this.PauseButton.ButtonText = "Pause";
-            this.PauseButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PauseButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PauseButton.ForeColor = System.Drawing.Color.White;
-            this.PauseButton.IdleBorderThickness = 1;
-            this.PauseButton.IdleCornerRadius = 20;
-            this.PauseButton.IdleFillColor = System.Drawing.Color.Crimson;
-            this.PauseButton.IdleForecolor = System.Drawing.Color.White;
-            this.PauseButton.IdleLineColor = System.Drawing.Color.White;
-            this.PauseButton.Location = new System.Drawing.Point(460, 406);
-            this.PauseButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.PauseButton.Name = "PauseButton";
-            this.PauseButton.Size = new System.Drawing.Size(84, 37);
-            this.PauseButton.TabIndex = 9;
-            this.PauseButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // PreviousButton
-            // 
-            this.PreviousButton.ActiveBorderThickness = 1;
-            this.PreviousButton.ActiveCornerRadius = 20;
-            this.PreviousButton.ActiveFillColor = System.Drawing.Color.White;
-            this.PreviousButton.ActiveForecolor = System.Drawing.Color.Crimson;
-            this.PreviousButton.ActiveLineColor = System.Drawing.Color.Crimson;
-            this.PreviousButton.BackColor = System.Drawing.Color.CadetBlue;
-            this.PreviousButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PreviousButton.BackgroundImage")));
-            this.PreviousButton.ButtonText = "Previous";
-            this.PreviousButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PreviousButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PreviousButton.ForeColor = System.Drawing.Color.White;
-            this.PreviousButton.IdleBorderThickness = 1;
-            this.PreviousButton.IdleCornerRadius = 20;
-            this.PreviousButton.IdleFillColor = System.Drawing.Color.Crimson;
-            this.PreviousButton.IdleForecolor = System.Drawing.Color.White;
-            this.PreviousButton.IdleLineColor = System.Drawing.Color.White;
-            this.PreviousButton.Location = new System.Drawing.Point(551, 406);
-            this.PreviousButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.PreviousButton.Name = "PreviousButton";
-            this.PreviousButton.Size = new System.Drawing.Size(84, 37);
-            this.PreviousButton.TabIndex = 10;
-            this.PreviousButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.PreviousButton.Click += new System.EventHandler(this.PreviousButton_Click);
-            // 
-            // NextButton
-            // 
-            this.NextButton.ActiveBorderThickness = 1;
-            this.NextButton.ActiveCornerRadius = 20;
-            this.NextButton.ActiveFillColor = System.Drawing.Color.White;
-            this.NextButton.ActiveForecolor = System.Drawing.Color.Crimson;
-            this.NextButton.ActiveLineColor = System.Drawing.Color.Crimson;
-            this.NextButton.BackColor = System.Drawing.Color.CadetBlue;
-            this.NextButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NextButton.BackgroundImage")));
-            this.NextButton.ButtonText = "Next";
-            this.NextButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.NextButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NextButton.ForeColor = System.Drawing.Color.White;
-            this.NextButton.IdleBorderThickness = 1;
-            this.NextButton.IdleCornerRadius = 20;
-            this.NextButton.IdleFillColor = System.Drawing.Color.Crimson;
-            this.NextButton.IdleForecolor = System.Drawing.Color.White;
-            this.NextButton.IdleLineColor = System.Drawing.Color.White;
-            this.NextButton.Location = new System.Drawing.Point(642, 406);
-            this.NextButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.NextButton.Name = "NextButton";
-            this.NextButton.Size = new System.Drawing.Size(84, 37);
-            this.NextButton.TabIndex = 11;
-            this.NextButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.NextButton.Click += new System.EventHandler(this.NextButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -467,6 +522,8 @@
             this.Name = "MainForm";
             this.Text = "C#MusicPlayer";
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.DragPanel.ResumeLayout(false);
             this.DragPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CoverPicture)).EndInit();
@@ -494,5 +551,7 @@
         private Bunifu.Framework.UI.BunifuThinButton2 PreviousButton;
         private Bunifu.Framework.UI.BunifuThinButton2 NextButton;
         private Bunifu.Framework.UI.BunifuCustomLabel TimeLabel;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton1;
     }
 }
