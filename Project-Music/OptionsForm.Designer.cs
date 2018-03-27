@@ -317,6 +317,8 @@
             this.bunifuSeparator3.TabIndex = 6;
             this.bunifuSeparator3.Transparency = 255;
             this.bunifuSeparator3.Vertical = true;
+            this.bunifuSeparator3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.bunifuSeparator3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
             // bunifuSeparator1
             // 
@@ -330,6 +332,8 @@
             this.bunifuSeparator1.TabIndex = 13;
             this.bunifuSeparator1.Transparency = 255;
             this.bunifuSeparator1.Vertical = false;
+            this.bunifuSeparator1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.bunifuSeparator1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
             // bunifuSeparator2
             // 
@@ -343,6 +347,8 @@
             this.bunifuSeparator2.TabIndex = 6;
             this.bunifuSeparator2.Transparency = 255;
             this.bunifuSeparator2.Vertical = false;
+            this.bunifuSeparator2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.bunifuSeparator2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
             // OptionsForm
             // 
