@@ -51,6 +51,10 @@ namespace Project_Music
                 BitrateTextbox.Text = Convert.ToString(mp3.Mp3WaveFormat.AverageBytesPerSecond * 8 / 1024) + "Kbps (aprox.)";
                 mp3.Close();
             }
+            LyricsRighText.Text = file.Tag.Lyrics;
+            LyricsRighText.SelectAll();
+            LyricsRighText.SelectionAlignment = HorizontalAlignment.Center;
+            LyricsRighText.DeselectAll();
             file.Dispose();
         }
 
@@ -76,7 +80,13 @@ namespace Project_Music
 
         private void GeneralButton_Click(object sender, EventArgs e)
         {
-            GeneralPanel.Visible = !GeneralPanel.Visible;
+            GeneralPanel.BringToFront();
+        }
+
+        private void LyricsButton_Click(object sender, EventArgs e)
+        {
+            if (!LyricsPanel.Visible) LyricsPanel.Visible = true;
+            LyricsPanel.BringToFront();
         }
     }
 }

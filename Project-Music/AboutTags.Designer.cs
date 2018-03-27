@@ -61,10 +61,13 @@
             this.YearTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.TrackTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.PathTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.LyricsPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.LyricsRighText = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.DragPanel.SuspendLayout();
             this.GeneralPanel.SuspendLayout();
+            this.LyricsPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -522,6 +525,7 @@
             this.LyricsButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.LyricsButton.Textcolor = System.Drawing.Color.White;
             this.LyricsButton.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LyricsButton.Click += new System.EventHandler(this.LyricsButton_Click);
             // 
             // YearTextbox
             // 
@@ -562,12 +566,42 @@
             this.PathTextbox.TabIndex = 37;
             this.PathTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // LyricsPanel
+            // 
+            this.LyricsPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LyricsPanel.BackgroundImage")));
+            this.LyricsPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LyricsPanel.Controls.Add(this.LyricsRighText);
+            this.LyricsPanel.GradientBottomLeft = System.Drawing.Color.Crimson;
+            this.LyricsPanel.GradientBottomRight = System.Drawing.Color.DarkSlateGray;
+            this.LyricsPanel.GradientTopLeft = System.Drawing.Color.Pink;
+            this.LyricsPanel.GradientTopRight = System.Drawing.Color.CadetBlue;
+            this.LyricsPanel.Location = new System.Drawing.Point(236, 60);
+            this.LyricsPanel.Name = "LyricsPanel";
+            this.LyricsPanel.Quality = 10;
+            this.LyricsPanel.Size = new System.Drawing.Size(530, 369);
+            this.LyricsPanel.TabIndex = 6;
+            this.LyricsPanel.Visible = false;
+            // 
+            // LyricsRighText
+            // 
+            this.LyricsRighText.BackColor = System.Drawing.Color.CadetBlue;
+            this.LyricsRighText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LyricsRighText.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LyricsRighText.ForeColor = System.Drawing.Color.White;
+            this.LyricsRighText.Location = new System.Drawing.Point(18, 12);
+            this.LyricsRighText.Name = "LyricsRighText";
+            this.LyricsRighText.ReadOnly = true;
+            this.LyricsRighText.Size = new System.Drawing.Size(496, 349);
+            this.LyricsRighText.TabIndex = 0;
+            this.LyricsRighText.Text = "";
+            // 
             // AboutTags
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.LyricsPanel);
             this.Controls.Add(this.bunifuSeparator3);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.GeneralPanel);
@@ -583,6 +617,7 @@
             this.DragPanel.PerformLayout();
             this.GeneralPanel.ResumeLayout(false);
             this.GeneralPanel.PerformLayout();
+            this.LyricsPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -621,5 +656,7 @@
         private WindowsFormsControlLibrary1.BunifuCustomTextbox TrackTextbox;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox YearTextbox;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox PathTextbox;
+        private Bunifu.Framework.UI.BunifuGradientPanel LyricsPanel;
+        private System.Windows.Forms.RichTextBox LyricsRighText;
     }
 }
