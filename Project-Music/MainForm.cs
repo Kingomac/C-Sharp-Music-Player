@@ -59,13 +59,17 @@ namespace Project_Music
         #endregion
         private void StopAudio()
         {
-            timer.Stop();
-            fade.BeginFadeOut(FadeLenght);
-            waveOutDevice.Stop();
-            TitleLabel.Text = "Let's listen your favourite songs!";
-            TimeLabel.Text = "0:0:0 / 0:0:0";
-            CoverPicture.Image = null;
-            _position = 0;
+            if (IsPlaying)
+            {
+                timer.Stop();
+                fade.BeginFadeOut(FadeLenght);
+                waveOutDevice.Stop();
+                TitleLabel.Text = "Let's listen your favourite songs!";
+                TimeLabel.Text = "0:0:0 / 0:0:0";
+                CoverPicture.Image = null;
+                _position = 0;
+            }
+            else { Error("You aren't playing anything", "If it's a bug, please make the developers know about it."); }
         }
 
         private void PlaySingleButton_Click(object sender, EventArgs e)
@@ -90,29 +94,21 @@ namespace Project_Music
             #endregion
             #region Play File
             if (IsPlaying) StopAudio();
-            if ((Path.GetExtension(FilePath) == ".mp3") || (Path.GetExtension(FilePath) == ".wav"))
-            {
-                audio = new AudioFileReader(FilePath);
-                fade = new FadeInOutSampleProvider(audio, true);
-                fade.BeginFadeIn(FadeLenght);
-                var waveOutDevice = new WaveOutEvent();
-                waveOutDevice.Init(fade);
-                waveOutDevice.Play();
-                IsPlaying = true;
-                timer.Tick += new EventHandler(Timer_Tick);
-                timer.Start();
-                TimeTrackbar.MaximumValue = Convert.ToInt32(audio.Length / 1000);
-                TagControl.GetCover(FilePath, CoverPicture);
-                TitleLabel.Text = TagControl.GetName(FilePath);
-                audio.Volume = 0.5f;
-                VolumeTrackbar.Value = 50;
-                PlayingMeth = 1;
-            }
-            else
-            {
-                ErrorForms.Error error = new ErrorForms.Error(1);
-                error.Show();
-            }
+            audio = new AudioFileReader(FilePath);
+            fade = new FadeInOutSampleProvider(audio, true);
+            fade.BeginFadeIn(FadeLenght);
+            var waveOutDevice = new WaveOutEvent();
+            waveOutDevice.Init(fade);
+            waveOutDevice.Play();
+            IsPlaying = true;
+            timer.Tick += new EventHandler(Timer_Tick);
+            timer.Start();
+            TimeTrackbar.MaximumValue = Convert.ToInt32(audio.Length / 1000);
+            TagControl.GetCover(FilePath, CoverPicture);
+            TitleLabel.Text = TagControl.GetName(FilePath);
+            audio.Volume = 0.5f;
+            VolumeTrackbar.Value = 50;
+            PlayingMeth = 1;
             #endregion
         }
         private void Timer_Tick(object sender, EventArgs e)
@@ -224,22 +220,26 @@ namespace Project_Music
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            audio = new AudioFileReader(FilePath);
-            fade = new FadeInOutSampleProvider(audio, true);
-            fade.BeginFadeIn(FadeLenght);
-            var waveOutDevice = new WaveOutEvent();
-            waveOutDevice.Init(fade);
-            waveOutDevice.Play();
-            IsPlaying = true;
-            timer.Tick += new EventHandler(Timer_Tick);
-            timer.Start();
-            TimeTrackbar.MaximumValue = Convert.ToInt32(audio.Length / 1000);
-            TagControl.GetCover(FilePath, CoverPicture);
-            TitleLabel.Text = TagControl.GetName(FilePath);
-            audio.Volume = 0.5f;
-            VolumeTrackbar.Value = 50;
-            PlayingMeth = 1;
-            audio.Position = _position;    
+            if ((Path.GetExtension(FilePath) == ".mp3") || (Path.GetExtension(FilePath) == ".wav") && !IsPlaying)
+            {
+                audio = new AudioFileReader(FilePath);
+                fade = new FadeInOutSampleProvider(audio, true);
+                fade.BeginFadeIn(FadeLenght);
+                var waveOutDevice = new WaveOutEvent();
+                waveOutDevice.Init(fade);
+                waveOutDevice.Play();
+                IsPlaying = true;
+                timer.Tick += new EventHandler(Timer_Tick);
+                timer.Start();
+                TimeTrackbar.MaximumValue = Convert.ToInt32(audio.Length / 1000);
+                TagControl.GetCover(FilePath, CoverPicture);
+                TitleLabel.Text = TagControl.GetName(FilePath);
+                audio.Volume = 0.5f;
+                VolumeTrackbar.Value = 50;
+                PlayingMeth = 1;
+                audio.Position = _position;
+            }
+            else { Error("You aren't playing anything", "First select a file a pause it. If it's a bug, please make the developers know it."); }
         }
 
         private void MoreAbout_Click(object sender, EventArgs e)
@@ -249,6 +249,18 @@ namespace Project_Music
                 AboutTags w = new AboutTags();
                 w.Show();
             }
+            else { Error("You're playing any file", "When you're playing a file and after stop it you can see its tags"); }
+        }
+        private void Error(string title, string body)
+        {
+            ErrorTitleLabel.Text = title;
+            ErrorBodyLabel.Text = body;
+            NotfPanel.Visible = true;
+        }
+
+        private void ErrorOKButton_Click(object sender, EventArgs e)
+        {
+            NotfPanel.Visible = false;
         }
     }
 }
