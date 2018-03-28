@@ -191,7 +191,7 @@ namespace Project_Music
             {
                 // Open the selected file to read.
                 string fileStream = folderBrowser.SelectedPath;
-
+                FileNum = 0;
                 try { Files = Directory.GetFiles(fileStream); PlayAudioDirectory(Files); }
                 catch { Files = null; }
             }
@@ -237,32 +237,30 @@ namespace Project_Music
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            //if ((Path.GetExtension(FilePath) == ".mp3") || (Path.GetExtension(FilePath) == ".wav") && !IsPlaying)
-            try
+            if(PlayingMeth == 2) PlayAudioDirectory(Files);
+            else if (PlayingMeth == 1)
             {
-                audio = new AudioFileReader(FilePath);
-                fade = new FadeInOutSampleProvider(audio, true);
-                fade.BeginFadeIn(FadeLenght);
-                var waveOutDevice = new WaveOutEvent();
-                waveOutDevice.Init(fade);
-                waveOutDevice.Play();
-                IsPlaying = true;
-                timer.Tick += new EventHandler(Timer_Tick);
-                timer.Start();
-                TimeTrackbar.MaximumValue = Convert.ToInt32(audio.Length / 1000);
-                TagControl.GetCover(FilePath, CoverPicture);
-                TitleLabel.Text = TagControl.GetName(FilePath);
-                audio.Volume = 0.5f;
-                VolumeTrackbar.Value = 50;
-                PlayingMeth = 1;
-                audio.Position = _position;
-                _fadeMade = false;
+                try
+                {
+                    audio = new AudioFileReader(FilePath);
+                    fade = new FadeInOutSampleProvider(audio, true);
+                    fade.BeginFadeIn(FadeLenght);
+                    var waveOutDevice = new WaveOutEvent();
+                    waveOutDevice.Init(fade);
+                    waveOutDevice.Play();
+                    IsPlaying = true;
+                    timer.Tick += new EventHandler(Timer_Tick);
+                    timer.Start();
+                    TimeTrackbar.MaximumValue = Convert.ToInt32(audio.Length / 1000);
+                    TagControl.GetCover(FilePath, CoverPicture);
+                    TitleLabel.Text = TagControl.GetName(FilePath);
+                    audio.Volume = 0.5f;
+                    VolumeTrackbar.Value = 50;
+                    PlayingMeth = 1;
+                }
+                catch { FilePath = null; }
             }
-            catch
-            {
-                ErrorForms.Error x = new ErrorForms.Error("You aren't playing anything", "First select a file a pause it. If it's a bug, please make the developers know it.");
-                x.ShowDialog();
-            }
+            audio.Position = _position;
         }
 
         private void MoreAbout_Click(object sender, EventArgs e)
