@@ -306,8 +306,8 @@ namespace Project_Music
             }
             else
             {
-                ErrorForms.Error error = new ErrorForms.Error(1);
-                error.Show();
+                //ErrorForms.Error error = new ErrorForms.Error(1);
+                //error.Show();
             }
         }
         private void PlayAudioDirectory(string[] path)
@@ -392,8 +392,8 @@ namespace Project_Music
             }
             else
             {
-                ErrorForms.Error error = new ErrorForms.Error(0);
-                error.Show();
+                //ErrorForms.Error error = new ErrorForms.Error(0);
+                //error.Show();
             }
         }
 

@@ -29,102 +29,157 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Error));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.NotfPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.OKButton = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.BodyLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.DragPanel = new System.Windows.Forms.Panel();
+            this.TitleLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.CloseButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.NotfPanel.SuspendLayout();
+            this.DragPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // NotfPanel
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(28)))), ((int)(((byte)(28)))));
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.pictureBox3);
-            this.panel1.Location = new System.Drawing.Point(-1, -1);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(421, 50);
-            this.panel1.TabIndex = 0;
-            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            this.panel1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.NotfPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NotfPanel.BackgroundImage")));
+            this.NotfPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.NotfPanel.Controls.Add(this.OKButton);
+            this.NotfPanel.Controls.Add(this.BodyLabel);
+            this.NotfPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.NotfPanel.GradientBottomLeft = System.Drawing.Color.Crimson;
+            this.NotfPanel.GradientBottomRight = System.Drawing.Color.SlateBlue;
+            this.NotfPanel.GradientTopLeft = System.Drawing.Color.PowderBlue;
+            this.NotfPanel.GradientTopRight = System.Drawing.Color.White;
+            this.NotfPanel.Location = new System.Drawing.Point(0, 30);
+            this.NotfPanel.Name = "NotfPanel";
+            this.NotfPanel.Quality = 10;
+            this.NotfPanel.Size = new System.Drawing.Size(392, 240);
+            this.NotfPanel.TabIndex = 15;
             // 
-            // label1
+            // OKButton
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(13, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Error Window";
-            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
-            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseMove);
+            this.OKButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(54)))), ((int)(((byte)(91)))));
+            this.OKButton.BackColor = System.Drawing.Color.Crimson;
+            this.OKButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.OKButton.BorderRadius = 0;
+            this.OKButton.ButtonText = "Ok";
+            this.OKButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OKButton.DisabledColor = System.Drawing.Color.Gray;
+            this.OKButton.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.OKButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OKButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.OKButton.Iconimage = null;
+            this.OKButton.Iconimage_right = null;
+            this.OKButton.Iconimage_right_Selected = null;
+            this.OKButton.Iconimage_Selected = null;
+            this.OKButton.IconMarginLeft = 0;
+            this.OKButton.IconMarginRight = 0;
+            this.OKButton.IconRightVisible = true;
+            this.OKButton.IconRightZoom = 0D;
+            this.OKButton.IconVisible = true;
+            this.OKButton.IconZoom = 0D;
+            this.OKButton.IsTab = false;
+            this.OKButton.Location = new System.Drawing.Point(0, 196);
+            this.OKButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.OKButton.Name = "OKButton";
+            this.OKButton.Normalcolor = System.Drawing.Color.Crimson;
+            this.OKButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(31)))), ((int)(((byte)(72)))));
+            this.OKButton.OnHoverTextColor = System.Drawing.Color.White;
+            this.OKButton.selected = false;
+            this.OKButton.Size = new System.Drawing.Size(392, 44);
+            this.OKButton.TabIndex = 8;
+            this.OKButton.Text = "Ok";
+            this.OKButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.OKButton.Textcolor = System.Drawing.Color.White;
+            this.OKButton.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.OKButton.Click += new System.EventHandler(this.OKButton_Click);
             // 
-            // pictureBox3
+            // BodyLabel
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(371, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 2;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.BodyLabel.BackColor = System.Drawing.Color.Transparent;
+            this.BodyLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BodyLabel.ForeColor = System.Drawing.Color.White;
+            this.BodyLabel.Location = new System.Drawing.Point(3, 26);
+            this.BodyLabel.Name = "BodyLabel";
+            this.BodyLabel.Size = new System.Drawing.Size(383, 166);
+            this.BodyLabel.TabIndex = 7;
+            this.BodyLabel.Text = "Error body";
             // 
-            // button1
+            // DragPanel
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(153, 305);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 39);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Ok";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.DragPanel.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.DragPanel.Controls.Add(this.TitleLabel);
+            this.DragPanel.Controls.Add(this.CloseButton);
+            this.DragPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DragPanel.Location = new System.Drawing.Point(0, 0);
+            this.DragPanel.Name = "DragPanel";
+            this.DragPanel.Size = new System.Drawing.Size(392, 38);
+            this.DragPanel.TabIndex = 16;
+            this.DragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.DragPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
-            // label2
+            // TitleLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 70);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 20);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Error explanation";
+            this.TitleLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleLabel.ForeColor = System.Drawing.Color.White;
+            this.TitleLabel.Location = new System.Drawing.Point(8, 9);
+            this.TitleLabel.Name = "TitleLabel";
+            this.TitleLabel.Size = new System.Drawing.Size(269, 18);
+            this.TitleLabel.TabIndex = 6;
+            this.TitleLabel.Text = "Error title";
+            this.TitleLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.TitleLabel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            // 
+            // CloseButton
+            // 
+            this.CloseButton.ActiveBorderThickness = 1;
+            this.CloseButton.ActiveCornerRadius = 20;
+            this.CloseButton.ActiveFillColor = System.Drawing.Color.White;
+            this.CloseButton.ActiveForecolor = System.Drawing.Color.Crimson;
+            this.CloseButton.ActiveLineColor = System.Drawing.Color.Crimson;
+            this.CloseButton.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.CloseButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("CloseButton.BackgroundImage")));
+            this.CloseButton.ButtonText = "X";
+            this.CloseButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CloseButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CloseButton.ForeColor = System.Drawing.Color.White;
+            this.CloseButton.IdleBorderThickness = 1;
+            this.CloseButton.IdleCornerRadius = 20;
+            this.CloseButton.IdleFillColor = System.Drawing.Color.Crimson;
+            this.CloseButton.IdleForecolor = System.Drawing.Color.White;
+            this.CloseButton.IdleLineColor = System.Drawing.Color.White;
+            this.CloseButton.Location = new System.Drawing.Point(347, 0);
+            this.CloseButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(39, 37);
+            this.CloseButton.TabIndex = 5;
+            this.CloseButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // Error
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
-            this.ClientSize = new System.Drawing.Size(419, 370);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.panel1);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(392, 270);
+            this.Controls.Add(this.DragPanel);
+            this.Controls.Add(this.NotfPanel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Error";
             this.Text = "Error";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.NotfPanel.ResumeLayout(false);
+            this.DragPanel.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label2;
+        private Bunifu.Framework.UI.BunifuGradientPanel NotfPanel;
+        private Bunifu.Framework.UI.BunifuCustomLabel BodyLabel;
+        private System.Windows.Forms.Panel DragPanel;
+        private Bunifu.Framework.UI.BunifuCustomLabel TitleLabel;
+        private Bunifu.Framework.UI.BunifuThinButton2 CloseButton;
+        private Bunifu.Framework.UI.BunifuFlatButton OKButton;
     }
 }

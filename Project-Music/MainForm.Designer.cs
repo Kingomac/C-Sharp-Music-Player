@@ -51,15 +51,10 @@
             this.CoverPicture = new System.Windows.Forms.PictureBox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.NotfPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
-            this.ErrorTitleLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.ErrorBodyLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.ErrorOKButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.DragPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CoverPicture)).BeginInit();
-            this.NotfPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -540,93 +535,12 @@
             this.bunifuSeparator3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
             this.bunifuSeparator3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
-            // NotfPanel
-            // 
-            this.NotfPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("NotfPanel.BackgroundImage")));
-            this.NotfPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.NotfPanel.Controls.Add(this.ErrorOKButton);
-            this.NotfPanel.Controls.Add(this.ErrorBodyLabel);
-            this.NotfPanel.Controls.Add(this.ErrorTitleLabel);
-            this.NotfPanel.GradientBottomLeft = System.Drawing.Color.Crimson;
-            this.NotfPanel.GradientBottomRight = System.Drawing.Color.SlateBlue;
-            this.NotfPanel.GradientTopLeft = System.Drawing.Color.PowderBlue;
-            this.NotfPanel.GradientTopRight = System.Drawing.Color.White;
-            this.NotfPanel.Location = new System.Drawing.Point(278, 101);
-            this.NotfPanel.Name = "NotfPanel";
-            this.NotfPanel.Quality = 10;
-            this.NotfPanel.Size = new System.Drawing.Size(448, 167);
-            this.NotfPanel.TabIndex = 14;
-            this.NotfPanel.Visible = false;
-            // 
-            // ErrorTitleLabel
-            // 
-            this.ErrorTitleLabel.BackColor = System.Drawing.Color.Transparent;
-            this.ErrorTitleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrorTitleLabel.ForeColor = System.Drawing.Color.White;
-            this.ErrorTitleLabel.Location = new System.Drawing.Point(3, 10);
-            this.ErrorTitleLabel.Name = "ErrorTitleLabel";
-            this.ErrorTitleLabel.Size = new System.Drawing.Size(442, 25);
-            this.ErrorTitleLabel.TabIndex = 0;
-            this.ErrorTitleLabel.Text = "Error title";
-            this.ErrorTitleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // ErrorBodyLabel
-            // 
-            this.ErrorBodyLabel.BackColor = System.Drawing.Color.Transparent;
-            this.ErrorBodyLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrorBodyLabel.ForeColor = System.Drawing.Color.White;
-            this.ErrorBodyLabel.Location = new System.Drawing.Point(3, 45);
-            this.ErrorBodyLabel.Name = "ErrorBodyLabel";
-            this.ErrorBodyLabel.Size = new System.Drawing.Size(442, 86);
-            this.ErrorBodyLabel.TabIndex = 1;
-            this.ErrorBodyLabel.Text = "Error body";
-            this.ErrorBodyLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // ErrorOKButton
-            // 
-            this.ErrorOKButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(54)))), ((int)(((byte)(91)))));
-            this.ErrorOKButton.BackColor = System.Drawing.Color.Crimson;
-            this.ErrorOKButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ErrorOKButton.BorderRadius = 0;
-            this.ErrorOKButton.ButtonText = "OK";
-            this.ErrorOKButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ErrorOKButton.DisabledColor = System.Drawing.Color.Gray;
-            this.ErrorOKButton.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ErrorOKButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrorOKButton.Iconcolor = System.Drawing.Color.Transparent;
-            this.ErrorOKButton.Iconimage = null;
-            this.ErrorOKButton.Iconimage_right = null;
-            this.ErrorOKButton.Iconimage_right_Selected = null;
-            this.ErrorOKButton.Iconimage_Selected = null;
-            this.ErrorOKButton.IconMarginLeft = 0;
-            this.ErrorOKButton.IconMarginRight = 0;
-            this.ErrorOKButton.IconRightVisible = true;
-            this.ErrorOKButton.IconRightZoom = 0D;
-            this.ErrorOKButton.IconVisible = true;
-            this.ErrorOKButton.IconZoom = 0D;
-            this.ErrorOKButton.IsTab = false;
-            this.ErrorOKButton.Location = new System.Drawing.Point(0, 126);
-            this.ErrorOKButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.ErrorOKButton.Name = "ErrorOKButton";
-            this.ErrorOKButton.Normalcolor = System.Drawing.Color.Crimson;
-            this.ErrorOKButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(31)))), ((int)(((byte)(72)))));
-            this.ErrorOKButton.OnHoverTextColor = System.Drawing.Color.White;
-            this.ErrorOKButton.selected = false;
-            this.ErrorOKButton.Size = new System.Drawing.Size(448, 41);
-            this.ErrorOKButton.TabIndex = 6;
-            this.ErrorOKButton.Text = "OK";
-            this.ErrorOKButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.ErrorOKButton.Textcolor = System.Drawing.Color.White;
-            this.ErrorOKButton.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ErrorOKButton.Click += new System.EventHandler(this.ErrorOKButton_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.NotfPanel);
             this.Controls.Add(this.bunifuSeparator3);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.NextButton);
@@ -649,7 +563,6 @@
             this.DragPanel.ResumeLayout(false);
             this.DragPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CoverPicture)).EndInit();
-            this.NotfPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -678,9 +591,5 @@
         private Bunifu.Framework.UI.BunifuFlatButton MoreAbout;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator3;
-        private Bunifu.Framework.UI.BunifuGradientPanel NotfPanel;
-        private Bunifu.Framework.UI.BunifuFlatButton ErrorOKButton;
-        private Bunifu.Framework.UI.BunifuCustomLabel ErrorBodyLabel;
-        private Bunifu.Framework.UI.BunifuCustomLabel ErrorTitleLabel;
     }
 }

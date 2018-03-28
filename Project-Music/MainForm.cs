@@ -59,7 +59,8 @@ namespace Project_Music
         #endregion
         private void StopAudio()
         {
-            if (IsPlaying)
+            //if (IsPlaying)
+            try
             {
                 timer.Stop();
                 fade.BeginFadeOut(FadeLenght);
@@ -69,7 +70,7 @@ namespace Project_Music
                 CoverPicture.Image = null;
                 _position = 0;
             }
-            else { Error("You aren't playing anything", "If it's a bug, please make the developers know about it."); }
+            catch { }
         }
 
         private void PlaySingleButton_Click(object sender, EventArgs e)
@@ -94,21 +95,25 @@ namespace Project_Music
             #endregion
             #region Play File
             if (IsPlaying) StopAudio();
-            audio = new AudioFileReader(FilePath);
-            fade = new FadeInOutSampleProvider(audio, true);
-            fade.BeginFadeIn(FadeLenght);
-            var waveOutDevice = new WaveOutEvent();
-            waveOutDevice.Init(fade);
-            waveOutDevice.Play();
-            IsPlaying = true;
-            timer.Tick += new EventHandler(Timer_Tick);
-            timer.Start();
-            TimeTrackbar.MaximumValue = Convert.ToInt32(audio.Length / 1000);
-            TagControl.GetCover(FilePath, CoverPicture);
-            TitleLabel.Text = TagControl.GetName(FilePath);
-            audio.Volume = 0.5f;
-            VolumeTrackbar.Value = 50;
-            PlayingMeth = 1;
+            try
+            {
+                audio = new AudioFileReader(FilePath);
+                fade = new FadeInOutSampleProvider(audio, true);
+                fade.BeginFadeIn(FadeLenght);
+                var waveOutDevice = new WaveOutEvent();
+                waveOutDevice.Init(fade);
+                waveOutDevice.Play();
+                IsPlaying = true;
+                timer.Tick += new EventHandler(Timer_Tick);
+                timer.Start();
+                TimeTrackbar.MaximumValue = Convert.ToInt32(audio.Length / 1000);
+                TagControl.GetCover(FilePath, CoverPicture);
+                TitleLabel.Text = TagControl.GetName(FilePath);
+                audio.Volume = 0.5f;
+                VolumeTrackbar.Value = 50;
+                PlayingMeth = 1;
+            }
+            catch{ FilePath = null;}
             #endregion
         }
         private void Timer_Tick(object sender, EventArgs e)
@@ -127,7 +132,8 @@ namespace Project_Music
         private void PlayAudioDirectory(string[] path)
         {
             if (IsPlaying) StopAudio();
-            if (Path.GetExtension(path[FileNum]) == ".mp3" || Path.GetExtension(path[FileNum]) == ".wav")
+            //if (Path.GetExtension(path[FileNum]) == ".mp3" || Path.GetExtension(path[FileNum]) == ".wav")
+            try
             {
                 audio = new AudioFileReader(path[FileNum]);
                 fade = new FadeInOutSampleProvider(audio, true);
@@ -145,7 +151,7 @@ namespace Project_Music
                 VolumeTrackbar.Value = 50;
                 PlayingMeth = 2;
             }
-            else
+            catch
             {
                 FileNum++;
                 PlayAudioDirectory(Files);
@@ -220,7 +226,8 @@ namespace Project_Music
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            if ((Path.GetExtension(FilePath) == ".mp3") || (Path.GetExtension(FilePath) == ".wav") && !IsPlaying)
+            //if ((Path.GetExtension(FilePath) == ".mp3") || (Path.GetExtension(FilePath) == ".wav") && !IsPlaying)
+            try
             {
                 audio = new AudioFileReader(FilePath);
                 fade = new FadeInOutSampleProvider(audio, true);
@@ -239,28 +246,26 @@ namespace Project_Music
                 PlayingMeth = 1;
                 audio.Position = _position;
             }
-            else { Error("You aren't playing anything", "First select a file a pause it. If it's a bug, please make the developers know it."); }
+            catch
+            {
+                ErrorForms.Error x = new ErrorForms.Error("You aren't playing anything", "First select a file a pause it. If it's a bug, please make the developers know it.");
+                x.ShowDialog();
+            }
         }
 
         private void MoreAbout_Click(object sender, EventArgs e)
         {
-            if(FilePath != null)
+            //if(FilePath != null)
+            try
             {
                 AboutTags w = new AboutTags();
                 w.Show();
             }
-            else { Error("You're playing any file", "When you're playing a file and after stop it you can see its tags"); }
-        }
-        private void Error(string title, string body)
-        {
-            ErrorTitleLabel.Text = title;
-            ErrorBodyLabel.Text = body;
-            NotfPanel.Visible = true;
-        }
-
-        private void ErrorOKButton_Click(object sender, EventArgs e)
-        {
-            NotfPanel.Visible = false;
+            catch
+            {
+                ErrorForms.Error x = new ErrorForms.Error("You're playing any file", "When you're playing a file and after stop it you can see its tags");
+                x.ShowDialog();
+            }
         }
     }
 }
