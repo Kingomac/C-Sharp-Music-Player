@@ -20,7 +20,7 @@ namespace Project_Music
         public AboutTags()
         {
             InitializeComponent();
-            PathTextbox.Text = $"More about: {MainForm.FilePath}";
+            PathTextbox.Text = MainForm.FilePath;
             TagLib.File file = TagLib.File.Create(MainForm.FilePath);
             TitleTextbox.Text = file.Tag.Title;
             AuthorTextbox.Text = "";
