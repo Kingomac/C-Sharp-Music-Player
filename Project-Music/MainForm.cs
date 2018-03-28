@@ -126,8 +126,9 @@ namespace Project_Music
         private void NextPrevPlay(bool next/*true --> play next || false --> play previos*/)
         {
             StopAudio();
-            FileNum++;
-            if (File.Exists(Files[FileNum])) PlayAudioDirectory(Files);
+            if (next) { FileNum++; }
+            else { FileNum--; }
+            PlayAudioDirectory(Files);
         }
         private void PlayAudioDirectory(string[] path)
         {
