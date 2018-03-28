@@ -63,7 +63,7 @@ namespace Project_Music
             try
             {
                 timer.Stop();
-                fade.BeginFadeOut(FadeLenght);
+                if(IsPlaying) fade.BeginFadeOut(FadeLenght);
                 waveOutDevice.Stop();
                 TitleLabel.Text = "Let's listen your favourite songs!";
                 TimeLabel.Text = "0:0:0 / 0:0:0";
@@ -222,6 +222,7 @@ namespace Project_Music
                 timer.Stop();
                 fade.BeginFadeOut(FadeLenght);
                 waveOutDevice.Stop();
+                IsPlaying = false;
             }
         }
 
