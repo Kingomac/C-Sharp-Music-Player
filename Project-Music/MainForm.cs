@@ -45,7 +45,7 @@ namespace Project_Music
             WindowState = FormWindowState.Minimized;
         }
         #region Properties and vars
-        bool IsPlaying { get => _isPlaying; set => _isPlaying = value; }
+        bool IsPlaying { get; set; }
         int FadeLenght { get; set; }
         public static string FilePath { get; set; }
         int FileNum { get; set; }
@@ -55,7 +55,7 @@ namespace Project_Music
         FadeInOutSampleProvider fade;
         AudioFileReader audio;
         Timer timer = new Timer();
-        private bool _isPlaying;
+        private bool _fadeMade;
         #endregion
         private void StopAudio()
         {
@@ -63,7 +63,11 @@ namespace Project_Music
             try
             {
                 timer.Stop();
-                if(IsPlaying) fade.BeginFadeOut(FadeLenght);
+                if (IsPlaying && !_fadeMade)
+                {
+                    fade.BeginFadeOut(FadeLenght);
+                    _fadeMade = true;
+                }
                 waveOutDevice.Stop();
                 TitleLabel.Text = "Let's listen your favourite songs!";
                 TimeLabel.Text = "0:0:0 / 0:0:0";
@@ -151,6 +155,7 @@ namespace Project_Music
                 audio.Volume = 0.5f;
                 VolumeTrackbar.Value = 50;
                 PlayingMeth = 2;
+                _fadeMade = false;
             }
             catch
             {
@@ -220,7 +225,11 @@ namespace Project_Music
             {
                 _position = audio.Position;
                 timer.Stop();
-                fade.BeginFadeOut(FadeLenght);
+                if (!_fadeMade)
+                {
+                    fade.BeginFadeOut(FadeLenght);
+                    _fadeMade = true;
+                }
                 waveOutDevice.Stop();
                 IsPlaying = false;
             }
@@ -247,6 +256,7 @@ namespace Project_Music
                 VolumeTrackbar.Value = 50;
                 PlayingMeth = 1;
                 audio.Position = _position;
+                _fadeMade = false;
             }
             catch
             {
