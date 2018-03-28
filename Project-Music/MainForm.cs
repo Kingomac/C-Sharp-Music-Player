@@ -186,10 +186,10 @@ namespace Project_Music
                 // Open the selected file to read.
                 string fileStream = folderBrowser.SelectedPath;
 
-                Files = Directory.GetFiles(fileStream);
+                try { Files = Directory.GetFiles(fileStream); PlayAudioDirectory(Files); }
+                catch { Files = null; }
             }
-            #endregion
-            PlayAudioDirectory(Files);
+            #endregion 
         }
 
         private void TimeTrackbar_ValueChanged(object sender, EventArgs e)
