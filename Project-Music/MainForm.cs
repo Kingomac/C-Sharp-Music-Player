@@ -156,6 +156,7 @@ namespace Project_Music
                 VolumeTrackbar.Value = 50;
                 PlayingMeth = 2;
                 _fadeMade = false;
+                FilePath = path[FileNum];
             }
             catch
             {
