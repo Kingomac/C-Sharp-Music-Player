@@ -31,4 +31,29 @@ namespace Project_Music
             else return file.Tag.Title;
         }
     }
+    class ConfigFile
+    {
+        public static async Task CreateDefault()
+        {
+            StreamWriter r = new StreamWriter("config.ini");
+            await r.WriteAsync($"2500{Environment.NewLine}100");
+            r.Close();
+        }
+        public static async Task<decimal[]> Read()
+        {
+            StreamReader r = new StreamReader("config.ini");
+            decimal[] num = new decimal[1];
+            num[0] = Convert.ToDecimal(await r.ReadLineAsync());
+            num[1] = Convert.ToDecimal(await r.ReadLineAsync());
+            r.Close();
+            return num;
+        }
+        public static async Task Save(decimal FadeInOut = 2500, decimal UpdateTime = 100)
+        {
+            StreamWriter r = new StreamWriter("config.ini");
+            await r.WriteLineAsync(FadeInOut.ToString());
+            await r.WriteLineAsync(UpdateTime.ToString());
+            r.Close();
+        }
+    }
 }

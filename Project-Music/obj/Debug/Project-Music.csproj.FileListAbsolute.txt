@@ -30,10 +30,7 @@ X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Interop.M
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Interop.WMPLib.dll
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Interop.WMPRichPreviewLauncher.dll
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project-Music.csproj.ResolveComReference.cache
-X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project_Music.About.resources
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project_Music.ErrorForms.Error.resources
-X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project_Music.Form1.resources
-X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project_Music.Options.resources
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project_Music.Properties.Resources.resources
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project-Music.csproj.GenerateResource.cache
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project-Music.csproj.CoreCompileInputs.cache

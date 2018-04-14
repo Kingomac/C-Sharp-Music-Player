@@ -17,10 +17,15 @@ namespace Project_Music
         public OptionsForm()
         {
             InitializeComponent();
-            StreamReader reader = new StreamReader("config.ini");
-            FadeNumUpDown.Value = Convert.ToDecimal(reader.ReadLine());
-            UpdateNumUpDown.Value = Convert.ToDecimal(reader.ReadLine());
-            reader.Close();
+            LoadConfig();
+        }
+        private async void LoadConfig()
+        {
+            StreamReader r = new StreamReader("config.ini");
+            decimal[] num = new decimal[1];
+            FadeNumUpDown.Value = Convert.ToDecimal(await r.ReadLineAsync());
+            UpdateNumUpDown.Value = Convert.ToDecimal(await r.ReadLineAsync());
+            r.Close();
         }
 
         private void FadeSlider_ValueChanged(object sender, EventArgs e)
@@ -53,12 +58,9 @@ namespace Project_Music
             if (e.Button == MouseButtons.Left) { this.Left += e.X - LastPoint.X; this.Top += e.Y - LastPoint.Y; }
         }
 
-        private void CloseButton_Click(object sender, EventArgs e)
+        private async void CloseButton_Click(object sender, EventArgs e)
         {
-            StreamWriter writer = new StreamWriter("config.ini");
-            writer.WriteLine(FadeNumUpDown.Value);
-            writer.WriteLine(UpdateNumUpDown.Value);
-            writer.Close();
+            await ConfigFile.Save(FadeNumUpDown.Value,UpdateNumUpDown.Value);
             this.Close();
         }
 

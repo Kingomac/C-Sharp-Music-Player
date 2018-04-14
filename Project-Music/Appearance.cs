@@ -22,7 +22,7 @@ namespace Project_Music
             button.ForeColor = ForeColor;
         }
     }
-    class ConfigFile
+    /*class ConfigFile
     {
         public static void Write(string text)
         {
@@ -49,5 +49,5 @@ namespace Project_Music
             reader.Close();
             return value;
         }
-    }
+    }*/
 }

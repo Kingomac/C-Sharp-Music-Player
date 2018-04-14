@@ -19,10 +19,21 @@ namespace Project_Music
         public MainForm()
         {
             InitializeComponent();
-            StreamReader reader = new StreamReader("config.ini");
-            FadeLenght = Convert.ToInt32(reader.ReadLine());
-            timer.Interval = Convert.ToInt32(reader.ReadLine());
-            reader.Close();
+            CheckConfigFile();
+        }
+        private async void CheckConfigFile()
+        {
+            if (File.Exists("config.ini"))
+            {
+                /*decimal[] i = await ConfigFile.Read();
+                FadeLenght = Convert.ToInt32(i[0]);
+                timer.Interval = Convert.ToInt32(i[1]);*/
+                StreamReader r = new StreamReader("config.ini");
+                FadeLenght = Convert.ToInt32(await r.ReadLineAsync());
+                timer.Interval = Convert.ToInt32(await r.ReadLineAsync());
+                r.Close();
+            }
+            else { await ConfigFile.CreateDefault(); }
         }
         Point LastPoint;
         private void DragPanel_MouseDown(object sender, MouseEventArgs e)
