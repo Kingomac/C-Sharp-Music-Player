@@ -59,9 +59,9 @@ namespace Project_Music
         #endregion
         private void StopAudio()
         {
-            //if (IsPlaying)
             try
             {
+                RandomCheckBox.Visible = false;
                 timer.Stop();
                 if (IsPlaying && !_fadeMade)
                 {
@@ -127,12 +127,27 @@ namespace Project_Music
             if (audio.Position >= audio.Length && PlayingMeth == 2) NextPrevPlay(true);
             else if (audio.Position > audio.Length && PlayingMeth == 1) StopAudio();
         }
+        private int _lastsong;
         private void NextPrevPlay(bool next/*true --> play next || false --> play previos*/)
         {
             StopAudio();
-            if (next) { FileNum++; }
-            else { FileNum--; }
+            if (!RandomCheckBox.Checked)
+            {
+                if (next) { FileNum++; }
+                else { FileNum--; }
+            }
+            else
+            {
+                if (next)
+                {
+                    _lastsong = FileNum;
+                    Random r = new Random();
+                    FileNum = r.Next(0, Files.Length);
+                }
+                else FileNum = _lastsong;
+            }
             PlayAudioDirectory(Files);
+            RandomCheckBox.Visible = true;
         }
         private void PlayAudioDirectory(string[] path)
         {
@@ -197,6 +212,7 @@ namespace Project_Music
                 catch { Files = null; }
             }
             #endregion 
+            RandomCheckBox.Visible = true;
         }
 
         private void TimeTrackbar_ValueChanged(object sender, EventArgs e)
@@ -277,6 +293,16 @@ namespace Project_Music
                 ErrorForms.Error x = new ErrorForms.Error("You're playing any file", "When you're playing a file and after stop it you can see its tags");
                 x.ShowDialog();
             }
+        }
+
+        private void RandomCheckBox_MouseHover(object sender, EventArgs e)
+        {
+            RandomLabel.Visible = true;
+        }
+
+        private void RandomCheckBox_MouseLeave(object sender, EventArgs e)
+        {
+            RandomLabel.Visible = false;
         }
     }
 }

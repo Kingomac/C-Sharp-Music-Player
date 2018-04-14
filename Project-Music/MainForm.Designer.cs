@@ -51,6 +51,8 @@
             this.CoverPicture = new System.Windows.Forms.PictureBox();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.RandomCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.RandomLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.DragPanel.SuspendLayout();
@@ -535,12 +537,41 @@
             this.bunifuSeparator3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
             this.bunifuSeparator3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
+            // RandomCheckBox
+            // 
+            this.RandomCheckBox.BackColor = System.Drawing.Color.Crimson;
+            this.RandomCheckBox.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.RandomCheckBox.Checked = true;
+            this.RandomCheckBox.CheckedOnColor = System.Drawing.Color.Crimson;
+            this.RandomCheckBox.ForeColor = System.Drawing.Color.White;
+            this.RandomCheckBox.Location = new System.Drawing.Point(253, 58);
+            this.RandomCheckBox.Name = "RandomCheckBox";
+            this.RandomCheckBox.Size = new System.Drawing.Size(20, 20);
+            this.RandomCheckBox.TabIndex = 14;
+            this.RandomCheckBox.Visible = false;
+            this.RandomCheckBox.MouseLeave += new System.EventHandler(this.RandomCheckBox_MouseLeave);
+            this.RandomCheckBox.MouseHover += new System.EventHandler(this.RandomCheckBox_MouseHover);
+            // 
+            // RandomLabel
+            // 
+            this.RandomLabel.AutoSize = true;
+            this.RandomLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RandomLabel.ForeColor = System.Drawing.Color.White;
+            this.RandomLabel.Location = new System.Drawing.Point(292, 58);
+            this.RandomLabel.Name = "RandomLabel";
+            this.RandomLabel.Size = new System.Drawing.Size(115, 20);
+            this.RandomLabel.TabIndex = 15;
+            this.RandomLabel.Text = "Random songs";
+            this.RandomLabel.Visible = false;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.RandomLabel);
+            this.Controls.Add(this.RandomCheckBox);
             this.Controls.Add(this.bunifuSeparator3);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.NextButton);
@@ -564,6 +595,7 @@
             this.DragPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CoverPicture)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -591,5 +623,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton MoreAbout;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator3;
+        private Bunifu.Framework.UI.BunifuCheckbox RandomCheckBox;
+        private Bunifu.Framework.UI.BunifuCustomLabel RandomLabel;
     }
 }

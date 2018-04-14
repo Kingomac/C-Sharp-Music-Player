@@ -18,7 +18,7 @@ namespace Project_Music
             if (file.Tag.Pictures.Length >= 1)
             {
                 var bin = (byte[])(file.Tag.Pictures[0].Data.Data);
-                pictureBox.Image = Image.FromStream(new MemoryStream(bin)).GetThumbnailImage(1000, 1000, null, IntPtr.Zero);
+                pictureBox.Image = Image.FromStream(new MemoryStream(bin)).GetThumbnailImage(2048, 2048, null, IntPtr.Zero);
             }
         }
         public static string GetName(string path)
