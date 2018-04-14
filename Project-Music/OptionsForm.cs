@@ -73,5 +73,14 @@ namespace Project_Music
         {
             GeneralPanel.Visible = !GeneralPanel.Visible;
         }
+
+        private async void DefaultSetButton_Click(object sender, EventArgs e)
+        {
+            File.Delete("config.ini");
+            await ConfigFile.CreateDefault();
+            var i = new OptionsForm();
+            i.Show();
+            this.Close();
+        }
     }
 }

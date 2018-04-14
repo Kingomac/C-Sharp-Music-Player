@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionsForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.PlaySingleButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -46,7 +47,7 @@
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
+            this.DefaultSetButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.DragPanel.SuspendLayout();
@@ -66,6 +67,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 1;
+            // 
+            // bunifuSeparator2
+            // 
+            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuSeparator2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
+            this.bunifuSeparator2.LineThickness = 4;
+            this.bunifuSeparator2.Location = new System.Drawing.Point(0, 440);
+            this.bunifuSeparator2.Name = "bunifuSeparator2";
+            this.bunifuSeparator2.Size = new System.Drawing.Size(200, 10);
+            this.bunifuSeparator2.TabIndex = 6;
+            this.bunifuSeparator2.Transparency = 255;
+            this.bunifuSeparator2.Vertical = false;
+            this.bunifuSeparator2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.bunifuSeparator2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
             // PlaySingleButton
             // 
@@ -131,6 +147,7 @@
             // DragPanel
             // 
             this.DragPanel.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.DragPanel.Controls.Add(this.DefaultSetButton);
             this.DragPanel.Controls.Add(this.TitleLabel);
             this.DragPanel.Controls.Add(this.CloseButton);
             this.DragPanel.Controls.Add(this.MinimizeButton);
@@ -335,20 +352,31 @@
             this.bunifuSeparator1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
             this.bunifuSeparator1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
-            // bunifuSeparator2
+            // DefaultSetButton
             // 
-            this.bunifuSeparator2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuSeparator2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bunifuSeparator2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
-            this.bunifuSeparator2.LineThickness = 4;
-            this.bunifuSeparator2.Location = new System.Drawing.Point(0, 440);
-            this.bunifuSeparator2.Name = "bunifuSeparator2";
-            this.bunifuSeparator2.Size = new System.Drawing.Size(200, 10);
-            this.bunifuSeparator2.TabIndex = 6;
-            this.bunifuSeparator2.Transparency = 255;
-            this.bunifuSeparator2.Vertical = false;
-            this.bunifuSeparator2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
-            this.bunifuSeparator2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            this.DefaultSetButton.ActiveBorderThickness = 1;
+            this.DefaultSetButton.ActiveCornerRadius = 20;
+            this.DefaultSetButton.ActiveFillColor = System.Drawing.Color.White;
+            this.DefaultSetButton.ActiveForecolor = System.Drawing.Color.Crimson;
+            this.DefaultSetButton.ActiveLineColor = System.Drawing.Color.Crimson;
+            this.DefaultSetButton.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.DefaultSetButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DefaultSetButton.BackgroundImage")));
+            this.DefaultSetButton.ButtonText = "Defualt values";
+            this.DefaultSetButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DefaultSetButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DefaultSetButton.ForeColor = System.Drawing.Color.White;
+            this.DefaultSetButton.IdleBorderThickness = 1;
+            this.DefaultSetButton.IdleCornerRadius = 20;
+            this.DefaultSetButton.IdleFillColor = System.Drawing.Color.Crimson;
+            this.DefaultSetButton.IdleForecolor = System.Drawing.Color.White;
+            this.DefaultSetButton.IdleLineColor = System.Drawing.Color.White;
+            this.DefaultSetButton.Location = new System.Drawing.Point(362, 0);
+            this.DefaultSetButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DefaultSetButton.Name = "DefaultSetButton";
+            this.DefaultSetButton.Size = new System.Drawing.Size(134, 37);
+            this.DefaultSetButton.TabIndex = 7;
+            this.DefaultSetButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DefaultSetButton.Click += new System.EventHandler(this.DefaultSetButton_Click);
             // 
             // OptionsForm
             // 
@@ -397,5 +425,6 @@
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator3;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
+        private Bunifu.Framework.UI.BunifuThinButton2 DefaultSetButton;
     }
 }
