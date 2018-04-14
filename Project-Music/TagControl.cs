@@ -36,23 +36,34 @@ namespace Project_Music
         public static async Task CreateDefault()
         {
             StreamWriter r = new StreamWriter("config.ini");
-            await r.WriteAsync($"2500{Environment.NewLine}100");
+            await r.WriteAsync($"2500{Environment.NewLine}100{Environment.NewLine}eng");
             r.Close();
         }
-        public static async Task<decimal[]> Read()
+        public static async Task<decimal[]> ReadDecimals()
         {
             StreamReader r = new StreamReader("config.ini");
-            decimal[] num = new decimal[1];
+            decimal[] num = new decimal[2];
             num[0] = Convert.ToDecimal(await r.ReadLineAsync());
             num[1] = Convert.ToDecimal(await r.ReadLineAsync());
             r.Close();
             return num;
         }
-        public static async Task Save(decimal FadeInOut = 2500, decimal UpdateTime = 100)
+        public static async Task<string> ReadLanguage()
+        {
+            StreamReader r = new StreamReader("config.ini");
+            await r.ReadLineAsync();
+            await r.ReadLineAsync();
+            string i = await r.ReadLineAsync();
+            r.Close();
+            if (i == "spa" || i == "eng") return i;
+            else throw new InvalidDataException("Error with language, check if it's all right in config file");
+        }
+        public static async Task Save(decimal FadeInOut = 2500, decimal UpdateTime = 100, string Language = "eng")
         {
             StreamWriter r = new StreamWriter("config.ini");
             await r.WriteLineAsync(FadeInOut.ToString());
             await r.WriteLineAsync(UpdateTime.ToString());
+            await r.WriteLineAsync(Language);
             r.Close();
         }
     }

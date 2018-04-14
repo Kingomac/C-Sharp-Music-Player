@@ -20,14 +20,31 @@ namespace Project_Music
         {
             InitializeComponent();
             CheckConfigFile();
+            SetLangAsync();
+        }
+        private async void SetLangAsync()
+        {
+            string lang = await ConfigFile.ReadLanguage();
+            string[,] w = Language.GetTexts(lang);
+            #region Set
+            TitleLabel.Text = w[0, 0];
+            PlaySingleButton.Text = w[0, 1];
+            PlayDirectoryButton.Text = w[0, 2];
+            //_randomtext = w[0, 3];
+            MoreAbout.Text = w[0, 4];
+            SettingsButton.Text = w[0, 5];
+            PlayButton.ButtonText = w[0, 6];
+            StopButton.ButtonText = w[0, 7];
+            PauseButton.ButtonText = w[0, 8];
+            NextButton.ButtonText = w[0, 9];
+            PreviousButton.ButtonText = w[0, 10];
+            #endregion
+            
         }
         private async void CheckConfigFile()
         {
             if (File.Exists("config.ini"))
             {
-                /*decimal[] i = await ConfigFile.Read();
-                FadeLenght = Convert.ToInt32(i[0]);
-                timer.Interval = Convert.ToInt32(i[1]);*/
                 StreamReader r = new StreamReader("config.ini");
                 FadeLenght = Convert.ToInt32(await r.ReadLineAsync());
                 timer.Interval = Convert.ToInt32(await r.ReadLineAsync());

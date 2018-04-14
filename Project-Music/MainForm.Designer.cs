@@ -386,7 +386,7 @@
             this.NextButton.IdleFillColor = System.Drawing.Color.Crimson;
             this.NextButton.IdleForecolor = System.Drawing.Color.White;
             this.NextButton.IdleLineColor = System.Drawing.Color.White;
-            this.NextButton.Location = new System.Drawing.Point(642, 406);
+            this.NextButton.Location = new System.Drawing.Point(672, 406);
             this.NextButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NextButton.Name = "NextButton";
             this.NextButton.Size = new System.Drawing.Size(84, 37);
@@ -412,7 +412,7 @@
             this.PreviousButton.IdleFillColor = System.Drawing.Color.Crimson;
             this.PreviousButton.IdleForecolor = System.Drawing.Color.White;
             this.PreviousButton.IdleLineColor = System.Drawing.Color.White;
-            this.PreviousButton.Location = new System.Drawing.Point(551, 406);
+            this.PreviousButton.Location = new System.Drawing.Point(580, 406);
             this.PreviousButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PreviousButton.Name = "PreviousButton";
             this.PreviousButton.Size = new System.Drawing.Size(84, 37);
@@ -438,10 +438,10 @@
             this.PauseButton.IdleFillColor = System.Drawing.Color.Crimson;
             this.PauseButton.IdleForecolor = System.Drawing.Color.White;
             this.PauseButton.IdleLineColor = System.Drawing.Color.White;
-            this.PauseButton.Location = new System.Drawing.Point(460, 406);
+            this.PauseButton.Location = new System.Drawing.Point(465, 406);
             this.PauseButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PauseButton.Name = "PauseButton";
-            this.PauseButton.Size = new System.Drawing.Size(84, 37);
+            this.PauseButton.Size = new System.Drawing.Size(109, 37);
             this.PauseButton.TabIndex = 9;
             this.PauseButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.PauseButton.Click += new System.EventHandler(this.PauseButton_Click);
@@ -464,10 +464,10 @@
             this.StopButton.IdleFillColor = System.Drawing.Color.Crimson;
             this.StopButton.IdleForecolor = System.Drawing.Color.White;
             this.StopButton.IdleLineColor = System.Drawing.Color.White;
-            this.StopButton.Location = new System.Drawing.Point(369, 406);
+            this.StopButton.Location = new System.Drawing.Point(348, 406);
             this.StopButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.StopButton.Name = "StopButton";
-            this.StopButton.Size = new System.Drawing.Size(84, 37);
+            this.StopButton.Size = new System.Drawing.Size(109, 37);
             this.StopButton.TabIndex = 8;
             this.StopButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.StopButton.Click += new System.EventHandler(this.StopButton_Click);
@@ -490,10 +490,10 @@
             this.PlayButton.IdleFillColor = System.Drawing.Color.Crimson;
             this.PlayButton.IdleForecolor = System.Drawing.Color.White;
             this.PlayButton.IdleLineColor = System.Drawing.Color.White;
-            this.PlayButton.Location = new System.Drawing.Point(278, 406);
+            this.PlayButton.Location = new System.Drawing.Point(231, 406);
             this.PlayButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PlayButton.Name = "PlayButton";
-            this.PlayButton.Size = new System.Drawing.Size(84, 37);
+            this.PlayButton.Size = new System.Drawing.Size(109, 37);
             this.PlayButton.TabIndex = 7;
             this.PlayButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
