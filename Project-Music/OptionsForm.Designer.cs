@@ -31,23 +31,25 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OptionsForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.PlaySingleButton = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.GeneralButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.DragPanel = new System.Windows.Forms.Panel();
+            this.DefaultSetButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.TitleLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.CloseButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.MinimizeButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.GeneralPanel = new System.Windows.Forms.Panel();
+            this.LangCombobox = new System.Windows.Forms.ComboBox();
             this.UpdateNumUpDown = new System.Windows.Forms.NumericUpDown();
             this.UpdateSlider = new Bunifu.Framework.UI.BunifuSlider();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.UpdateLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.FadeNumUpDown = new System.Windows.Forms.NumericUpDown();
             this.FadeSlider = new Bunifu.Framework.UI.BunifuSlider();
-            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.FadeLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.DefaultSetButton = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.LanguageLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.DragPanel.SuspendLayout();
@@ -60,7 +62,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Controls.Add(this.bunifuSeparator2);
-            this.panel1.Controls.Add(this.PlaySingleButton);
+            this.panel1.Controls.Add(this.GeneralButton);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -83,42 +85,42 @@
             this.bunifuSeparator2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
             this.bunifuSeparator2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
-            // PlaySingleButton
+            // GeneralButton
             // 
-            this.PlaySingleButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(54)))), ((int)(((byte)(91)))));
-            this.PlaySingleButton.BackColor = System.Drawing.Color.Crimson;
-            this.PlaySingleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PlaySingleButton.BorderRadius = 0;
-            this.PlaySingleButton.ButtonText = "General";
-            this.PlaySingleButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PlaySingleButton.DisabledColor = System.Drawing.Color.Gray;
-            this.PlaySingleButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlaySingleButton.Iconcolor = System.Drawing.Color.Transparent;
-            this.PlaySingleButton.Iconimage = null;
-            this.PlaySingleButton.Iconimage_right = null;
-            this.PlaySingleButton.Iconimage_right_Selected = null;
-            this.PlaySingleButton.Iconimage_Selected = null;
-            this.PlaySingleButton.IconMarginLeft = 0;
-            this.PlaySingleButton.IconMarginRight = 0;
-            this.PlaySingleButton.IconRightVisible = true;
-            this.PlaySingleButton.IconRightZoom = 0D;
-            this.PlaySingleButton.IconVisible = true;
-            this.PlaySingleButton.IconZoom = 0D;
-            this.PlaySingleButton.IsTab = false;
-            this.PlaySingleButton.Location = new System.Drawing.Point(0, 101);
-            this.PlaySingleButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.PlaySingleButton.Name = "PlaySingleButton";
-            this.PlaySingleButton.Normalcolor = System.Drawing.Color.Crimson;
-            this.PlaySingleButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(31)))), ((int)(((byte)(72)))));
-            this.PlaySingleButton.OnHoverTextColor = System.Drawing.Color.White;
-            this.PlaySingleButton.selected = false;
-            this.PlaySingleButton.Size = new System.Drawing.Size(200, 55);
-            this.PlaySingleButton.TabIndex = 2;
-            this.PlaySingleButton.Text = "General";
-            this.PlaySingleButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.PlaySingleButton.Textcolor = System.Drawing.Color.White;
-            this.PlaySingleButton.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PlaySingleButton.Click += new System.EventHandler(this.PlaySingleButton_Click);
+            this.GeneralButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(54)))), ((int)(((byte)(91)))));
+            this.GeneralButton.BackColor = System.Drawing.Color.Crimson;
+            this.GeneralButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GeneralButton.BorderRadius = 0;
+            this.GeneralButton.ButtonText = "General";
+            this.GeneralButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GeneralButton.DisabledColor = System.Drawing.Color.Gray;
+            this.GeneralButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GeneralButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.GeneralButton.Iconimage = null;
+            this.GeneralButton.Iconimage_right = null;
+            this.GeneralButton.Iconimage_right_Selected = null;
+            this.GeneralButton.Iconimage_Selected = null;
+            this.GeneralButton.IconMarginLeft = 0;
+            this.GeneralButton.IconMarginRight = 0;
+            this.GeneralButton.IconRightVisible = true;
+            this.GeneralButton.IconRightZoom = 0D;
+            this.GeneralButton.IconVisible = true;
+            this.GeneralButton.IconZoom = 0D;
+            this.GeneralButton.IsTab = false;
+            this.GeneralButton.Location = new System.Drawing.Point(0, 101);
+            this.GeneralButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.GeneralButton.Name = "GeneralButton";
+            this.GeneralButton.Normalcolor = System.Drawing.Color.Crimson;
+            this.GeneralButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(31)))), ((int)(((byte)(72)))));
+            this.GeneralButton.OnHoverTextColor = System.Drawing.Color.White;
+            this.GeneralButton.selected = false;
+            this.GeneralButton.Size = new System.Drawing.Size(200, 55);
+            this.GeneralButton.TabIndex = 2;
+            this.GeneralButton.Text = "General";
+            this.GeneralButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GeneralButton.Textcolor = System.Drawing.Color.White;
+            this.GeneralButton.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GeneralButton.Click += new System.EventHandler(this.PlaySingleButton_Click);
             // 
             // panel2
             // 
@@ -159,12 +161,38 @@
             this.DragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
             this.DragPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
+            // DefaultSetButton
+            // 
+            this.DefaultSetButton.ActiveBorderThickness = 1;
+            this.DefaultSetButton.ActiveCornerRadius = 20;
+            this.DefaultSetButton.ActiveFillColor = System.Drawing.Color.White;
+            this.DefaultSetButton.ActiveForecolor = System.Drawing.Color.Crimson;
+            this.DefaultSetButton.ActiveLineColor = System.Drawing.Color.Crimson;
+            this.DefaultSetButton.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.DefaultSetButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DefaultSetButton.BackgroundImage")));
+            this.DefaultSetButton.ButtonText = "Defualt values";
+            this.DefaultSetButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DefaultSetButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DefaultSetButton.ForeColor = System.Drawing.Color.White;
+            this.DefaultSetButton.IdleBorderThickness = 1;
+            this.DefaultSetButton.IdleCornerRadius = 20;
+            this.DefaultSetButton.IdleFillColor = System.Drawing.Color.Crimson;
+            this.DefaultSetButton.IdleForecolor = System.Drawing.Color.White;
+            this.DefaultSetButton.IdleLineColor = System.Drawing.Color.White;
+            this.DefaultSetButton.Location = new System.Drawing.Point(353, 0);
+            this.DefaultSetButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DefaultSetButton.Name = "DefaultSetButton";
+            this.DefaultSetButton.Size = new System.Drawing.Size(143, 37);
+            this.DefaultSetButton.TabIndex = 7;
+            this.DefaultSetButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DefaultSetButton.Click += new System.EventHandler(this.DefaultSetButton_Click);
+            // 
             // TitleLabel
             // 
             this.TitleLabel.AutoSize = true;
             this.TitleLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TitleLabel.ForeColor = System.Drawing.Color.White;
-            this.TitleLabel.Location = new System.Drawing.Point(18, 9);
+            this.TitleLabel.Location = new System.Drawing.Point(6, 9);
             this.TitleLabel.Name = "TitleLabel";
             this.TitleLabel.Size = new System.Drawing.Size(241, 18);
             this.TitleLabel.TabIndex = 6;
@@ -227,16 +255,33 @@
             // GeneralPanel
             // 
             this.GeneralPanel.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.GeneralPanel.Controls.Add(this.LanguageLabel);
+            this.GeneralPanel.Controls.Add(this.LangCombobox);
             this.GeneralPanel.Controls.Add(this.UpdateNumUpDown);
             this.GeneralPanel.Controls.Add(this.UpdateSlider);
-            this.GeneralPanel.Controls.Add(this.bunifuCustomLabel2);
+            this.GeneralPanel.Controls.Add(this.UpdateLabel);
             this.GeneralPanel.Controls.Add(this.FadeNumUpDown);
             this.GeneralPanel.Controls.Add(this.FadeSlider);
-            this.GeneralPanel.Controls.Add(this.bunifuCustomLabel1);
+            this.GeneralPanel.Controls.Add(this.FadeLabel);
             this.GeneralPanel.Location = new System.Drawing.Point(221, 70);
             this.GeneralPanel.Name = "GeneralPanel";
-            this.GeneralPanel.Size = new System.Drawing.Size(567, 100);
+            this.GeneralPanel.Size = new System.Drawing.Size(567, 161);
             this.GeneralPanel.TabIndex = 3;
+            // 
+            // LangCombobox
+            // 
+            this.LangCombobox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.LangCombobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.LangCombobox.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LangCombobox.ForeColor = System.Drawing.Color.Crimson;
+            this.LangCombobox.FormattingEnabled = true;
+            this.LangCombobox.Items.AddRange(new object[] {
+            "English",
+            "Español"});
+            this.LangCombobox.Location = new System.Drawing.Point(434, 95);
+            this.LangCombobox.Name = "LangCombobox";
+            this.LangCombobox.Size = new System.Drawing.Size(120, 25);
+            this.LangCombobox.TabIndex = 13;
             // 
             // UpdateNumUpDown
             // 
@@ -269,16 +314,16 @@
             this.UpdateSlider.Value = 0;
             this.UpdateSlider.ValueChanged += new System.EventHandler(this.UpdateSlider_ValueChanged);
             // 
-            // bunifuCustomLabel2
+            // UpdateLabel
             // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(37, 56);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(98, 18);
-            this.bunifuCustomLabel2.TabIndex = 10;
-            this.bunifuCustomLabel2.Text = "Update time";
+            this.UpdateLabel.AutoSize = true;
+            this.UpdateLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UpdateLabel.ForeColor = System.Drawing.Color.White;
+            this.UpdateLabel.Location = new System.Drawing.Point(37, 56);
+            this.UpdateLabel.Name = "UpdateLabel";
+            this.UpdateLabel.Size = new System.Drawing.Size(98, 18);
+            this.UpdateLabel.TabIndex = 10;
+            this.UpdateLabel.Text = "Update time";
             // 
             // FadeNumUpDown
             // 
@@ -311,16 +356,16 @@
             this.FadeSlider.Value = 0;
             this.FadeSlider.ValueChanged += new System.EventHandler(this.FadeSlider_ValueChanged);
             // 
-            // bunifuCustomLabel1
+            // FadeLabel
             // 
-            this.bunifuCustomLabel1.AutoSize = true;
-            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel1.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel1.Location = new System.Drawing.Point(14, 19);
-            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
-            this.bunifuCustomLabel1.Size = new System.Drawing.Size(142, 18);
-            this.bunifuCustomLabel1.TabIndex = 7;
-            this.bunifuCustomLabel1.Text = "Fade in/out length";
+            this.FadeLabel.AutoSize = true;
+            this.FadeLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FadeLabel.ForeColor = System.Drawing.Color.White;
+            this.FadeLabel.Location = new System.Drawing.Point(14, 19);
+            this.FadeLabel.Name = "FadeLabel";
+            this.FadeLabel.Size = new System.Drawing.Size(142, 18);
+            this.FadeLabel.TabIndex = 7;
+            this.FadeLabel.Text = "Fade in/out length";
             // 
             // bunifuSeparator3
             // 
@@ -352,31 +397,16 @@
             this.bunifuSeparator1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
             this.bunifuSeparator1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
-            // DefaultSetButton
+            // LanguageLabel
             // 
-            this.DefaultSetButton.ActiveBorderThickness = 1;
-            this.DefaultSetButton.ActiveCornerRadius = 20;
-            this.DefaultSetButton.ActiveFillColor = System.Drawing.Color.White;
-            this.DefaultSetButton.ActiveForecolor = System.Drawing.Color.Crimson;
-            this.DefaultSetButton.ActiveLineColor = System.Drawing.Color.Crimson;
-            this.DefaultSetButton.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.DefaultSetButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DefaultSetButton.BackgroundImage")));
-            this.DefaultSetButton.ButtonText = "Defualt values";
-            this.DefaultSetButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DefaultSetButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DefaultSetButton.ForeColor = System.Drawing.Color.White;
-            this.DefaultSetButton.IdleBorderThickness = 1;
-            this.DefaultSetButton.IdleCornerRadius = 20;
-            this.DefaultSetButton.IdleFillColor = System.Drawing.Color.Crimson;
-            this.DefaultSetButton.IdleForecolor = System.Drawing.Color.White;
-            this.DefaultSetButton.IdleLineColor = System.Drawing.Color.White;
-            this.DefaultSetButton.Location = new System.Drawing.Point(362, 0);
-            this.DefaultSetButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.DefaultSetButton.Name = "DefaultSetButton";
-            this.DefaultSetButton.Size = new System.Drawing.Size(134, 37);
-            this.DefaultSetButton.TabIndex = 7;
-            this.DefaultSetButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.DefaultSetButton.Click += new System.EventHandler(this.DefaultSetButton_Click);
+            this.LanguageLabel.AutoSize = true;
+            this.LanguageLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LanguageLabel.ForeColor = System.Drawing.Color.White;
+            this.LanguageLabel.Location = new System.Drawing.Point(295, 96);
+            this.LanguageLabel.Name = "LanguageLabel";
+            this.LanguageLabel.Size = new System.Drawing.Size(83, 18);
+            this.LanguageLabel.TabIndex = 14;
+            this.LanguageLabel.Text = "Language";
             // 
             // OptionsForm
             // 
@@ -392,6 +422,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "OptionsForm";
             this.Text = "OptionsForm";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.OptionsForm_FormClosed);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -409,16 +440,16 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private Bunifu.Framework.UI.BunifuFlatButton PlaySingleButton;
+        private Bunifu.Framework.UI.BunifuFlatButton GeneralButton;
         private System.Windows.Forms.Panel DragPanel;
         private Bunifu.Framework.UI.BunifuCustomLabel TitleLabel;
         private Bunifu.Framework.UI.BunifuThinButton2 CloseButton;
         private Bunifu.Framework.UI.BunifuThinButton2 MinimizeButton;
         private System.Windows.Forms.Panel GeneralPanel;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel UpdateLabel;
         private System.Windows.Forms.NumericUpDown FadeNumUpDown;
         private Bunifu.Framework.UI.BunifuSlider FadeSlider;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuCustomLabel FadeLabel;
         private System.Windows.Forms.NumericUpDown UpdateNumUpDown;
         private Bunifu.Framework.UI.BunifuSlider UpdateSlider;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
@@ -426,5 +457,7 @@
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator1;
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator2;
         private Bunifu.Framework.UI.BunifuThinButton2 DefaultSetButton;
+        private System.Windows.Forms.ComboBox LangCombobox;
+        private Bunifu.Framework.UI.BunifuCustomLabel LanguageLabel;
     }
 }

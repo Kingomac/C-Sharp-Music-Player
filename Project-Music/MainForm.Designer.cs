@@ -53,10 +53,16 @@
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
             this.RandomCheckBox = new Bunifu.Framework.UI.BunifuCheckbox();
             this.RandomLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.TabControl = new MetroFramework.Controls.MetroTabControl();
+            this.ImageTab = new MetroFramework.Controls.MetroTabPage();
+            this.Tab2 = new MetroFramework.Controls.MetroTabPage();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.DragPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CoverPicture)).BeginInit();
+            this.TabControl.SuspendLayout();
+            this.ImageTab.SuspendLayout();
+            this.Tab2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,7 +76,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(200, 450);
+            this.panel1.Size = new System.Drawing.Size(200, 521);
             this.panel1.TabIndex = 0;
             // 
             // MoreAbout
@@ -133,7 +139,7 @@
             this.SettingsButton.IconVisible = true;
             this.SettingsButton.IconZoom = 85D;
             this.SettingsButton.IsTab = false;
-            this.SettingsButton.Location = new System.Drawing.Point(0, 395);
+            this.SettingsButton.Location = new System.Drawing.Point(0, 466);
             this.SettingsButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.Normalcolor = System.Drawing.Color.Crimson;
@@ -347,7 +353,7 @@
             this.VolumeTrackbar.Location = new System.Drawing.Point(208, 44);
             this.VolumeTrackbar.MaximumValue = 100;
             this.VolumeTrackbar.Name = "VolumeTrackbar";
-            this.VolumeTrackbar.Size = new System.Drawing.Size(30, 394);
+            this.VolumeTrackbar.Size = new System.Drawing.Size(30, 459);
             this.VolumeTrackbar.SliderRadius = 0;
             this.VolumeTrackbar.TabIndex = 4;
             this.VolumeTrackbar.Value = 50;
@@ -362,7 +368,7 @@
             this.TimeTrackbar.Location = new System.Drawing.Point(763, 44);
             this.TimeTrackbar.MaximumValue = 100;
             this.TimeTrackbar.Name = "TimeTrackbar";
-            this.TimeTrackbar.Size = new System.Drawing.Size(30, 394);
+            this.TimeTrackbar.Size = new System.Drawing.Size(30, 461);
             this.TimeTrackbar.SliderRadius = 0;
             this.TimeTrackbar.TabIndex = 5;
             this.TimeTrackbar.Value = 0;
@@ -386,7 +392,7 @@
             this.NextButton.IdleFillColor = System.Drawing.Color.Crimson;
             this.NextButton.IdleForecolor = System.Drawing.Color.White;
             this.NextButton.IdleLineColor = System.Drawing.Color.White;
-            this.NextButton.Location = new System.Drawing.Point(672, 406);
+            this.NextButton.Location = new System.Drawing.Point(676, 466);
             this.NextButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.NextButton.Name = "NextButton";
             this.NextButton.Size = new System.Drawing.Size(84, 37);
@@ -412,7 +418,7 @@
             this.PreviousButton.IdleFillColor = System.Drawing.Color.Crimson;
             this.PreviousButton.IdleForecolor = System.Drawing.Color.White;
             this.PreviousButton.IdleLineColor = System.Drawing.Color.White;
-            this.PreviousButton.Location = new System.Drawing.Point(580, 406);
+            this.PreviousButton.Location = new System.Drawing.Point(584, 466);
             this.PreviousButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PreviousButton.Name = "PreviousButton";
             this.PreviousButton.Size = new System.Drawing.Size(84, 37);
@@ -438,7 +444,7 @@
             this.PauseButton.IdleFillColor = System.Drawing.Color.Crimson;
             this.PauseButton.IdleForecolor = System.Drawing.Color.White;
             this.PauseButton.IdleLineColor = System.Drawing.Color.White;
-            this.PauseButton.Location = new System.Drawing.Point(465, 406);
+            this.PauseButton.Location = new System.Drawing.Point(467, 466);
             this.PauseButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PauseButton.Name = "PauseButton";
             this.PauseButton.Size = new System.Drawing.Size(109, 37);
@@ -464,7 +470,7 @@
             this.StopButton.IdleFillColor = System.Drawing.Color.Crimson;
             this.StopButton.IdleForecolor = System.Drawing.Color.White;
             this.StopButton.IdleLineColor = System.Drawing.Color.White;
-            this.StopButton.Location = new System.Drawing.Point(348, 406);
+            this.StopButton.Location = new System.Drawing.Point(350, 466);
             this.StopButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.StopButton.Name = "StopButton";
             this.StopButton.Size = new System.Drawing.Size(109, 37);
@@ -490,7 +496,7 @@
             this.PlayButton.IdleFillColor = System.Drawing.Color.Crimson;
             this.PlayButton.IdleForecolor = System.Drawing.Color.White;
             this.PlayButton.IdleLineColor = System.Drawing.Color.White;
-            this.PlayButton.Location = new System.Drawing.Point(231, 406);
+            this.PlayButton.Location = new System.Drawing.Point(233, 466);
             this.PlayButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PlayButton.Name = "PlayButton";
             this.PlayButton.Size = new System.Drawing.Size(109, 37);
@@ -500,9 +506,9 @@
             // 
             // CoverPicture
             // 
-            this.CoverPicture.Location = new System.Drawing.Point(322, 48);
+            this.CoverPicture.Location = new System.Drawing.Point(50, 0);
             this.CoverPicture.Name = "CoverPicture";
-            this.CoverPicture.Size = new System.Drawing.Size(350, 350);
+            this.CoverPicture.Size = new System.Drawing.Size(370, 370);
             this.CoverPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.CoverPicture.TabIndex = 2;
             this.CoverPicture.TabStop = false;
@@ -513,7 +519,7 @@
             this.bunifuSeparator1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bunifuSeparator1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(20)))), ((int)(((byte)(60)))));
             this.bunifuSeparator1.LineThickness = 4;
-            this.bunifuSeparator1.Location = new System.Drawing.Point(200, 440);
+            this.bunifuSeparator1.Location = new System.Drawing.Point(200, 511);
             this.bunifuSeparator1.Name = "bunifuSeparator1";
             this.bunifuSeparator1.Size = new System.Drawing.Size(600, 10);
             this.bunifuSeparator1.TabIndex = 12;
@@ -530,7 +536,7 @@
             this.bunifuSeparator3.LineThickness = 4;
             this.bunifuSeparator3.Location = new System.Drawing.Point(790, 38);
             this.bunifuSeparator3.Name = "bunifuSeparator3";
-            this.bunifuSeparator3.Size = new System.Drawing.Size(10, 402);
+            this.bunifuSeparator3.Size = new System.Drawing.Size(10, 473);
             this.bunifuSeparator3.TabIndex = 13;
             this.bunifuSeparator3.Transparency = 255;
             this.bunifuSeparator3.Vertical = true;
@@ -539,39 +545,93 @@
             // 
             // RandomCheckBox
             // 
-            this.RandomCheckBox.BackColor = System.Drawing.Color.Crimson;
-            this.RandomCheckBox.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.RandomCheckBox.BackColor = System.Drawing.Color.DodgerBlue;
+            this.RandomCheckBox.ChechedOffColor = System.Drawing.Color.LightCyan;
             this.RandomCheckBox.Checked = true;
-            this.RandomCheckBox.CheckedOnColor = System.Drawing.Color.Crimson;
+            this.RandomCheckBox.CheckedOnColor = System.Drawing.Color.DodgerBlue;
             this.RandomCheckBox.ForeColor = System.Drawing.Color.White;
-            this.RandomCheckBox.Location = new System.Drawing.Point(253, 58);
+            this.RandomCheckBox.Location = new System.Drawing.Point(14, 17);
             this.RandomCheckBox.Name = "RandomCheckBox";
             this.RandomCheckBox.Size = new System.Drawing.Size(20, 20);
             this.RandomCheckBox.TabIndex = 14;
             this.RandomCheckBox.Visible = false;
-            this.RandomCheckBox.MouseLeave += new System.EventHandler(this.RandomCheckBox_MouseLeave);
-            this.RandomCheckBox.MouseHover += new System.EventHandler(this.RandomCheckBox_MouseHover);
             // 
             // RandomLabel
             // 
             this.RandomLabel.AutoSize = true;
             this.RandomLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RandomLabel.ForeColor = System.Drawing.Color.White;
-            this.RandomLabel.Location = new System.Drawing.Point(292, 58);
+            this.RandomLabel.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.RandomLabel.Location = new System.Drawing.Point(40, 17);
             this.RandomLabel.Name = "RandomLabel";
             this.RandomLabel.Size = new System.Drawing.Size(115, 20);
             this.RandomLabel.TabIndex = 15;
             this.RandomLabel.Text = "Random songs";
             this.RandomLabel.Visible = false;
             // 
+            // TabControl
+            // 
+            this.TabControl.Controls.Add(this.ImageTab);
+            this.TabControl.Controls.Add(this.Tab2);
+            this.TabControl.Location = new System.Drawing.Point(244, 45);
+            this.TabControl.Name = "TabControl";
+            this.TabControl.SelectedIndex = 0;
+            this.TabControl.Size = new System.Drawing.Size(499, 413);
+            this.TabControl.TabIndex = 17;
+            this.TabControl.UseCustomBackColor = true;
+            this.TabControl.UseCustomForeColor = true;
+            this.TabControl.UseSelectable = true;
+            this.TabControl.UseStyleColors = true;
+            // 
+            // ImageTab
+            // 
+            this.ImageTab.BackColor = System.Drawing.Color.LightBlue;
+            this.ImageTab.Controls.Add(this.CoverPicture);
+            this.ImageTab.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ImageTab.ForeColor = System.Drawing.Color.Crimson;
+            this.ImageTab.HorizontalScrollbarBarColor = true;
+            this.ImageTab.HorizontalScrollbarHighlightOnWheel = true;
+            this.ImageTab.HorizontalScrollbarSize = 10;
+            this.ImageTab.Location = new System.Drawing.Point(4, 38);
+            this.ImageTab.Name = "ImageTab";
+            this.ImageTab.Size = new System.Drawing.Size(491, 371);
+            this.ImageTab.TabIndex = 0;
+            this.ImageTab.Text = "Art Cover";
+            this.ImageTab.UseCustomBackColor = true;
+            this.ImageTab.UseCustomForeColor = true;
+            this.ImageTab.UseStyleColors = true;
+            this.ImageTab.VerticalScrollbar = true;
+            this.ImageTab.VerticalScrollbarBarColor = true;
+            this.ImageTab.VerticalScrollbarHighlightOnWheel = true;
+            this.ImageTab.VerticalScrollbarSize = 10;
+            // 
+            // Tab2
+            // 
+            this.Tab2.BackColor = System.Drawing.Color.LightBlue;
+            this.Tab2.Controls.Add(this.RandomCheckBox);
+            this.Tab2.Controls.Add(this.RandomLabel);
+            this.Tab2.HorizontalScrollbarBarColor = true;
+            this.Tab2.HorizontalScrollbarHighlightOnWheel = false;
+            this.Tab2.HorizontalScrollbarSize = 10;
+            this.Tab2.Location = new System.Drawing.Point(4, 38);
+            this.Tab2.Name = "Tab2";
+            this.Tab2.Size = new System.Drawing.Size(491, 371);
+            this.Tab2.TabIndex = 1;
+            this.Tab2.Text = "Options";
+            this.Tab2.UseCustomBackColor = true;
+            this.Tab2.UseCustomForeColor = true;
+            this.Tab2.UseStyleColors = true;
+            this.Tab2.UseVisualStyleBackColor = true;
+            this.Tab2.VerticalScrollbarBarColor = true;
+            this.Tab2.VerticalScrollbarHighlightOnWheel = true;
+            this.Tab2.VerticalScrollbarSize = 10;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.RandomLabel);
-            this.Controls.Add(this.RandomCheckBox);
+            this.ClientSize = new System.Drawing.Size(800, 521);
+            this.Controls.Add(this.TabControl);
             this.Controls.Add(this.bunifuSeparator3);
             this.Controls.Add(this.bunifuSeparator1);
             this.Controls.Add(this.NextButton);
@@ -581,21 +641,24 @@
             this.Controls.Add(this.PlayButton);
             this.Controls.Add(this.TimeTrackbar);
             this.Controls.Add(this.VolumeTrackbar);
-            this.Controls.Add(this.CoverPicture);
             this.Controls.Add(this.DragPanel);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.SystemColors.WindowText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.Text = "C#MusicPlayer";
+            this.Leave += new System.EventHandler(this.MainForm_Leave);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.DragPanel.ResumeLayout(false);
             this.DragPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CoverPicture)).EndInit();
+            this.TabControl.ResumeLayout(false);
+            this.ImageTab.ResumeLayout(false);
+            this.Tab2.ResumeLayout(false);
+            this.Tab2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -625,5 +688,8 @@
         private Bunifu.Framework.UI.BunifuSeparator bunifuSeparator3;
         private Bunifu.Framework.UI.BunifuCheckbox RandomCheckBox;
         private Bunifu.Framework.UI.BunifuCustomLabel RandomLabel;
+        private MetroFramework.Controls.MetroTabControl TabControl;
+        private MetroFramework.Controls.MetroTabPage ImageTab;
+        private MetroFramework.Controls.MetroTabPage Tab2;
     }
 }

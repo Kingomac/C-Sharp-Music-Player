@@ -18,6 +18,7 @@ namespace Project_Music
         {
             InitializeComponent();
             LoadConfig();
+            SetLanguage();
         }
         private async void LoadConfig()
         {
@@ -25,7 +26,20 @@ namespace Project_Music
             decimal[] num = new decimal[1];
             FadeNumUpDown.Value = Convert.ToDecimal(await r.ReadLineAsync());
             UpdateNumUpDown.Value = Convert.ToDecimal(await r.ReadLineAsync());
+            string c = await r.ReadLineAsync();
+            if (c == "spa") LangCombobox.SelectedItem = "Español";
+            if (c == "eng") LangCombobox.SelectedItem = "English";
             r.Close();
+        }
+        private async void SetLanguage()
+        {
+            string[] w = await Language.GetSettingsTexts(await Language.ReadConfFile());
+            GeneralButton.Text = w[0];
+            TitleLabel.Text = w[1];
+            DefaultSetButton.ButtonText = w[2];
+            FadeLabel.Text = w[3];
+            UpdateLabel.Text = w[4];
+            LanguageLabel.Text = w[5];
         }
 
         private void FadeSlider_ValueChanged(object sender, EventArgs e)
@@ -60,7 +74,11 @@ namespace Project_Music
 
         private async void CloseButton_Click(object sender, EventArgs e)
         {
-            await ConfigFile.Save(FadeNumUpDown.Value,UpdateNumUpDown.Value);
+            string i  = null;
+            if (LangCombobox.SelectedItem.ToString() == "Español") { i = "spa"; }
+            if (LangCombobox.SelectedItem.ToString() == "English") { i = "eng"; }
+            if(i != null) await ConfigFile.Save(FadeNumUpDown.Value,UpdateNumUpDown.Value,i);
+            else { await ConfigFile.Save(FadeNumUpDown.Value, UpdateNumUpDown.Value); }
             this.Close();
         }
 
@@ -81,6 +99,12 @@ namespace Project_Music
             var i = new OptionsForm();
             i.Show();
             this.Close();
+        }
+
+        private void OptionsForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Dispose(false);
+            GC.Collect();
         }
     }
 }

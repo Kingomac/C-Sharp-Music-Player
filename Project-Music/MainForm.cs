@@ -24,22 +24,20 @@ namespace Project_Music
         }
         private async void SetLangAsync()
         {
-            string lang = await ConfigFile.ReadLanguage();
-            string[,] w = Language.GetTexts(lang);
+            string[] w = await Language.GetTexts(await Language.ReadConfFile());
             #region Set
-            TitleLabel.Text = w[0, 0];
-            PlaySingleButton.Text = w[0, 1];
-            PlayDirectoryButton.Text = w[0, 2];
+            TitleLabel.Text = w[0];
+            PlaySingleButton.Text = w[1];
+            PlayDirectoryButton.Text = w[2];
             //_randomtext = w[0, 3];
-            MoreAbout.Text = w[0, 4];
-            SettingsButton.Text = w[0, 5];
-            PlayButton.ButtonText = w[0, 6];
-            StopButton.ButtonText = w[0, 7];
-            PauseButton.ButtonText = w[0, 8];
-            NextButton.ButtonText = w[0, 9];
-            PreviousButton.ButtonText = w[0, 10];
+            MoreAbout.Text = w[4];
+            SettingsButton.Text = w[5];
+            PlayButton.ButtonText = w[6];
+            StopButton.ButtonText = w[7];
+            PauseButton.ButtonText = w[8];
+            NextButton.ButtonText = w[9];
+            PreviousButton.ButtonText = w[10];
             #endregion
-            
         }
         private async void CheckConfigFile()
         {
@@ -81,15 +79,17 @@ namespace Project_Music
         int PlayingMeth { get; set; }
         WaveOutEvent waveOutDevice = new WaveOutEvent();
         FadeInOutSampleProvider fade;
-        AudioFileReader audio;
+        AudioFileReader audio = null;
         Timer timer = new Timer();
+        Timer afterfade = new Timer();
         private bool _fadeMade;
         #endregion
         private void StopAudio()
         {
+            RandomCheckBox.Visible = false;
+            RandomLabel.Visible = false;
             try
             {
-                RandomCheckBox.Visible = false;
                 timer.Stop();
                 if (IsPlaying && !_fadeMade)
                 {
@@ -102,7 +102,15 @@ namespace Project_Music
                 CoverPicture.Image = null;
                 _position = 0;
             }
-            catch { }
+            catch {  }
+        }
+
+        private void Afterfade_Tick(object sender, EventArgs e)
+        {
+            audio.Dispose();
+            waveOutDevice.Dispose();
+            afterfade.Stop();
+            afterfade.Dispose();
         }
 
         private void PlaySingleButton_Click(object sender, EventArgs e)
@@ -176,6 +184,7 @@ namespace Project_Music
             }
             PlayAudioDirectory(Files);
             RandomCheckBox.Visible = true;
+            RandomLabel.Visible = true;
         }
         private void PlayAudioDirectory(string[] path)
         {
@@ -207,8 +216,14 @@ namespace Project_Music
                 PlayAudioDirectory(Files);
             }
         }
-
-        private void StopButton_Click(object sender, EventArgs e) => StopAudio();
+        Timer timer2 = new Timer();
+        private void StopButton_Click(object sender, EventArgs e)
+        {
+            StopAudio();
+            afterfade.Interval = FadeLenght;
+            afterfade.Start();
+            afterfade.Tick += Afterfade_Tick;
+        }
 
         private void NextButton_Click(object sender, EventArgs e)
         {
@@ -241,6 +256,7 @@ namespace Project_Music
             }
             #endregion 
             RandomCheckBox.Visible = true;
+            RandomLabel.Visible = true;
         }
 
         private void TimeTrackbar_ValueChanged(object sender, EventArgs e)
@@ -323,14 +339,10 @@ namespace Project_Music
             }
         }
 
-        private void RandomCheckBox_MouseHover(object sender, EventArgs e)
+        private void MainForm_Leave(object sender, EventArgs e)
         {
-            RandomLabel.Visible = true;
-        }
-
-        private void RandomCheckBox_MouseLeave(object sender, EventArgs e)
-        {
-            RandomLabel.Visible = false;
+            this.Dispose();
+            GC.Collect();
         }
     }
 }
