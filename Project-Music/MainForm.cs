@@ -88,6 +88,8 @@ namespace Project_Music
         {
             RandomCheckBox.Visible = false;
             RandomLabel.Visible = false;
+            RepeatCheckbox.Visible = false;
+            RepeatLabel.Visible = false;
             try
             {
                 timer.Stop();
@@ -103,6 +105,28 @@ namespace Project_Music
                 _position = 0;
             }
             catch {  }
+        }
+        private void PlayAudio()
+        {
+                try
+                {
+                    audio = new AudioFileReader(FilePath);
+                    fade = new FadeInOutSampleProvider(audio, true);
+                    fade.BeginFadeIn(FadeLenght);
+                    var waveOutDevice = new WaveOutEvent();
+                    waveOutDevice.Init(fade);
+                    waveOutDevice.Play();
+                    IsPlaying = true;
+                    timer.Tick += new EventHandler(Timer_Tick);
+                    timer.Start();
+                    TimeTrackbar.MaximumValue = Convert.ToInt32(audio.Length / 1000);
+                    TagControl.GetCover(FilePath, CoverPicture);
+                    TitleLabel.Text = TagControl.GetName(FilePath);
+                    audio.Volume = 0.5f;
+                    VolumeTrackbar.Value = 50;
+                    PlayingMeth = 1;
+                }
+                catch { FilePath = null; }
         }
 
         private void Afterfade_Tick(object sender, EventArgs e)
@@ -160,8 +184,16 @@ namespace Project_Music
         {
             TimeTrackbar.Value = Convert.ToInt32(audio.Position / 1000);
             if (IsPlaying) TimeLabel.Text = $"{audio.CurrentTime.Hours.ToString()}:{audio.CurrentTime.Minutes.ToString()}:{audio.CurrentTime.Seconds.ToString()} / {audio.TotalTime.Hours}:{audio.TotalTime.Minutes}:{audio.TotalTime.Seconds}";
-            if (audio.Position >= audio.Length && PlayingMeth == 2) NextPrevPlay(true);
-            else if (audio.Position > audio.Length && PlayingMeth == 1) StopAudio();
+            if (audio.Position >= audio.Length && PlayingMeth == 2)
+            {
+                if (RepeatCheckbox.Checked) { PlayAudio(); }
+                else { NextPrevPlay(true); }
+            }
+            if (audio.Position >= audio.Length && PlayingMeth == 1)
+            {
+                if (RepeatCheckbox.Checked) PlayAudio();
+                StopAudio();
+            }
         }
         private int _lastsong;
         private void NextPrevPlay(bool next/*true --> play next || false --> play previos*/)
@@ -185,6 +217,8 @@ namespace Project_Music
             PlayAudioDirectory(Files);
             RandomCheckBox.Visible = true;
             RandomLabel.Visible = true;
+            RepeatCheckbox.Visible = true;
+            RepeatLabel.Visible = true;
         }
         private void PlayAudioDirectory(string[] path)
         {
@@ -257,6 +291,8 @@ namespace Project_Music
             #endregion 
             RandomCheckBox.Visible = true;
             RandomLabel.Visible = true;
+            RepeatCheckbox.Visible = true;
+            RepeatLabel.Visible = true;
         }
 
         private void TimeTrackbar_ValueChanged(object sender, EventArgs e)

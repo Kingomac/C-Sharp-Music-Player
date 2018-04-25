@@ -56,6 +56,8 @@
             this.TabControl = new MetroFramework.Controls.MetroTabControl();
             this.ImageTab = new MetroFramework.Controls.MetroTabPage();
             this.Tab2 = new MetroFramework.Controls.MetroTabPage();
+            this.RepeatCheckbox = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.RepeatLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.DragPanel.SuspendLayout();
@@ -550,7 +552,7 @@
             this.RandomCheckBox.Checked = true;
             this.RandomCheckBox.CheckedOnColor = System.Drawing.Color.DodgerBlue;
             this.RandomCheckBox.ForeColor = System.Drawing.Color.White;
-            this.RandomCheckBox.Location = new System.Drawing.Point(14, 17);
+            this.RandomCheckBox.Location = new System.Drawing.Point(12, 46);
             this.RandomCheckBox.Name = "RandomCheckBox";
             this.RandomCheckBox.Size = new System.Drawing.Size(20, 20);
             this.RandomCheckBox.TabIndex = 14;
@@ -561,7 +563,7 @@
             this.RandomLabel.AutoSize = true;
             this.RandomLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RandomLabel.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.RandomLabel.Location = new System.Drawing.Point(40, 17);
+            this.RandomLabel.Location = new System.Drawing.Point(38, 46);
             this.RandomLabel.Name = "RandomLabel";
             this.RandomLabel.Size = new System.Drawing.Size(115, 20);
             this.RandomLabel.TabIndex = 15;
@@ -574,7 +576,7 @@
             this.TabControl.Controls.Add(this.Tab2);
             this.TabControl.Location = new System.Drawing.Point(244, 45);
             this.TabControl.Name = "TabControl";
-            this.TabControl.SelectedIndex = 0;
+            this.TabControl.SelectedIndex = 1;
             this.TabControl.Size = new System.Drawing.Size(499, 413);
             this.TabControl.TabIndex = 17;
             this.TabControl.UseCustomBackColor = true;
@@ -607,6 +609,8 @@
             // Tab2
             // 
             this.Tab2.BackColor = System.Drawing.Color.LightBlue;
+            this.Tab2.Controls.Add(this.RepeatCheckbox);
+            this.Tab2.Controls.Add(this.RepeatLabel);
             this.Tab2.Controls.Add(this.RandomCheckBox);
             this.Tab2.Controls.Add(this.RandomLabel);
             this.Tab2.HorizontalScrollbarBarColor = true;
@@ -624,6 +628,29 @@
             this.Tab2.VerticalScrollbarBarColor = true;
             this.Tab2.VerticalScrollbarHighlightOnWheel = true;
             this.Tab2.VerticalScrollbarSize = 10;
+            // 
+            // RepeatCheckbox
+            // 
+            this.RepeatCheckbox.BackColor = System.Drawing.Color.DodgerBlue;
+            this.RepeatCheckbox.ChechedOffColor = System.Drawing.Color.LightCyan;
+            this.RepeatCheckbox.Checked = true;
+            this.RepeatCheckbox.CheckedOnColor = System.Drawing.Color.DodgerBlue;
+            this.RepeatCheckbox.ForeColor = System.Drawing.Color.White;
+            this.RepeatCheckbox.Location = new System.Drawing.Point(12, 18);
+            this.RepeatCheckbox.Name = "RepeatCheckbox";
+            this.RepeatCheckbox.Size = new System.Drawing.Size(20, 20);
+            this.RepeatCheckbox.TabIndex = 16;
+            // 
+            // RepeatLabel
+            // 
+            this.RepeatLabel.AutoSize = true;
+            this.RepeatLabel.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RepeatLabel.ForeColor = System.Drawing.Color.RoyalBlue;
+            this.RepeatLabel.Location = new System.Drawing.Point(38, 18);
+            this.RepeatLabel.Name = "RepeatLabel";
+            this.RepeatLabel.Size = new System.Drawing.Size(102, 20);
+            this.RepeatLabel.TabIndex = 17;
+            this.RepeatLabel.Text = "Repeat song";
             // 
             // MainForm
             // 
@@ -691,5 +718,7 @@
         private MetroFramework.Controls.MetroTabControl TabControl;
         private MetroFramework.Controls.MetroTabPage ImageTab;
         private MetroFramework.Controls.MetroTabPage Tab2;
+        private Bunifu.Framework.UI.BunifuCheckbox RepeatCheckbox;
+        private Bunifu.Framework.UI.BunifuCustomLabel RepeatLabel;
     }
 }
