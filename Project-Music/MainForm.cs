@@ -380,5 +380,10 @@ namespace Project_Music
             this.Dispose();
             GC.Collect();
         }
+
+        private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            LyricsText.Text = TagControl.GetLyrics(FilePath);
+        }
     }
 }

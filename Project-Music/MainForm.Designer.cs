@@ -58,6 +58,9 @@
             this.Tab2 = new MetroFramework.Controls.MetroTabPage();
             this.RepeatCheckbox = new Bunifu.Framework.UI.BunifuCheckbox();
             this.RepeatLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.MoreAboutTab = new MetroFramework.Controls.MetroTabPage();
+            this.LyricsTab = new MetroFramework.Controls.MetroTabPage();
+            this.LyricsText = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.DragPanel.SuspendLayout();
@@ -65,6 +68,7 @@
             this.TabControl.SuspendLayout();
             this.ImageTab.SuspendLayout();
             this.Tab2.SuspendLayout();
+            this.LyricsTab.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -574,15 +578,18 @@
             // 
             this.TabControl.Controls.Add(this.ImageTab);
             this.TabControl.Controls.Add(this.Tab2);
+            this.TabControl.Controls.Add(this.MoreAboutTab);
+            this.TabControl.Controls.Add(this.LyricsTab);
             this.TabControl.Location = new System.Drawing.Point(244, 45);
             this.TabControl.Name = "TabControl";
-            this.TabControl.SelectedIndex = 1;
+            this.TabControl.SelectedIndex = 0;
             this.TabControl.Size = new System.Drawing.Size(499, 413);
             this.TabControl.TabIndex = 17;
             this.TabControl.UseCustomBackColor = true;
             this.TabControl.UseCustomForeColor = true;
             this.TabControl.UseSelectable = true;
             this.TabControl.UseStyleColors = true;
+            this.TabControl.SelectedIndexChanged += new System.EventHandler(this.TabControl_SelectedIndexChanged);
             // 
             // ImageTab
             // 
@@ -652,6 +659,47 @@
             this.RepeatLabel.TabIndex = 17;
             this.RepeatLabel.Text = "Repeat song";
             // 
+            // MoreAboutTab
+            // 
+            this.MoreAboutTab.HorizontalScrollbarBarColor = true;
+            this.MoreAboutTab.HorizontalScrollbarHighlightOnWheel = false;
+            this.MoreAboutTab.HorizontalScrollbarSize = 10;
+            this.MoreAboutTab.Location = new System.Drawing.Point(4, 38);
+            this.MoreAboutTab.Name = "MoreAboutTab";
+            this.MoreAboutTab.Size = new System.Drawing.Size(491, 371);
+            this.MoreAboutTab.TabIndex = 2;
+            this.MoreAboutTab.Text = "More About this song";
+            this.MoreAboutTab.VerticalScrollbarBarColor = true;
+            this.MoreAboutTab.VerticalScrollbarHighlightOnWheel = false;
+            this.MoreAboutTab.VerticalScrollbarSize = 10;
+            // 
+            // LyricsTab
+            // 
+            this.LyricsTab.Controls.Add(this.LyricsText);
+            this.LyricsTab.HorizontalScrollbarBarColor = true;
+            this.LyricsTab.HorizontalScrollbarHighlightOnWheel = false;
+            this.LyricsTab.HorizontalScrollbarSize = 10;
+            this.LyricsTab.Location = new System.Drawing.Point(4, 38);
+            this.LyricsTab.Name = "LyricsTab";
+            this.LyricsTab.Size = new System.Drawing.Size(491, 371);
+            this.LyricsTab.TabIndex = 3;
+            this.LyricsTab.Text = "Lyrics";
+            this.LyricsTab.VerticalScrollbarBarColor = true;
+            this.LyricsTab.VerticalScrollbarHighlightOnWheel = false;
+            this.LyricsTab.VerticalScrollbarSize = 10;
+            // 
+            // LyricsText
+            // 
+            this.LyricsText.BackColor = System.Drawing.Color.LightBlue;
+            this.LyricsText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LyricsText.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LyricsText.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.LyricsText.Location = new System.Drawing.Point(3, 3);
+            this.LyricsText.Name = "LyricsText";
+            this.LyricsText.Size = new System.Drawing.Size(485, 365);
+            this.LyricsText.TabIndex = 2;
+            this.LyricsText.Text = "";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -685,6 +733,7 @@
             this.ImageTab.ResumeLayout(false);
             this.Tab2.ResumeLayout(false);
             this.Tab2.PerformLayout();
+            this.LyricsTab.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -720,5 +769,8 @@
         private MetroFramework.Controls.MetroTabPage Tab2;
         private Bunifu.Framework.UI.BunifuCheckbox RepeatCheckbox;
         private Bunifu.Framework.UI.BunifuCustomLabel RepeatLabel;
+        private MetroFramework.Controls.MetroTabPage MoreAboutTab;
+        private MetroFramework.Controls.MetroTabPage LyricsTab;
+        private System.Windows.Forms.RichTextBox LyricsText;
     }
 }

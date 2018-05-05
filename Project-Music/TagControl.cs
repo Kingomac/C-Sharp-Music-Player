@@ -30,6 +30,11 @@ namespace Project_Music
             }
             else return file.Tag.Title;
         }
+        public static string GetLyrics(string path)
+        {
+            TagLib.File file = TagLib.File.Create(path);
+            return file.Tag.Lyrics;
+        }
     }
     class ConfigFile
     {
