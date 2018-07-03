@@ -30,14 +30,68 @@ namespace Project_Music
             PlaySingleButton.Text = w[1];
             PlayDirectoryButton.Text = w[2];
             //_randomtext = w[0, 3];
-            MoreAbout.Text = w[4];
+            //MoreAbout.Text = w[4];
             SettingsButton.Text = w[5];
             PlayButton.ButtonText = w[6];
             StopButton.ButtonText = w[7];
             PauseButton.ButtonText = w[8];
             NextButton.ButtonText = w[9];
             PreviousButton.ButtonText = w[10];
+            TabPage art = new TabPage();
+            TabPage options = new TabPage();
+            TabPage mabout = new TabPage();
+            TabPage lyrics = new TabPage();
+            foreach(TabPage i in TabControl.TabPages)
+            {
+                if (i.Name == "ImageTab") art = i;
+                if (i.Name == "OptionsTab") options = i;
+                if (i.Name == "MoreAboutTab") mabout = i;
+                if (i.Name == "LyricsTab") lyrics = i;
+            }
+            art.Text = w[11];
+            options.Text = w[12];
+            mabout.Text = w[13];
+            lyrics.Text = w[14];
             #endregion
+        }
+        private void UpdateTags()
+        {
+            PathTextbox.Text = FilePath;
+            TagLib.File file = TagLib.File.Create(MainForm.FilePath);
+            TitleTextbox.Text = file.Tag.Title;
+            AuthorTextbox.Text = "";
+            foreach (string i in file.Tag.Performers)
+            {
+                AuthorTextbox.Text += $"{i} ";
+            }
+            AlbumTextbox.Text = file.Tag.Album;
+            YearTextbox.Text = file.Tag.Year.ToString();
+            TrackTextbox.Text = file.Tag.Track.ToString();
+            GenreTextbox.Text = "";
+            foreach (string i in file.Tag.Genres)
+            {
+                GenreTextbox.Text += $"{i} ";
+            }
+            if (Path.GetExtension(MainForm.FilePath) == ".wav")
+            {
+                var wave = new WaveFileReader(MainForm.FilePath);
+                LengthTextbox.Text = wave.TotalTime.ToString();
+                FreqTextbox.Text = $"{wave.WaveFormat.SampleRate.ToString()} Hz";
+                wave.Close();
+            }
+            else if (Path.GetExtension(MainForm.FilePath) == ".mp3")
+            {
+                var mp3 = new Mp3FileReader(MainForm.FilePath);
+                LengthTextbox.Text = mp3.TotalTime.ToString();
+                FreqTextbox.Text = $"{mp3.WaveFormat.SampleRate.ToString()} Hz";
+                BitrateTextbox.Text = Convert.ToString((mp3.Mp3WaveFormat.AverageBytesPerSecond * 8 / 1024) + (mp3.Mp3WaveFormat.AverageBytesPerSecond * 8 / 1024 * 8 / 312)) + "Kbps";
+                mp3.Close();
+            }
+            LyricsRighText.Text = file.Tag.Lyrics;
+            LyricsRighText.SelectAll();
+            LyricsRighText.SelectionAlignment = HorizontalAlignment.Center;
+            LyricsRighText.DeselectAll();
+            file.Dispose();
         }
         private async void CheckConfigFile()
         {
@@ -176,6 +230,7 @@ namespace Project_Music
                 audio.Volume = 0.5f;
                 VolumeTrackbar.Value = 50;
                 PlayingMeth = 1;
+                UpdateTags();
             }
             catch{ FilePath = null;}
             #endregion
@@ -293,6 +348,7 @@ namespace Project_Music
             RandomLabel.Visible = true;
             RepeatCheckbox.Visible = true;
             RepeatLabel.Visible = true;
+            UpdateTags();
         }
 
         private void TimeTrackbar_ValueChanged(object sender, EventArgs e)
@@ -383,7 +439,7 @@ namespace Project_Music
 
         private void TabControl_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LyricsText.Text = TagControl.GetLyrics(FilePath);
+            LyricsRighText.Text = TagControl.GetLyrics(FilePath);
         }
     }
 }

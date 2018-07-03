@@ -25,7 +25,6 @@ X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\policy.2.
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\taglib-sharp.dll
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\NAudio.xml
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\policy.2.0.taglib-sharp.config
-X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project-Music.csprojResolveAssemblyReference.cache
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Interop.MediaPlayer.dll
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Interop.WMPLib.dll
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Interop.WMPRichPreviewLauncher.dll
@@ -47,3 +46,4 @@ X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\bin\Debug\MetroFram
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project_Music.MainForm.resources
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project_Music.OptionsForm.resources
 X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project_Music.AboutTags.resources
+X:\Projects\Visual Studio\C-Sharp-Music-Player\Project-Music\obj\Debug\Project-Music.csprojAssemblyReference.cache

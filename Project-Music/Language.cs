@@ -35,6 +35,7 @@ namespace Project_Music
                     q[i] = await w.ReadLineAsync();
                 }
                 w.Close();
+                w.Dispose();
                 return q;
             }
             catch { throw new FileNotFoundException("Language file is missing"); }

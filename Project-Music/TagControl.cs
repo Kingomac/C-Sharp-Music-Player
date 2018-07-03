@@ -32,8 +32,15 @@ namespace Project_Music
         }
         public static string GetLyrics(string path)
         {
-            TagLib.File file = TagLib.File.Create(path);
-            return file.Tag.Lyrics;
+            try
+            {
+                TagLib.File file = TagLib.File.Create(path);
+                return file.Tag.Lyrics;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
     class ConfigFile

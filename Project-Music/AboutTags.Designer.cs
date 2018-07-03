@@ -30,14 +30,24 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutTags));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LyricsButton = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.GeneralButton = new Bunifu.Framework.UI.BunifuFlatButton();
             this.bunifuSeparator2 = new Bunifu.Framework.UI.BunifuSeparator();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.DragPanel = new System.Windows.Forms.Panel();
+            this.PathTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.TitleLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.CloseButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.MinimizeButton = new Bunifu.Framework.UI.BunifuThinButton2();
             this.GeneralPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
+            this.TrackTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.YearTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.TitleTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.BitrateTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.FreqTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
+            this.LengthTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.GenreTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.AlbumTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.AuthorTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
@@ -51,16 +61,6 @@
             this.AuthorLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuSeparator1 = new Bunifu.Framework.UI.BunifuSeparator();
             this.bunifuSeparator3 = new Bunifu.Framework.UI.BunifuSeparator();
-            this.TitleTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.LengthTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.FreqTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.BitrateTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.GeneralButton = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.LyricsButton = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.YearTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.TrackTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.PathTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.LyricsPanel = new Bunifu.Framework.UI.BunifuGradientPanel();
             this.LyricsRighText = new System.Windows.Forms.RichTextBox();
             this.panel1.SuspendLayout();
@@ -82,6 +82,80 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 1;
+            // 
+            // LyricsButton
+            // 
+            this.LyricsButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(54)))), ((int)(((byte)(91)))));
+            this.LyricsButton.BackColor = System.Drawing.Color.Crimson;
+            this.LyricsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LyricsButton.BorderRadius = 0;
+            this.LyricsButton.ButtonText = "Lyrics";
+            this.LyricsButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LyricsButton.DisabledColor = System.Drawing.Color.Gray;
+            this.LyricsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LyricsButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.LyricsButton.Iconimage = null;
+            this.LyricsButton.Iconimage_right = null;
+            this.LyricsButton.Iconimage_right_Selected = null;
+            this.LyricsButton.Iconimage_Selected = null;
+            this.LyricsButton.IconMarginLeft = 0;
+            this.LyricsButton.IconMarginRight = 0;
+            this.LyricsButton.IconRightVisible = true;
+            this.LyricsButton.IconRightZoom = 0D;
+            this.LyricsButton.IconVisible = true;
+            this.LyricsButton.IconZoom = 0D;
+            this.LyricsButton.IsTab = false;
+            this.LyricsButton.Location = new System.Drawing.Point(-1, 164);
+            this.LyricsButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.LyricsButton.Name = "LyricsButton";
+            this.LyricsButton.Normalcolor = System.Drawing.Color.Crimson;
+            this.LyricsButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(31)))), ((int)(((byte)(72)))));
+            this.LyricsButton.OnHoverTextColor = System.Drawing.Color.White;
+            this.LyricsButton.selected = false;
+            this.LyricsButton.Size = new System.Drawing.Size(200, 55);
+            this.LyricsButton.TabIndex = 8;
+            this.LyricsButton.Text = "Lyrics";
+            this.LyricsButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LyricsButton.Textcolor = System.Drawing.Color.White;
+            this.LyricsButton.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LyricsButton.Click += new System.EventHandler(this.LyricsButton_Click);
+            // 
+            // GeneralButton
+            // 
+            this.GeneralButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(54)))), ((int)(((byte)(91)))));
+            this.GeneralButton.BackColor = System.Drawing.Color.Crimson;
+            this.GeneralButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.GeneralButton.BorderRadius = 0;
+            this.GeneralButton.ButtonText = "General";
+            this.GeneralButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.GeneralButton.DisabledColor = System.Drawing.Color.Gray;
+            this.GeneralButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GeneralButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.GeneralButton.Iconimage = null;
+            this.GeneralButton.Iconimage_right = null;
+            this.GeneralButton.Iconimage_right_Selected = null;
+            this.GeneralButton.Iconimage_Selected = null;
+            this.GeneralButton.IconMarginLeft = 0;
+            this.GeneralButton.IconMarginRight = 0;
+            this.GeneralButton.IconRightVisible = true;
+            this.GeneralButton.IconRightZoom = 0D;
+            this.GeneralButton.IconVisible = true;
+            this.GeneralButton.IconZoom = 0D;
+            this.GeneralButton.IsTab = false;
+            this.GeneralButton.Location = new System.Drawing.Point(-1, 101);
+            this.GeneralButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
+            this.GeneralButton.Name = "GeneralButton";
+            this.GeneralButton.Normalcolor = System.Drawing.Color.Crimson;
+            this.GeneralButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(31)))), ((int)(((byte)(72)))));
+            this.GeneralButton.OnHoverTextColor = System.Drawing.Color.White;
+            this.GeneralButton.selected = false;
+            this.GeneralButton.Size = new System.Drawing.Size(200, 55);
+            this.GeneralButton.TabIndex = 7;
+            this.GeneralButton.Text = "General";
+            this.GeneralButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.GeneralButton.Textcolor = System.Drawing.Color.White;
+            this.GeneralButton.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GeneralButton.Click += new System.EventHandler(this.GeneralButton_Click);
             // 
             // bunifuSeparator2
             // 
@@ -136,6 +210,19 @@
             this.DragPanel.TabIndex = 2;
             this.DragPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
             this.DragPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
+            // 
+            // PathTextbox
+            // 
+            this.PathTextbox.BackColor = System.Drawing.Color.CadetBlue;
+            this.PathTextbox.BorderColor = System.Drawing.Color.Crimson;
+            this.PathTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PathTextbox.ForeColor = System.Drawing.Color.Crimson;
+            this.PathTextbox.Location = new System.Drawing.Point(118, 8);
+            this.PathTextbox.Name = "PathTextbox";
+            this.PathTextbox.ReadOnly = true;
+            this.PathTextbox.Size = new System.Drawing.Size(379, 22);
+            this.PathTextbox.TabIndex = 37;
+            this.PathTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TitleLabel
             // 
@@ -232,6 +319,95 @@
             this.GeneralPanel.Quality = 10;
             this.GeneralPanel.Size = new System.Drawing.Size(530, 369);
             this.GeneralPanel.TabIndex = 3;
+            // 
+            // TrackTextbox
+            // 
+            this.TrackTextbox.BackColor = System.Drawing.Color.CadetBlue;
+            this.TrackTextbox.BorderColor = System.Drawing.Color.Crimson;
+            this.TrackTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrackTextbox.ForeColor = System.Drawing.Color.Crimson;
+            this.TrackTextbox.Location = new System.Drawing.Point(370, 148);
+            this.TrackTextbox.Name = "TrackTextbox";
+            this.TrackTextbox.ReadOnly = true;
+            this.TrackTextbox.Size = new System.Drawing.Size(113, 22);
+            this.TrackTextbox.TabIndex = 36;
+            this.TrackTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // YearTextbox
+            // 
+            this.YearTextbox.BackColor = System.Drawing.Color.CadetBlue;
+            this.YearTextbox.BorderColor = System.Drawing.Color.Crimson;
+            this.YearTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YearTextbox.ForeColor = System.Drawing.Color.Crimson;
+            this.YearTextbox.Location = new System.Drawing.Point(104, 151);
+            this.YearTextbox.Name = "YearTextbox";
+            this.YearTextbox.ReadOnly = true;
+            this.YearTextbox.Size = new System.Drawing.Size(113, 22);
+            this.YearTextbox.TabIndex = 35;
+            this.YearTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TitleTextbox
+            // 
+            this.TitleTextbox.BackColor = System.Drawing.Color.CadetBlue;
+            this.TitleTextbox.BorderColor = System.Drawing.Color.Crimson;
+            this.TitleTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleTextbox.ForeColor = System.Drawing.Color.Crimson;
+            this.TitleTextbox.Location = new System.Drawing.Point(104, 12);
+            this.TitleTextbox.Name = "TitleTextbox";
+            this.TitleTextbox.ReadOnly = true;
+            this.TitleTextbox.Size = new System.Drawing.Size(379, 22);
+            this.TitleTextbox.TabIndex = 30;
+            this.TitleTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // bunifuCustomLabel9
+            // 
+            this.bunifuCustomLabel9.BackColor = System.Drawing.Color.Transparent;
+            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.White;
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(39, 12);
+            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(79, 33);
+            this.bunifuCustomLabel9.TabIndex = 34;
+            this.bunifuCustomLabel9.Text = "Title:";
+            // 
+            // BitrateTextbox
+            // 
+            this.BitrateTextbox.BackColor = System.Drawing.Color.CadetBlue;
+            this.BitrateTextbox.BorderColor = System.Drawing.Color.Crimson;
+            this.BitrateTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BitrateTextbox.ForeColor = System.Drawing.Color.Crimson;
+            this.BitrateTextbox.Location = new System.Drawing.Point(104, 336);
+            this.BitrateTextbox.Name = "BitrateTextbox";
+            this.BitrateTextbox.ReadOnly = true;
+            this.BitrateTextbox.Size = new System.Drawing.Size(379, 22);
+            this.BitrateTextbox.TabIndex = 33;
+            this.BitrateTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // FreqTextbox
+            // 
+            this.FreqTextbox.BackColor = System.Drawing.Color.CadetBlue;
+            this.FreqTextbox.BorderColor = System.Drawing.Color.Crimson;
+            this.FreqTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FreqTextbox.ForeColor = System.Drawing.Color.Crimson;
+            this.FreqTextbox.Location = new System.Drawing.Point(104, 289);
+            this.FreqTextbox.Name = "FreqTextbox";
+            this.FreqTextbox.ReadOnly = true;
+            this.FreqTextbox.Size = new System.Drawing.Size(379, 22);
+            this.FreqTextbox.TabIndex = 32;
+            this.FreqTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // LengthTextbox
+            // 
+            this.LengthTextbox.BackColor = System.Drawing.Color.CadetBlue;
+            this.LengthTextbox.BorderColor = System.Drawing.Color.Crimson;
+            this.LengthTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LengthTextbox.ForeColor = System.Drawing.Color.Crimson;
+            this.LengthTextbox.Location = new System.Drawing.Point(104, 241);
+            this.LengthTextbox.Name = "LengthTextbox";
+            this.LengthTextbox.ReadOnly = true;
+            this.LengthTextbox.Size = new System.Drawing.Size(379, 22);
+            this.LengthTextbox.TabIndex = 31;
+            this.LengthTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // GenreTextbox
             // 
@@ -390,182 +566,6 @@
             this.bunifuSeparator3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
             this.bunifuSeparator3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
-            // TitleTextbox
-            // 
-            this.TitleTextbox.BackColor = System.Drawing.Color.CadetBlue;
-            this.TitleTextbox.BorderColor = System.Drawing.Color.Crimson;
-            this.TitleTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TitleTextbox.ForeColor = System.Drawing.Color.Crimson;
-            this.TitleTextbox.Location = new System.Drawing.Point(104, 12);
-            this.TitleTextbox.Name = "TitleTextbox";
-            this.TitleTextbox.ReadOnly = true;
-            this.TitleTextbox.Size = new System.Drawing.Size(379, 22);
-            this.TitleTextbox.TabIndex = 30;
-            this.TitleTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // LengthTextbox
-            // 
-            this.LengthTextbox.BackColor = System.Drawing.Color.CadetBlue;
-            this.LengthTextbox.BorderColor = System.Drawing.Color.Crimson;
-            this.LengthTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LengthTextbox.ForeColor = System.Drawing.Color.Crimson;
-            this.LengthTextbox.Location = new System.Drawing.Point(104, 241);
-            this.LengthTextbox.Name = "LengthTextbox";
-            this.LengthTextbox.ReadOnly = true;
-            this.LengthTextbox.Size = new System.Drawing.Size(379, 22);
-            this.LengthTextbox.TabIndex = 31;
-            this.LengthTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // FreqTextbox
-            // 
-            this.FreqTextbox.BackColor = System.Drawing.Color.CadetBlue;
-            this.FreqTextbox.BorderColor = System.Drawing.Color.Crimson;
-            this.FreqTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FreqTextbox.ForeColor = System.Drawing.Color.Crimson;
-            this.FreqTextbox.Location = new System.Drawing.Point(104, 289);
-            this.FreqTextbox.Name = "FreqTextbox";
-            this.FreqTextbox.ReadOnly = true;
-            this.FreqTextbox.Size = new System.Drawing.Size(379, 22);
-            this.FreqTextbox.TabIndex = 32;
-            this.FreqTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // BitrateTextbox
-            // 
-            this.BitrateTextbox.BackColor = System.Drawing.Color.CadetBlue;
-            this.BitrateTextbox.BorderColor = System.Drawing.Color.Crimson;
-            this.BitrateTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BitrateTextbox.ForeColor = System.Drawing.Color.Crimson;
-            this.BitrateTextbox.Location = new System.Drawing.Point(104, 336);
-            this.BitrateTextbox.Name = "BitrateTextbox";
-            this.BitrateTextbox.ReadOnly = true;
-            this.BitrateTextbox.Size = new System.Drawing.Size(379, 22);
-            this.BitrateTextbox.TabIndex = 33;
-            this.BitrateTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // bunifuCustomLabel9
-            // 
-            this.bunifuCustomLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.White;
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(39, 12);
-            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
-            this.bunifuCustomLabel9.Size = new System.Drawing.Size(79, 33);
-            this.bunifuCustomLabel9.TabIndex = 34;
-            this.bunifuCustomLabel9.Text = "Title:";
-            // 
-            // GeneralButton
-            // 
-            this.GeneralButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(54)))), ((int)(((byte)(91)))));
-            this.GeneralButton.BackColor = System.Drawing.Color.Crimson;
-            this.GeneralButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.GeneralButton.BorderRadius = 0;
-            this.GeneralButton.ButtonText = "General";
-            this.GeneralButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.GeneralButton.DisabledColor = System.Drawing.Color.Gray;
-            this.GeneralButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GeneralButton.Iconcolor = System.Drawing.Color.Transparent;
-            this.GeneralButton.Iconimage = null;
-            this.GeneralButton.Iconimage_right = null;
-            this.GeneralButton.Iconimage_right_Selected = null;
-            this.GeneralButton.Iconimage_Selected = null;
-            this.GeneralButton.IconMarginLeft = 0;
-            this.GeneralButton.IconMarginRight = 0;
-            this.GeneralButton.IconRightVisible = true;
-            this.GeneralButton.IconRightZoom = 0D;
-            this.GeneralButton.IconVisible = true;
-            this.GeneralButton.IconZoom = 0D;
-            this.GeneralButton.IsTab = false;
-            this.GeneralButton.Location = new System.Drawing.Point(-1, 101);
-            this.GeneralButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.GeneralButton.Name = "GeneralButton";
-            this.GeneralButton.Normalcolor = System.Drawing.Color.Crimson;
-            this.GeneralButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(31)))), ((int)(((byte)(72)))));
-            this.GeneralButton.OnHoverTextColor = System.Drawing.Color.White;
-            this.GeneralButton.selected = false;
-            this.GeneralButton.Size = new System.Drawing.Size(200, 55);
-            this.GeneralButton.TabIndex = 7;
-            this.GeneralButton.Text = "General";
-            this.GeneralButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.GeneralButton.Textcolor = System.Drawing.Color.White;
-            this.GeneralButton.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GeneralButton.Click += new System.EventHandler(this.GeneralButton_Click);
-            // 
-            // LyricsButton
-            // 
-            this.LyricsButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(54)))), ((int)(((byte)(91)))));
-            this.LyricsButton.BackColor = System.Drawing.Color.Crimson;
-            this.LyricsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.LyricsButton.BorderRadius = 0;
-            this.LyricsButton.ButtonText = "Lyrics";
-            this.LyricsButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LyricsButton.DisabledColor = System.Drawing.Color.Gray;
-            this.LyricsButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LyricsButton.Iconcolor = System.Drawing.Color.Transparent;
-            this.LyricsButton.Iconimage = null;
-            this.LyricsButton.Iconimage_right = null;
-            this.LyricsButton.Iconimage_right_Selected = null;
-            this.LyricsButton.Iconimage_Selected = null;
-            this.LyricsButton.IconMarginLeft = 0;
-            this.LyricsButton.IconMarginRight = 0;
-            this.LyricsButton.IconRightVisible = true;
-            this.LyricsButton.IconRightZoom = 0D;
-            this.LyricsButton.IconVisible = true;
-            this.LyricsButton.IconZoom = 0D;
-            this.LyricsButton.IsTab = false;
-            this.LyricsButton.Location = new System.Drawing.Point(-1, 164);
-            this.LyricsButton.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.LyricsButton.Name = "LyricsButton";
-            this.LyricsButton.Normalcolor = System.Drawing.Color.Crimson;
-            this.LyricsButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(31)))), ((int)(((byte)(72)))));
-            this.LyricsButton.OnHoverTextColor = System.Drawing.Color.White;
-            this.LyricsButton.selected = false;
-            this.LyricsButton.Size = new System.Drawing.Size(200, 55);
-            this.LyricsButton.TabIndex = 8;
-            this.LyricsButton.Text = "Lyrics";
-            this.LyricsButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.LyricsButton.Textcolor = System.Drawing.Color.White;
-            this.LyricsButton.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LyricsButton.Click += new System.EventHandler(this.LyricsButton_Click);
-            // 
-            // YearTextbox
-            // 
-            this.YearTextbox.BackColor = System.Drawing.Color.CadetBlue;
-            this.YearTextbox.BorderColor = System.Drawing.Color.Crimson;
-            this.YearTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.YearTextbox.ForeColor = System.Drawing.Color.Crimson;
-            this.YearTextbox.Location = new System.Drawing.Point(104, 151);
-            this.YearTextbox.Name = "YearTextbox";
-            this.YearTextbox.ReadOnly = true;
-            this.YearTextbox.Size = new System.Drawing.Size(113, 22);
-            this.YearTextbox.TabIndex = 35;
-            this.YearTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TrackTextbox
-            // 
-            this.TrackTextbox.BackColor = System.Drawing.Color.CadetBlue;
-            this.TrackTextbox.BorderColor = System.Drawing.Color.Crimson;
-            this.TrackTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TrackTextbox.ForeColor = System.Drawing.Color.Crimson;
-            this.TrackTextbox.Location = new System.Drawing.Point(370, 148);
-            this.TrackTextbox.Name = "TrackTextbox";
-            this.TrackTextbox.ReadOnly = true;
-            this.TrackTextbox.Size = new System.Drawing.Size(113, 22);
-            this.TrackTextbox.TabIndex = 36;
-            this.TrackTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // PathTextbox
-            // 
-            this.PathTextbox.BackColor = System.Drawing.Color.CadetBlue;
-            this.PathTextbox.BorderColor = System.Drawing.Color.Crimson;
-            this.PathTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PathTextbox.ForeColor = System.Drawing.Color.Crimson;
-            this.PathTextbox.Location = new System.Drawing.Point(118, 8);
-            this.PathTextbox.Name = "PathTextbox";
-            this.PathTextbox.ReadOnly = true;
-            this.PathTextbox.Size = new System.Drawing.Size(379, 22);
-            this.PathTextbox.TabIndex = 37;
-            this.PathTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // LyricsPanel
             // 
             this.LyricsPanel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LyricsPanel.BackgroundImage")));
@@ -575,7 +575,7 @@
             this.LyricsPanel.GradientBottomRight = System.Drawing.Color.DarkSlateGray;
             this.LyricsPanel.GradientTopLeft = System.Drawing.Color.Pink;
             this.LyricsPanel.GradientTopRight = System.Drawing.Color.CadetBlue;
-            this.LyricsPanel.Location = new System.Drawing.Point(236, 60);
+            this.LyricsPanel.Location = new System.Drawing.Point(734, 49);
             this.LyricsPanel.Name = "LyricsPanel";
             this.LyricsPanel.Quality = 10;
             this.LyricsPanel.Size = new System.Drawing.Size(530, 369);
