@@ -55,20 +55,20 @@
             this.TrackTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.YearTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.TitleTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.TagTitleLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.BitrateTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.FreqTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.LengthTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.GenreTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.AlbumTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
             this.AuthorTextbox = new WindowsFormsControlLibrary1.BunifuCustomTextbox();
-            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel4 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel3 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.BitrateLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.FrequLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.LengthLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.GenreLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.TrackLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.YearLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.AlbumLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.AuthorLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.LyricsTab = new MetroFramework.Controls.MetroTabPage();
             this.LyricsRighText = new System.Windows.Forms.RichTextBox();
@@ -402,7 +402,7 @@
             this.TabControl.Controls.Add(this.LyricsTab);
             this.TabControl.Location = new System.Drawing.Point(244, 45);
             this.TabControl.Name = "TabControl";
-            this.TabControl.SelectedIndex = 0;
+            this.TabControl.SelectedIndex = 2;
             this.TabControl.Size = new System.Drawing.Size(499, 413);
             this.TabControl.TabIndex = 17;
             this.TabControl.UseCustomBackColor = true;
@@ -505,20 +505,20 @@
             this.GeneralPanel.Controls.Add(this.TrackTextbox);
             this.GeneralPanel.Controls.Add(this.YearTextbox);
             this.GeneralPanel.Controls.Add(this.TitleTextbox);
-            this.GeneralPanel.Controls.Add(this.bunifuCustomLabel9);
+            this.GeneralPanel.Controls.Add(this.TagTitleLabel);
             this.GeneralPanel.Controls.Add(this.BitrateTextbox);
             this.GeneralPanel.Controls.Add(this.FreqTextbox);
             this.GeneralPanel.Controls.Add(this.LengthTextbox);
             this.GeneralPanel.Controls.Add(this.GenreTextbox);
             this.GeneralPanel.Controls.Add(this.AlbumTextbox);
             this.GeneralPanel.Controls.Add(this.AuthorTextbox);
-            this.GeneralPanel.Controls.Add(this.bunifuCustomLabel8);
-            this.GeneralPanel.Controls.Add(this.bunifuCustomLabel7);
-            this.GeneralPanel.Controls.Add(this.bunifuCustomLabel6);
-            this.GeneralPanel.Controls.Add(this.bunifuCustomLabel5);
-            this.GeneralPanel.Controls.Add(this.bunifuCustomLabel4);
-            this.GeneralPanel.Controls.Add(this.bunifuCustomLabel3);
-            this.GeneralPanel.Controls.Add(this.bunifuCustomLabel2);
+            this.GeneralPanel.Controls.Add(this.BitrateLabel);
+            this.GeneralPanel.Controls.Add(this.FrequLabel);
+            this.GeneralPanel.Controls.Add(this.LengthLabel);
+            this.GeneralPanel.Controls.Add(this.GenreLabel);
+            this.GeneralPanel.Controls.Add(this.TrackLabel);
+            this.GeneralPanel.Controls.Add(this.YearLabel);
+            this.GeneralPanel.Controls.Add(this.AlbumLabel);
             this.GeneralPanel.Controls.Add(this.AuthorLabel);
             this.GeneralPanel.GradientBottomLeft = System.Drawing.Color.LightCyan;
             this.GeneralPanel.GradientBottomRight = System.Drawing.Color.LightSkyBlue;
@@ -569,16 +569,16 @@
             this.TitleTextbox.TabIndex = 30;
             this.TitleTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // bunifuCustomLabel9
+            // TagTitleLabel
             // 
-            this.bunifuCustomLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.Fuchsia;
-            this.bunifuCustomLabel9.Location = new System.Drawing.Point(14, 6);
-            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
-            this.bunifuCustomLabel9.Size = new System.Drawing.Size(79, 33);
-            this.bunifuCustomLabel9.TabIndex = 34;
-            this.bunifuCustomLabel9.Text = "Title:";
+            this.TagTitleLabel.BackColor = System.Drawing.Color.Transparent;
+            this.TagTitleLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TagTitleLabel.ForeColor = System.Drawing.Color.Fuchsia;
+            this.TagTitleLabel.Location = new System.Drawing.Point(14, 6);
+            this.TagTitleLabel.Name = "TagTitleLabel";
+            this.TagTitleLabel.Size = new System.Drawing.Size(79, 33);
+            this.TagTitleLabel.TabIndex = 34;
+            this.TagTitleLabel.Text = "Title:";
             // 
             // BitrateTextbox
             // 
@@ -658,82 +658,82 @@
             this.AuthorTextbox.TabIndex = 27;
             this.AuthorTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // bunifuCustomLabel8
+            // BitrateLabel
             // 
-            this.bunifuCustomLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.Fuchsia;
-            this.bunifuCustomLabel8.Location = new System.Drawing.Point(14, 330);
-            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
-            this.bunifuCustomLabel8.Size = new System.Drawing.Size(79, 33);
-            this.bunifuCustomLabel8.TabIndex = 23;
-            this.bunifuCustomLabel8.Text = "Bitrate:";
+            this.BitrateLabel.BackColor = System.Drawing.Color.Transparent;
+            this.BitrateLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BitrateLabel.ForeColor = System.Drawing.Color.Fuchsia;
+            this.BitrateLabel.Location = new System.Drawing.Point(14, 330);
+            this.BitrateLabel.Name = "BitrateLabel";
+            this.BitrateLabel.Size = new System.Drawing.Size(79, 33);
+            this.BitrateLabel.TabIndex = 23;
+            this.BitrateLabel.Text = "Bitrate:";
             // 
-            // bunifuCustomLabel7
+            // FrequLabel
             // 
-            this.bunifuCustomLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel7.ForeColor = System.Drawing.Color.Fuchsia;
-            this.bunifuCustomLabel7.Location = new System.Drawing.Point(14, 283);
-            this.bunifuCustomLabel7.Name = "bunifuCustomLabel7";
-            this.bunifuCustomLabel7.Size = new System.Drawing.Size(79, 33);
-            this.bunifuCustomLabel7.TabIndex = 21;
-            this.bunifuCustomLabel7.Text = "Frequ:";
+            this.FrequLabel.BackColor = System.Drawing.Color.Transparent;
+            this.FrequLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FrequLabel.ForeColor = System.Drawing.Color.Fuchsia;
+            this.FrequLabel.Location = new System.Drawing.Point(14, 283);
+            this.FrequLabel.Name = "FrequLabel";
+            this.FrequLabel.Size = new System.Drawing.Size(79, 33);
+            this.FrequLabel.TabIndex = 21;
+            this.FrequLabel.Text = "Frequ:";
             // 
-            // bunifuCustomLabel6
+            // LengthLabel
             // 
-            this.bunifuCustomLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel6.ForeColor = System.Drawing.Color.Fuchsia;
-            this.bunifuCustomLabel6.Location = new System.Drawing.Point(14, 235);
-            this.bunifuCustomLabel6.Name = "bunifuCustomLabel6";
-            this.bunifuCustomLabel6.Size = new System.Drawing.Size(79, 33);
-            this.bunifuCustomLabel6.TabIndex = 19;
-            this.bunifuCustomLabel6.Text = "Length:";
+            this.LengthLabel.BackColor = System.Drawing.Color.Transparent;
+            this.LengthLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LengthLabel.ForeColor = System.Drawing.Color.Fuchsia;
+            this.LengthLabel.Location = new System.Drawing.Point(14, 235);
+            this.LengthLabel.Name = "LengthLabel";
+            this.LengthLabel.Size = new System.Drawing.Size(79, 33);
+            this.LengthLabel.TabIndex = 19;
+            this.LengthLabel.Text = "Length:";
             // 
-            // bunifuCustomLabel5
+            // GenreLabel
             // 
-            this.bunifuCustomLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel5.ForeColor = System.Drawing.Color.Fuchsia;
-            this.bunifuCustomLabel5.Location = new System.Drawing.Point(14, 190);
-            this.bunifuCustomLabel5.Name = "bunifuCustomLabel5";
-            this.bunifuCustomLabel5.Size = new System.Drawing.Size(79, 33);
-            this.bunifuCustomLabel5.TabIndex = 17;
-            this.bunifuCustomLabel5.Text = "Genre:";
+            this.GenreLabel.BackColor = System.Drawing.Color.Transparent;
+            this.GenreLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GenreLabel.ForeColor = System.Drawing.Color.Fuchsia;
+            this.GenreLabel.Location = new System.Drawing.Point(14, 190);
+            this.GenreLabel.Name = "GenreLabel";
+            this.GenreLabel.Size = new System.Drawing.Size(79, 33);
+            this.GenreLabel.TabIndex = 17;
+            this.GenreLabel.Text = "Genre:";
             // 
-            // bunifuCustomLabel4
+            // TrackLabel
             // 
-            this.bunifuCustomLabel4.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel4.ForeColor = System.Drawing.Color.Fuchsia;
-            this.bunifuCustomLabel4.Location = new System.Drawing.Point(268, 142);
-            this.bunifuCustomLabel4.Name = "bunifuCustomLabel4";
-            this.bunifuCustomLabel4.Size = new System.Drawing.Size(69, 33);
-            this.bunifuCustomLabel4.TabIndex = 15;
-            this.bunifuCustomLabel4.Text = "Track:";
+            this.TrackLabel.BackColor = System.Drawing.Color.Transparent;
+            this.TrackLabel.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TrackLabel.ForeColor = System.Drawing.Color.Fuchsia;
+            this.TrackLabel.Location = new System.Drawing.Point(268, 142);
+            this.TrackLabel.Name = "TrackLabel";
+            this.TrackLabel.Size = new System.Drawing.Size(69, 33);
+            this.TrackLabel.TabIndex = 15;
+            this.TrackLabel.Text = "Track:";
             // 
-            // bunifuCustomLabel3
+            // YearLabel
             // 
-            this.bunifuCustomLabel3.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel3.ForeColor = System.Drawing.Color.Fuchsia;
-            this.bunifuCustomLabel3.Location = new System.Drawing.Point(14, 142);
-            this.bunifuCustomLabel3.Name = "bunifuCustomLabel3";
-            this.bunifuCustomLabel3.Size = new System.Drawing.Size(69, 33);
-            this.bunifuCustomLabel3.TabIndex = 13;
-            this.bunifuCustomLabel3.Text = "Year:";
+            this.YearLabel.BackColor = System.Drawing.Color.Transparent;
+            this.YearLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.YearLabel.ForeColor = System.Drawing.Color.Fuchsia;
+            this.YearLabel.Location = new System.Drawing.Point(14, 142);
+            this.YearLabel.Name = "YearLabel";
+            this.YearLabel.Size = new System.Drawing.Size(69, 33);
+            this.YearLabel.TabIndex = 13;
+            this.YearLabel.Text = "Year:";
             // 
-            // bunifuCustomLabel2
+            // AlbumLabel
             // 
-            this.bunifuCustomLabel2.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.Fuchsia;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(14, 98);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(79, 33);
-            this.bunifuCustomLabel2.TabIndex = 11;
-            this.bunifuCustomLabel2.Text = "Album:";
+            this.AlbumLabel.BackColor = System.Drawing.Color.Transparent;
+            this.AlbumLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AlbumLabel.ForeColor = System.Drawing.Color.Fuchsia;
+            this.AlbumLabel.Location = new System.Drawing.Point(14, 98);
+            this.AlbumLabel.Name = "AlbumLabel";
+            this.AlbumLabel.Size = new System.Drawing.Size(79, 33);
+            this.AlbumLabel.TabIndex = 11;
+            this.AlbumLabel.Text = "Album:";
             // 
             // AuthorLabel
             // 
@@ -944,6 +944,8 @@
             this.bunifuGradientPanel2.Quality = 10;
             this.bunifuGradientPanel2.Size = new System.Drawing.Size(600, 38);
             this.bunifuGradientPanel2.TabIndex = 38;
+            this.bunifuGradientPanel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseDown);
+            this.bunifuGradientPanel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.DragPanel_MouseMove);
             // 
             // PathTextbox
             // 
@@ -1030,20 +1032,20 @@
         private WindowsFormsControlLibrary1.BunifuCustomTextbox TrackTextbox;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox YearTextbox;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox TitleTextbox;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
+        private Bunifu.Framework.UI.BunifuCustomLabel TagTitleLabel;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox BitrateTextbox;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox FreqTextbox;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox LengthTextbox;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox GenreTextbox;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox AlbumTextbox;
         private WindowsFormsControlLibrary1.BunifuCustomTextbox AuthorTextbox;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel BitrateLabel;
+        private Bunifu.Framework.UI.BunifuCustomLabel FrequLabel;
+        private Bunifu.Framework.UI.BunifuCustomLabel LengthLabel;
+        private Bunifu.Framework.UI.BunifuCustomLabel GenreLabel;
+        private Bunifu.Framework.UI.BunifuCustomLabel TrackLabel;
+        private Bunifu.Framework.UI.BunifuCustomLabel YearLabel;
+        private Bunifu.Framework.UI.BunifuCustomLabel AlbumLabel;
         private Bunifu.Framework.UI.BunifuCustomLabel AuthorLabel;
         private System.Windows.Forms.Panel panel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;

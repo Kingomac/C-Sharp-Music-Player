@@ -29,8 +29,8 @@ namespace Project_Music
             TitleLabel.Text = w[0];
             PlaySingleButton.Text = w[1];
             PlayDirectoryButton.Text = w[2];
-            //_randomtext = w[0, 3];
-            //MoreAbout.Text = w[4];
+            RandomLabel.Text = w[3];
+            //MoreAbout.Text = w[4]; Si, no vale para nada pero lo cogí cariño
             SettingsButton.Text = w[5];
             PlayButton.ButtonText = w[6];
             StopButton.ButtonText = w[7];
@@ -52,6 +52,16 @@ namespace Project_Music
             options.Text = w[12];
             mabout.Text = w[13];
             lyrics.Text = w[14];
+            TagTitleLabel.Text = w[15];
+            AuthorLabel.Text = w[16];
+            AlbumLabel.Text = w[17];
+            YearLabel.Text = w[18];
+            TrackLabel.Text = w[19];
+            GenreLabel.Text = w[20];
+            LengthLabel.Text = w[21];
+            FrequLabel.Text = w[22];
+            BitrateLabel.Text = w[23];
+            RepeatLabel.Text = w[24];
             #endregion
         }
         private void UpdateTags()
